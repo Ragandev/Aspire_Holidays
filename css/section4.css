@@ -1,0 +1,45 @@
+.all-package {
+  padding: 100px 0;
+}
+.package-cont-box{
+    background: url(/asset/images/Campus@3x-8.png) no-repeat;
+    background-size: 300px 300px;
+    background-position: 800px;
+}
+.package-cont {
+  width: 60%;
+}
+.package-cont .cursive-heading,
+.package-cont .main-heading {
+  margin-bottom: 20px;
+}
+
+.pop-package {
+  margin-top: 80px;
+}
+.pop-package .item {
+  border-radius: 20px;
+  height: 400px;
+  overflow: hidden;
+}
+.pop-package .item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #000;
+  opacity: 0.3;
+  top: 0;
+}
+.pop-package .item img {
+  filter: saturate(2);
+}
+.pop-package .item .item-cont {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  z-index: 1;
+  text-align: center;
+}
