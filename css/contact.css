@@ -1,0 +1,51 @@
+.cont-banner{
+    height: 400px;
+    background-image: url('/asset/images/banner3.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    text-align: center;
+}
+.form-section{
+    padding: 100px 0 120px 0 ;
+}
+.form-header{
+    text-align: center;
+    padding: 20px;
+}
+.map-box-inn div{
+    padding: 0;
+}
+.add-inn{
+    background-image: url('/asset/images/domestic-dark.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    height: 400px;
+    font-size: 16px;
+    padding: 20px;
+}
+.map-section{
+    overflow: hidden;
+}
+.map-inn iframe{
+    width: 100%;
+    height: 400px;
+}
+.social{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.socialbox{
+    display: flex;
+    gap: 50px;
+}

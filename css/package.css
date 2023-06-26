@@ -1,0 +1,340 @@
+.hero-section {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  padding: 50px 0 0 0;
+}
+
+.hero-section h2 {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.hero-section .container {
+  height: 300px;
+  width: 100%;
+  display: flex;
+}
+
+.hero-section .container .card {
+  height: 480px;
+  width: 550px;
+  border: 2px solid var(--main);
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem rgba(0, 0, 0, 0.5);
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+  background-position: center;
+}
+
+.hero-section .card:first-child {
+  background-image: url("/asset/images/domestic.jpg");
+}
+
+.hero-section .card:nth-child(2) {
+  background-image: url("/asset/images/international.jpeg");
+}
+
+.hero-section .card:nth-child(3) {
+  background-image: url("/asset/images/college.jpg");
+}
+
+.hero-section .card:nth-child(4) {
+  background-image: url("/asset/images/honeymoon.jpg");
+}
+
+.hero-section .card:nth-child(5) {
+  background-image: url("/asset/images/cruser.jpg");
+}
+
+.hero-section .card:not(:first-child) {
+  margin-left: -50px;
+}
+
+.hero-section .card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.hero-section .card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.hero-section .card-title {
+  background-color: #fff;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section .title {
+  font-size: 14px;
+  letter-spacing: normal;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+/* Popular Packages  */
+.popular{
+  padding: 150px 0;
+}
+.dom{
+  background-color: var(--main);
+  color: #fff;
+}
+.hny{
+  background-color: var(--main);
+  color: #fff;
+}
+.int,.edu{
+  background-color: #f1f1f1;
+}
+.item {
+  min-height: 380px;
+  max-height: 380px;
+  overflow: hidden;
+  object-fit: cover;
+  position: relative;
+}
+.item::before {
+  content: "";
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    315deg, rgba(32, 191, 85, 0.5) 0%, 
+    rgba(1, 186, 239, 0.5) 74%);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.item-img {
+  object-fit: cover;
+}
+.item::after{
+  cursor: pointer;
+  content: 'Know More';
+  color: var(--main);
+  font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  width: fit-content;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.item:hover::after{
+  opacity: 1;
+}
+.item:hover::before{
+  opacity: 1;
+}
+.owl-nav{
+  font-size: 100px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 290px;
+  color: var(--main);
+}
+.nav-right .owl-nav {
+  left: -100px;
+}
+.nav-left .owl-nav{
+  right: -100px;
+  color: #fff;
+}
+.text-box h1 {
+  margin-left: 20px;
+}
+.text-box img {
+  width: 60%;
+  margin-left: 60px;
+  margin-top: 60px;
+}
+
+/* services Section  */
+.service {
+  height: 500px;
+  margin: 40px auto 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.service .main-heading{
+  padding: 30px 0;
+}
+.service-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.service-text {
+  position: absolute;
+  top: 400px;
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+.service-box span {
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.service-box-inn1 :hover  span,
+.service-box-inn2 :hover  span,
+.service-box-inn3 :hover  span,
+.service-box-inn4 :hover  span,
+.service-box-inn5 :hover  span{
+  opacity: 1;
+  color: var(--main);
+}
+
+.service-box div {
+  width: 20%;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+.service-bg {
+  height: 50% !important;
+  width: 100%;
+  position: absolute;
+  background-image: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 0)
+  );
+  bottom: 0;
+  z-index: 1;
+}
+.service-box-inn1:hover .service-bg,
+.service-box-inn2:hover .service-bg,
+.service-box-inn3:hover .service-bg,
+.service-box-inn4:hover .service-bg,
+.service-box-inn5:hover .service-bg {
+  height: 78% !important;
+}
+.service-box-inn1 {
+  background-image: url("/asset/images/cruser.jpg");
+}
+.service-box-inn2 {
+  background-image: url("/asset/images/domestic.jpg");
+}
+.service-box-inn3 {
+  background-image: url("/asset/images/honeymoon.jpg");
+}
+.service-box-inn4 {
+  background-image: url("/asset/images/international.jpeg");
+}
+.service-box-inn5 {
+  background-image: url("/asset/images/college.jpg");
+}
+
+/* Blog Section  */
+.blog-sec {
+  padding: 100px 0 100px 0;
+}
+.blog-title-box {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.blog-title-box a {
+  text-align: left;
+  margin: 0 0 0 auto;
+}
+.blog-box-inn {
+  background-color: rgba(240, 248, 255, 0.5);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.blog-des-box {
+  padding: 30px;
+}
+.blog-box-inn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 10px;
+  background-color: var(--main);
+  width: 100%;
+}
+
+/* Review Section  */
+
+.review-sec {
+  padding: 100px 0 150px 0;
+  background-image: url(../asset/images/bw_mountain_bg.jpg);
+  background-size: cover;
+}
+.review-title {
+  text-align: center;
+  margin-bottom: 70px;
+}
+.review-box-inn {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(253, 253, 254, 0.9);
+  padding: 50px 30px;
+}
+.stars {
+  margin-bottom: 10px;
+}
+.stars img {
+  height: 40px;
+}
+
+/* Footer  */
+.ft {
+  background-color: var(--dark);
+  color: #fff;
+  margin: 0 auto;
+  padding: 50px 0px;
+}
+.ft li {
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+footer .sub-heading {
+  padding-bottom: 10px;
+}
+footer .col-lg-3 img {
+  width: 80%;
+  scale: 0.7;
+  align-items: center;
+}
+
+/* Infygain  */
+.infy {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: var(--dark);
+  padding: 0 0 20px 0;
+}
+.infy img {
+  width: 150px;
+  margin-right: 22px;
+}
+.infy p {
+  margin: 0 10px;
+  padding: 0;
+}
+.infy p a {
+  color: #fff;
+}
+.front .sub-heading h1{
+  color:var(--main);
+}

@@ -1,0 +1,77 @@
+/* Josefin Sans Font Family */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
+
+:root {
+  --main: #009ee0;
+  --sec: #4f7d17;
+  --dark: #1e1e1e;
+  --lit: rgb(80, 80, 80);
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Buttons */
+.btns {
+  border: none;
+  padding: 10px 30px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.b-dark {
+  background-color: var(--dark);
+}
+.b-dark:hover {
+  background-color: var(--main);
+}
+
+.b-main {
+  background-color: var(--main);
+}
+.b-main:hover {
+  background-color: #071409;
+}
+
+/* Links */
+.link {
+  text-decoration: none;
+  color: var(--sec);
+  font-weight: bolder;
+}
+.link:hover {
+  color: var(--main);
+}
+
+/* Heading  */
+.main-heading {
+  font-size: 40px;
+  font-weight: 900;
+}
+.sub-heading {
+  font-size: 25px;
+  font-weight: 700;
+}
+.mini-heading {
+  font-size: 20px;
+  font-weight: 500;
+}
+.banner-heading{
+  font-size: 80px;
+  font-weight: 900;
+}
+.para {
+  color: var(--lit);
+}
+
+input:focus, textarea:focus{
+  outline: none !important;
+  box-shadow: none !important;
+  border: 2px solid var(--main) !important;
+}
