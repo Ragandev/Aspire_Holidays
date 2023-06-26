@@ -22,7 +22,11 @@
     color:var(--main);
     font-weight: 500;
 }
+.main-menu .nav-link{
+    color: var(--dgrey);
+    margin-left:5px;
+}
 .main-menu .nav-link:not(:first-child){
-    color: var(--main);
+    color: var(--dgrey);
     margin-left:5px;
 }

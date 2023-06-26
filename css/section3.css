@@ -1,0 +1,19 @@
+.tour-explore{
+    margin:50px;
+    border: 1px solid red;
+    padding: 50px;
+}
+.tour-box{
+    margin:0 auto;
+    overflow: hidden;
+    padding:30px;
+}
+.tour-box img{
+    height: 100px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.tour-box1{
+    /* background-image: url(/asset/images/banner1.jpg); */
+}
