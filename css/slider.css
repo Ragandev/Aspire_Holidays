@@ -1,0 +1,13 @@
+.banner-sec{
+    height: 793px;
+    overflow: hidden;
+}
+.main-banner{
+    height: 100%;
+}
+.main-banner .carousel-item img,
+.main-banner .carousel-item,
+.main-banner .carousel-inner{
+    width: 100%;
+    height: 100%;
+}

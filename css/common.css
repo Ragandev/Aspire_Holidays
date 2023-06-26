@@ -1,77 +1,51 @@
-/* Josefin Sans Font Family */
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap");
+/* Font Family */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-:root {
-  --main: #009ee0;
-  --sec: #4f7d17;
-  --dark: #1e1e1e;
-  --lit: rgb(80, 80, 80);
+/* Root */
+:root{
+  --main: #f0870d;
+  --sec: #1e2d58;
+  --gray: #929292;
 }
-
-body {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 18px;
-  width: 100vw;
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
   overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 }
-
-/* Buttons */
-.btns {
-  border: none;
-  padding: 10px 30px;
-  font-weight: bold;
-  color: #fff;
-  border-radius: 50px;
-  cursor: pointer;
+.para{
+  color: var(--gray);
 }
-
-.b-dark {
-  background-color: var(--dark);
+.large-heading{
+  font-size: 80px;
+  font-weight: 800;
 }
-.b-dark:hover {
-  background-color: var(--main);
-}
-
-.b-main {
-  background-color: var(--main);
-}
-.b-main:hover {
-  background-color: #071409;
-}
-
-/* Links */
-.link {
-  text-decoration: none;
-  color: var(--sec);
-  font-weight: bolder;
-}
-.link:hover {
-  color: var(--main);
-}
-
-/* Heading  */
-.main-heading {
-  font-size: 40px;
-  font-weight: 900;
-}
-.sub-heading {
-  font-size: 25px;
+.main-heading{
+  font-size: 50px;
   font-weight: 700;
 }
-.mini-heading {
+.sub-heading{
+  font-size: 35px;
+  font-weight: 700;
+}
+.mini-heading{
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
 }
-.banner-heading{
-  font-size: 80px;
-  font-weight: 900;
+.cursive-heading{
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--main);
 }
-.para {
-  color: var(--lit);
-}
-
-input:focus, textarea:focus{
-  outline: none !important;
-  box-shadow: none !important;
-  border: 2px solid var(--main) !important;
+.btns{
+  padding: 10px 20px;
+  font-weight: 600;
+  background-color: var(--main);
+  border: 0;
+  color: #fff;
+  border-radius: 5px;
 }
