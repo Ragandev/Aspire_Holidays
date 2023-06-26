@@ -20,7 +20,7 @@ body{
   color: var(--gray);
 }
 .large-heading{
-  font-size: 80px;
+  font-size: 100px;
   font-weight: 800;
 }
 .main-heading{
@@ -48,4 +48,8 @@ body{
   border: 0;
   color: #fff;
   border-radius: 5px;
+}
+a{
+  text-decoration: none;
+  font-weight: bold;
 }
