@@ -1,0 +1,13 @@
+.service-sec{
+    padding: 100px 0;
+}
+.service-sec .service-cont .para{
+    margin-top: 30px;
+}
+.service-links{
+    margin-top: 50px;
+}
+.service-img{
+    border-radius: 300px 0 0 300px;
+    overflow: hidden;
+}
