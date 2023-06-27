@@ -1,19 +1,139 @@
 .tour-explore{
-    margin:50px;
-    border: 1px solid red;
-    padding: 50px;
+    margin:30px;
 }
-.tour-box{
+.box-inn{
+    padding: 50px 10px;
+}
+.main-tour-box{
     margin:0 auto;
-    overflow: hidden;
+}
+.tour-box-1{
+    background-image: url(/asset/images/banner1.jpg);
+}
+.tour-box-2{
+    background-image: url(/asset/images/banner1.jpg);
+}
+.tour-box-3{
+    background-image: url(/asset/images/banner1.jpg);
+}
+.tour-box-4{
+    background-image: url(/asset/images/banner1.jpg);
+}
+.tour-box-5{
+    background-image: url(/asset/images/banner1.jpg);
+}
+/* .icon-box{
+    background-image: url("../asset/images/menu.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+} */
+.icon-box, .txt-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+}
+.txt-box{
+    justify-content: start;
+}
+.tour{
+    height: 130px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+}
+.trend{
+    margin:30px;
+    color:var(--gray);
+}
+.trend .trend-title{
+    margin-bottom: 20px;;
+}
+.trend .card{
+    position: relative;
+}
+.trend .card-img-top{
+    height:250px;
+}
+.trend .mini-heading{
+    margin-top: 20px;
+    color:black;
+}
+.trend .trend-price{
+    color: black;
+    text-align: end;
+}
+.trend .day-plan{
+    height:40px;
+    width: 90%;
+    position: absolute;
+    top:43%;
+    left:5%;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 2px 3px 0px;
+    color:var(--gray);
+    padding:10px;
+}
+.trend .day-plan i{
+    color: var(--main);
+}
+.trend .day-plan .day-map i:first-child{
+    margin-right:10px;
+}
+.about-sec{
+    background-image: url(/asset/images/banner1.jpg);
+    background-size: cover;
+    background-repeat:no-repeat ;
+    margin:80px auto;
+    padding:100px;
+    color:white;
+}
+.about-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-owl .item{
+    border: 1px solid red;
+    height: 100%;
+}
+.price-content-box{
+    height:100%;
+}
+.price-first-box{
+    margin:0 auto;
+    text-align: center;
+    padding:40px;
+}
+.price-content-box .para{
+    width:60%;
+    margin: 0 auto;
+}
+.price-content-box .row{   
     padding:30px;
 }
-.tour-box img{
-    height: 100px;
-    width: 100%;
-    object-fit: cover;
+.price-content-box .box1-con{
+    border:1px solid red;
+    background-color:rgb(255, 115, 0);
+    height:500px;
     border-radius: 10px;
+    padding:50px;
 }
-.tour-box1{
-    /* background-image: url(/asset/images/banner1.jpg); */
+.price-content-box .box2-con{
+    border:1px solid red;
+    background-color:rgb(255, 115, 0);
+    height:500px;
+    border-radius: 10px;
+    padding:50px;
 }
+.price-content-box .box3-con{
+    border:1px solid red;
+    background-color:rgb(255, 115, 0);
+    height:500px;
+    border-radius: 10px;
+    padding:50px;
+}
+
+
