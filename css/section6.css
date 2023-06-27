@@ -1,0 +1,14 @@
+.travel-video{
+    padding: 100px 0;
+    background-image: url("/asset/images/World\ Map\ \(\ Flat\ \)@3x-8.png");
+    background-repeat: no-repeat;
+    background-position: 250% 0px;
+}
+.travel-video-box .large-heading{
+    padding-bottom: 50px;
+    text-align: center;
+}
+.video-box{
+    display: flex;
+    justify-content: center;
+}

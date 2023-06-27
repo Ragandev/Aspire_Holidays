@@ -30,8 +30,10 @@
   height: 100%;
   border-radius: 20px;
   background-color: #000;
+  color: #fff;
   opacity: 0.3;
   top: 0;
+  transition: all 0.3s ease;
 }
 .pop-package .item img {
   filter: saturate(2);
@@ -42,4 +44,19 @@
   color: #fff;
   z-index: 1;
   text-align: center;
+  transition: all 0.3s ease;
+}
+.pop-package .item .item-cont a{
+  opacity: 0;
+  transition: all 0.3s ease;
+  transition-delay: 0.2s;
+}
+.pop-package .item:hover::after{
+  opacity: 0.7;
+}
+.pop-package .item:hover .item-cont{
+  bottom: 130px;
+}
+.pop-package .item:hover .item-cont a{
+  opacity: 1;
 }
