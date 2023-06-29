@@ -1,0 +1,160 @@
+.tour-explore{
+    padding: 100px 0 30px 0;
+}
+.box-inn{
+    padding: 50px 10px;
+}
+.main-tour-box{
+    margin:0 auto;
+}
+.tour-box-1{
+    background-image: url(/asset/images/banner1.jpg);
+}
+.tour-box-2{
+    background-image: url(/asset/images/banner1.jpg);
+}
+.tour-box-3{
+    background-image: url(/asset/images/banner1.jpg);
+}
+.tour-box-4{
+    background-image: url(/asset/images/banner1.jpg);
+}
+.tour-box-5{
+    background-image: url(/asset/images/banner1.jpg);
+}
+/* .icon-box{
+    background-image: url("../asset/images/menu.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+} */
+.icon-box, .txt-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+}
+.txt-box{
+    justify-content: start;
+}
+.tour{
+    height: 130px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+}
+.trend{
+    color:var(--gray);
+}
+.trend .trend-title{
+    margin-bottom: 20px;;
+}
+.trend .card{
+    position: relative;
+}
+.trend .card-img-top{
+    height:250px;
+}
+.trend .mini-heading{
+    margin-top: 20px;
+    color:black;
+}
+.trend .trend-price{
+    color: black;
+    text-align: end;
+}
+.trend .day-plan{
+    height:40px;
+    width: 90%;
+    position: absolute;
+    top:43%;
+    left:5%;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 2px 3px 0px;
+    color:var(--gray);
+    padding:10px;
+}
+.trend .day-plan i{
+    color: var(--main);
+}
+.trend .day-plan .day-map i:first-child{
+    margin-right:10px;
+}
+.about-sec{
+    background-image: url(/asset/images/banner1.jpg);
+    background-size: cover;
+    background-repeat:no-repeat ;
+    margin:80px auto;
+    padding:100px;
+    color:white;
+}
+.about-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-owl .item{
+    height: 100%;
+}
+.price-content-box{
+    height:100%;
+    padding: 100px 0;
+}
+.price-first-box{
+    margin:0 auto;
+    text-align: center;
+    padding:40px;
+}
+.price-content-box .para{
+    width:60%;
+    margin: 0 auto;
+}
+.price-content-box .row{   
+    padding:30px;
+}
+.price-content-box .box1-con{
+    background-color:#f9f4f0;
+    height:500px;
+    border-radius: 10px;
+    padding:50px;
+}
+.price-content-box .box2-con{
+    background-color:#d57c48;
+    height:500px;
+    border-radius: 10px;
+    padding:50px;
+    color:#fff;
+}
+.price-content-box .box3-con{
+    background-color:#1e2d58;
+    height:500px;
+    border-radius: 10px;
+    padding:50px;
+    color:#fff;
+}
+.price-content-box li{
+    list-style-type: none;
+}
+.price-content-box i{
+   padding:15px;
+}
+.price-content-box .mini-heading{
+    margin:0 auto;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.price-content-box .main-heading{
+    margin:0 auto;
+    text-align: center;
+}
+.price-content-box .price{
+    font-size:20px !important;
+    padding-left:10px;
+}
+.price-content-box button{
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+}
+

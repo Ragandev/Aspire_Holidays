@@ -1,0 +1,28 @@
+.search-sec{
+    padding: 100px 0;
+    margin-top: 100px;
+    background-image: url(/asset/images/Gta@3x-100.jpg);
+    background-size: cover;
+}
+.search-cont {
+    margin-bottom: 80px;
+}
+.search-box{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+}
+.ico-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: var(--main);
+}
+.form-label{
+    font-weight: bold;
+}
+input ,
+select{
+    all: unset !important;
+}

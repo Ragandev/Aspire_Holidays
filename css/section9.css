@@ -1,13 +1,32 @@
-.service-sec{
+.data-sec{
     padding: 100px 0;
 }
-.service-sec .service-cont .para{
+.data-sec .data-cont .para{
     margin-top: 30px;
 }
-.service-links{
+.data-links{
     margin-top: 50px;
 }
-.service-img{
-    border-radius: 300px 0 0 300px;
-    overflow: hidden;
+.data-img{
+    border-radius: 500px 0 0 500px;
+    overflow: hidden; 
+}
+.data-img img{ 
+    height: 600px;
+}
+.progress{
+    height: 5px;
+}
+.progress div{
+    background-color: var(--sec);
+}
+.bar-1{
+    width: 90%;
+}
+.bar-2{
+    width: 80%;
+}
+.data-sec-inn .row{
+    justify-content: center;
+    align-items: center;
 }

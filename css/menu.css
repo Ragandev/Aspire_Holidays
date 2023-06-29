@@ -1,0 +1,32 @@
+.main-menu{
+    height: 80px;
+    width: 100%;
+}
+.main-menu .row{
+    height: 100%;
+}
+.main-menu img{
+    height:60px;
+}
+.main-menu .icons-box,
+.main-menu .list-box,
+.main-menu .logo-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-menu .nav-link:hover{
+    color:var(--main);
+}
+.main-menu .nav-item .active{
+    color:var(--main);
+    font-weight: 500;
+}
+.main-menu .nav-link{
+    color: var(--dgrey);
+    margin-left:5px;
+}
+.main-menu .nav-link:not(:first-child){
+    color: var(--dgrey);
+    margin-left:5px;
+}

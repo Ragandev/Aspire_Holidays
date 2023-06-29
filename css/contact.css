@@ -1,0 +1,48 @@
+.cont-banner{
+   height: 400px;
+   background-image: url(/asset/images/banner1.jpg);
+   background-size: cover;
+   background-position: bottom;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.cont-banner .banner-box{
+    color: #fff;
+    text-align: center;
+}
+.cont-sec{
+    padding: 100px 0;
+}
+.cont-head{
+    display: flex;
+    align-items: center;
+}
+.cont-head p{
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+.cont-head .circle{
+    background-color: var(--main);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-head .circle span{
+    color: #fff;
+}
+.add-1,
+.call-1,
+.call-2,
+.mail{
+    margin-top: 30px;
+}
+.call-1 a,
+.call-2 a,
+.mail a{
+    color: var(--grey);
+}
