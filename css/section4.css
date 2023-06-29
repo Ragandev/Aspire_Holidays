@@ -1,10 +1,11 @@
 .all-package {
   padding: 100px 0;
+  background: url(/asset/images/Campusandflifht.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .package-cont-box{
-    background: url(/asset/images/Campus@3x-8.png) no-repeat;
-    background-size: 300px 300px;
-    background-position: 800px;
+    
 }
 .package-cont {
   width: 60%;
