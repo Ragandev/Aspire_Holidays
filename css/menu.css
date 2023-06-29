@@ -30,3 +30,7 @@
     color: var(--dgrey);
     margin-left:5px;
 }
+.main-menu .social-icons a{
+    color:var(--main);
+    padding:2px;
+}

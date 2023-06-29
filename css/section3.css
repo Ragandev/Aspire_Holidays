@@ -22,12 +22,29 @@
 .tour-box-5{
     background-image: url(/asset/images/banner1.jpg);
 }
-/* .icon-box{
-    background-image: url("../asset/images/menu.png");
+.box-inn .icon-box{
+    background-image: url("../asset/images/orangemap.png");
     background-repeat: no-repeat;
-    background-size: contain;
-
-} */
+    background-position: -150px 0px;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.box-inn .icons-box{
+    background-image: url("../asset/images/orangemap.png");
+    background-repeat: no-repeat;
+    background-position: -180px 0px;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 10px;
+    
+}
+.icons-box, .txt-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+}
 .icon-box, .txt-box{
     display: flex;
     justify-content: center;
@@ -47,7 +64,7 @@
     color:var(--gray);
 }
 .trend .trend-title{
-    margin-bottom: 20px;;
+    margin-bottom: 20px;
 }
 .trend .card{
     position: relative;
@@ -114,10 +131,11 @@
     padding:30px;
 }
 .price-content-box .box1-con{
-    background-color:#f9f4f0;
+    background-color:#1e2d58;
     height:500px;
     border-radius: 10px;
     padding:50px;
+    color:#fff;
 }
 .price-content-box .box2-con{
     background-color:#d57c48;
@@ -156,5 +174,14 @@
     margin:0 auto;
     display: flex;
     align-items: center;
+}
+.price-content-box{
+    background-image:url(/asset/images/flight\ path@3x-100.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.travel-video-box{
+    background-image:url(/asset/images/Map\ -\ 1.@3x-100.jpg);
+    background-size: cover;
 }
 

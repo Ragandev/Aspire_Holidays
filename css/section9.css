@@ -1,5 +1,7 @@
 .data-sec{
     padding: 100px 0;
+    background-image: url(/asset/images/wolrd\ map\ piece@3x-100.jpg);
+    background-size: cover;
 }
 .data-sec .data-cont .para{
     margin-top: 30px;

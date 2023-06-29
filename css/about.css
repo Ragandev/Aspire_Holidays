@@ -1,0 +1,80 @@
+.about-service{
+    margin:0 auto;
+    padding:40px 0px;
+    background-image: url(/asset/images/flight\ path@3x-100.jpg);
+    background-size: cover;
+}
+.about-service .service-sec{
+    padding:20px 0px;
+}
+.about-service .service-sec .mini-heading{
+    padding-top:40px;
+}
+.about-service .cursive-heading{
+    margin-bottom:20px;
+}
+.about-service .main-heading span{
+    
+    color:#fff;
+    position: relative;
+    animation: vacation 3s infinite;
+    z-index: 1;
+}
+.about-service .main-heading span::before{
+    content: "";
+    height: 100%;
+    position: absolute;
+    top:-2px;
+    z-index: -1;
+    width: 100%;
+    background-color: var(--main);
+    animation: vacation 3s infinite 1s; 
+}
+@keyframes vacation {
+    0% {
+        width: 0;
+    }
+    20% {
+       width: 100%;
+    }
+}
+.about-book{
+    background-color: #1e2d59;
+    width: 100%;
+    color:#fff;
+}
+.about-book .book-sec{
+    margin-top:40px;
+}
+.about-book img{
+    height: 100%;
+}
+.about-book button{
+    margin-top:80px;
+}
+.about-service .about-testimonial{
+    margin:0 auto;
+    text-align: center;
+    padding:50px;
+}
+.about-service .about-testimonial span::before{
+    content: "";
+    height: 100%;
+    position: absolute;
+    top:-2px;
+    z-index: -1;
+    width: 100%;
+    background-color:#1e2d59;
+    animation: vacation 3s infinite 1s; 
+}
+@keyframes vacation {
+    0% {
+        width: 0;
+    }
+    20% {
+       width: 100%;
+    }
+}
+/* .about-testimonial img{
+    border-radius: 50px;
+} */
