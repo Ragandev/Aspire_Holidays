@@ -84,7 +84,7 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <video width="100%" autoplay loop>
+          <video width="100%" autoplay loop muted>
             <source src="asset/videos/Banner_Video.mp4" type="video/mp4" />
           </video>
           <div class="slider-cont">
@@ -471,18 +471,20 @@
         </div>
 
         <div class="col-md-6">
-          <h5 class="cursive-heading">About Aspire Holidays</h5>
+          <div class="min-about">
+            <h5 class="cursive-heading">About Aspire Holidays</h5>
           <h5 class="main-heading">Planning your Vacation</h5>
           <p">Aspire holidays has everything you need to make the most of your next dream holiday. We are one of the
             best travel agencies in Coimbatore dedicated to make your next vacation the best it can be.
             </p>
-            <li>Our Mission</li>
+            <li><i class="fa-solid fa-check"> </i>Our Mission</li>
             <hr>
-            <li>Our Vision</li>
+            <li><i class="fa-solid fa-check"> </i>Our Vision</li>
             <hr>
-            <li>Our Value</li>
+            <li><i class="fa-solid fa-check"> </i>Our Value</li>
             <hr>
             <button class="btns">Know More</button>
+          </div>
         </div>
       </div>
     </div>
@@ -825,6 +827,8 @@
     integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/owl.carousel.min.js"></script>
+
+  
 
   <script>
     $(".pop-package").owlCarousel({

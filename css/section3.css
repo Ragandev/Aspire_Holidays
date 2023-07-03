@@ -4,6 +4,13 @@
 .box-inn{
     padding: 50px 10px;
 }
+.min-about li{
+    list-style-type: none;
+    padding:8px;
+}
+.min-about i{
+    padding:15px;
+ }
 .main-tour-box{
     margin:0 auto;
 }
