@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>CRM Dashboard</title>
+  <style>
+    /* CSS styling for the dashboard */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f9fc;
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      flex: 0 0 200px;
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      margin-top: 0;
+    }
+    .top-section {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+    }
+    .user-details {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+    .user-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #777;
+      margin-right: 10px;
+    }
+    .user-name {
+      font-weight: bold;
+    }
+    .logout-button {
+      background-color: #fff;
+      color: #333;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+    .widget {
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .widget h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #333;
+    }
+    .widget p {
+      margin: 0;
+      font-size: 14px;
+      color: #777;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #444;
+      border-radius: 4px;
+    }
+    .sidebar li.active {
+      background-color: #777;
+    }
+    .sidebar a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-section">
+      <div class="user-details">
+        <div class="user-avatar"></div>
+        <div class="user-name">John Doe</div>
+      </div>
+      <button class="logout-button">Logout</button>
+    </div>
+    <div class="sidebar">
+      <h2>CRM Dashboard</h2>
+      <ul>
+        <li class="active"><a href="#">Dashboard</a></li>
+        <li><a href="#">Customers</a></li>
+        <li><a href="#">Sales</a></li>
+        <li><a href="#">Tasks</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Cases</a></li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="widget">
+        <h2>Customers</h2>
+        <p>Total customers: 1000</p>
+        <p>New customers this month: 50</p>
+        <!-- Add more relevant customer-related data here -->
+      </div>
+      <div class="widget">
+        <h2>Sales</h2>
+        <p>Total sales: $100,000</p>
+        <p>Sales this month: $10,000</p>
+        <!-- Add more relevant sales-related data here -->
+      </div>
+      <div class="widget">
+        <h2>Tasks</h2>
+        <p>Total tasks: 20</p>
+        <p>Tasks overdue: 5</p>
+        <!-- Add more relevant task-related data here -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
