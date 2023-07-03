@@ -32,3 +32,46 @@
     color: #fff;
     font-size: 25px;
 }
+.pd-main-sec{
+    padding: 100px 0;
+}
+.pd-main-sec hr{
+    margin: 50px 0;
+}
+.pd-main-sec .detail-box{
+    padding: 30px;
+}
+.pd-main-sec .inclusion-box li{
+    list-style: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.pd-main-sec .inclusion-box li span{
+    color: var(--main);
+}
+.pd-main-sec iframe{
+    width: 100%;
+    border-radius: 20px;
+}
+.pd-main-sec .price-box{
+    box-shadow: 0 0 10px lightgrey;
+    padding: 30px;
+    border-radius: 20px;
+    top: 0;
+}
+.pd-main-sec .price-box .price-head{
+    display: flex;
+}
+.pd-main-sec .price-box .price-head .price{
+    width: 80%;
+    text-align: right;
+}
+.pd-main-sec .price-box .price-head p{
+    padding: 0;
+    margin: 0;
+
+}
+.pd-main-sec .price-box .form-box input,
+.pd-main-sec .price-box .form-box textarea{
+    width: 80%
+}
