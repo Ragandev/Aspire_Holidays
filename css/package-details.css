@@ -1,0 +1,34 @@
+.pd-banner-sec{
+    padding: 20px;
+    background-color: #f9f4f0;
+}
+.pd-banner .item{
+    height: 400px;
+}
+.pd-header{
+    padding: 40px 0;
+}
+.pd-header .pd-head-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pd-head-cont div{
+    flex-basis: 33.3%;
+}
+.pd-head-cont div p{
+    margin: 0;
+}
+.pd-head-cont .icon-box{
+    background-color: var(--main);
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pd-head-cont .icon-box span{
+    color: #fff;
+    font-size: 25px;
+}

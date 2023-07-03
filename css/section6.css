@@ -1,8 +1,8 @@
 .travel-video{
-    padding: 100px 0;
-    background-image: url("/asset/images/World\ Map\ \(\ Flat\ \)@3x-8.png");
+    padding: 150px 0;
+    background-image: url(/asset/images/side_map_bg.jpg);
     background-repeat: no-repeat;
-    background-position: 250% 0px;
+    background-size: cover;
 }
 .travel-video-box .large-heading{
     padding-bottom: 50px;
@@ -11,4 +11,7 @@
 .video-box{
     display: flex;
     justify-content: center;
+}
+.partner-box{
+    padding: 100px 0 50px 0;
 }

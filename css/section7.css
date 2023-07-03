@@ -1,6 +1,6 @@
 .review-sec {
   padding: 100px 0;
-  background-image: url(/asset/images/banner2.jpg);
+  background-image: url(/asset/images/girl3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: fit-content;
@@ -24,13 +24,18 @@
   margin-bottom: 50px;
 }
 .review-title p {
-  width: 60%;
+  width: 100%;
 }
 .review-slide .item {
   height: 330px;
   background-color: var(--main);
   border-radius: 20px;
   padding: 50px;
+}
+.re-img img{
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 100px;
 }
 .review-txt {
   color: #fff;

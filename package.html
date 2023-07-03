@@ -1,336 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Packages</title>
 
-<head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Domestic Page</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-   <link rel="stylesheet" href="css/common.css" />
-   <link rel="stylesheet" href="css/home.css" />
-   <link rel="stylesheet" href="css/package-list.css" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/section11.css" />
+    <link rel="stylesheet" href="css/package.css" />
+  </head>
 
-<body>
-   <!-- Banner Section  -->
-   <section class="banner-sec">
-      <div id="banner" class="main-banner carousel slide" data-bs-ride="false">
-         <div class="carousel-indicators"></div>
-         <div class="carousel-inner">
-            <div class="carousel-item active">
-               <video width="100%" autoplay loop>
-                  <source src="asset/videos/domestic.mp4" type="video/mp4" />
-                  <p>Your browser does not support video</p>
-               </video>
-               <div class="carousel-caption d-none d-md-block">
-                  <h2>Domestic Packages</h2>
-                  <p>
-                     "Journey into the Heart of Your Country: Unforgettable
-                     Experiences."
-                  </p>
-               </div>
+  <body>
+    <!--  section 1-->
+    <section class="main-menu">
+      <div class="row">
+        <div class="col-md-2 logo-box">
+          <img src="asset/images/logo.png" alt="Aspire-logo" />
+        </div>
+        <div class="col-md-8 list-box">
+          <nav class="navbar navbar-expand-lg">
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#"
+                    >Home <span class="sr-only"></span
+                  ></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Packages</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Educational Tours</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Honeymoon Packages</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cruises Tour</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
             </div>
-         </div>
+          </nav>
+        </div>
+        <div class="col-md-2 icons-box">
+          <button class="btns b-main">Enquiry</button>
+        </div>
       </div>
-   </section>
-   <!-- Banner Section End -->
+    </section>
+    <!--  section 1 end -->
 
-   <!-- Package list Section -->
-   <section class="package-list">
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Aspire%20Holidays_Kerala.jpg)">
-            <h1 class="sub-heading">KERALA</h1>
-         </div>
-         <div class="back">
-            <h2>Kerala</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
+    <!-- Banner Section  -->
+    <section class="cont-banner">
+      <div class="banner-box">
+        <h2 class="main-heading">OUR PACKAGES</h2>
+        <p class="mini-heading">Explore Now</p>
       </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Aspire%20Holidays_Karnataka.jpg)">
-            <h1 class="sub-heading">KARNATAKA</h1>
-         </div>
-         <div class="back">
-            <h2>Karnataka</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/packagelist/AH_Manali%20Honeymoon%20Packages.webp)">
-            <h1 class="sub-heading">HIMACHAL</h1>
-         </div>
-         <div class="back">
-            <h2>Himachal</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Aspire%20Holidays_Tamilnadu.jpg)">
-            <h1 class="sub-heading">TAMILNADU</h1>
-         </div>
-         <div class="back">
-            <h2>Tamilnadu</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front" style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Telangana.jpg)">
-            <h1 class="sub-heading">TELANGANA</h1>
-         </div>
-         <div class="back">
-            <h2>Telangana</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front" style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Andhra.jpg)">
-            <h1 class="sub-heading">ANDHRA</h1>
-         </div>
-         <div class="back">
-            <h2>Andhra</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front" style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Goa.jpg)">
-            <h1 class="sub-heading">GOA</h1>
-         </div>
-         <div class="back">
-            <h2>Goa</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Maharastra.jpg)">
-            <h1 class="sub-heading">MAHARASTRA</h1>
-         </div>
-         <div class="back">
-            <h2>Maharastra</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front" style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Gujarat.jpg)">
-            <h1 class="sub-heading">GUJARAT</h1>
-         </div>
-         <div class="back">
-            <h2>Gujarat</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front" style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Assam.jpg)">
-            <h1 class="sub-heading">ASSAM</h1>
-         </div>
-         <div class="back">
-            <h2>Assam</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Chattisgarh.jpg)">
-            <h1 class="sub-heading">CHATTISGARH</h1>
-         </div>
-         <div class="back">
-            <h2>Chattisgarh</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Madhya%20Pradesh.jpg)">
-            <h1 class="sub-heading">MADHYAPRADESH</h1>
-         </div>
-         <div class="back">
-            <h2>MadhyaPradesh</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front" style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Odisha.jpg)">
-            <h1 class="sub-heading">CHATTISGARH</h1>
-         </div>
-         <div class="back">
-            <h2>Chattisgarh</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front" style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Punjab.jpg)">
-            <h1 class="sub-heading">PUNJAB</h1>
-         </div>
-         <div class="back">
-            <h2>Punjab</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front" style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Rajasthan.jpg)">
-            <h1 class="sub-heading">RAJASTHAN</h1>
-         </div>
-         <div class="back">
-            <h2>Rajasthan</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front" style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Sikkim.jpg)">
-            <h1 class="sub-heading">SIKKIM</h1>
-         </div>
-         <div class="back">
-            <h2>Sikkim</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Uttar%20Pradesh.jpg)">
-            <h1 class="sub-heading">UTTARPRADESH</h1>
-         </div>
-         <div class="back">
-            <h2>UttarPradesh</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Uttarkhand.webp)">
-            <h1 class="sub-heading">UTTARKHAND</h1>
-         </div>
-         <div class="back">
-            <h2>Uttarkhand</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/West%20Bengal.webp)">
-            <h1 class="sub-heading">WESTBENGAL</h1>
-         </div>
-         <div class="back">
-            <h2>Westbengal</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front" style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Kashmir.jpg)">
-            <h1 class="sub-heading">KASHMIR</h1>
-         </div>
-         <div class="back">
-            <h2>Kashmir</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Golden%20Triangle.jpg)">
-            <h1 class="sub-heading">GoldenTriangle</h1>
-         </div>
-         <div class="back">
-            <h2>GoldenTriangle</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Leh%20Ladakh.jpg)">
-            <h1 class="sub-heading">LADAKH</h1>
-         </div>
-         <div class="back">
-            <h2>Ladakh</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front"
-            style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Lakshadweep.jpg)">
-            <h1 class="sub-heading">lAKSHADWEEP</h1>
-         </div>
-         <div class="back">
-            <h2>Lakshadweep</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
-      <div class="flip">
-         <div class="front" style="background-image: url(https://aspireholidays.in/admin_new/img/subcat/Andaman.jpg)">
-            <h1 class="sub-heading">ANDAMAN</h1>
-         </div>
-         <div class="back">
-            <h2>Andaman</h2>
-            <p>Good tools make application development quicker and easier to maintain than if you did everyth1ng by
-               hand..</p>
-            <button class="btns b-main">View More</button>
-         </div>
-      </div>
+    </section>
+    <!-- Banner Section End  -->
 
+    <!-- package Section  -->
+    <section class="package-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="filter-box">
+              <div class="filter-1">
+                <p class="mini-heading">Select your destination :</p>
+                <select name="" id="">
+                  <option value="">All Destination</option>
+                  <option value="">Europe</option>
+                  <option value="">Africa</option>
+                </select>
+              </div>
 
+              <hr />
 
+              <div class="filter-2">
+                <p class="mini-heading">Select your Date :</p>
+                <input type="date" name="" id="" />
+              </div>
 
+              <hr />
 
-   </section>
+              <div class="filter-3">
+                <p class="mini-heading">Typologies :</p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="set-1">
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Sports <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Heritage <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Budget <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Eco-tourism <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Beach <br />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="set-2">
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Family <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Road Trips <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Culinary <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Adventure <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Cultural <br />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="filter-4">
+                <p class="mini-heading">Max Price :</p>
+                <input type="range" name="" id="" />
+              </div>
+              <hr />
+              <div class="filter-5">
+                <p class="mini-heading">Durations :</p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="set-1">
+                      <input type="checkbox" name="" id="" value="" />&nbsp; 1
+                      Week <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp; 15
+                      Days
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="set-2">
+                      <input type="checkbox" name="" id="" value="" />&nbsp; 10
+                      Days <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp; 5
+                      Days
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="filter-7">
+                <p class="mini-heading">Difficulty :</p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="set-1">
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Challenging <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Difficult
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="set-2">
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Easy <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp;
+                      Medium
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="filter-6">
+                <p class="mini-heading">Min Age :</p>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="set-1">
+                      <input type="checkbox" name="" id="" value="" />&nbsp; 0
+                      <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp; 18
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="set-2">
+                      <input type="checkbox" name="" id="" value="" />&nbsp; 16
+                      <br />
+                      <input type="checkbox" name="" id="" value="" />&nbsp; 5
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="package-box mb-4">
+              <div class="item-box">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="item-img">
+                      <img
+                        class="img-fluid"
+                        src="asset/images/girl3.jpg"
+                        alt=""
+                        srcset=""
+                      />
+                      <div class="img-cont">
+                        <div class="row">
+                          <div class="col-md-9">
+                            <p class="para">
+                              <span class="fa fa-clock"></span>&nbsp; 3 Days
+                            </p>
+                          </div>
+                          <div class="col-md-3">
+                            <span class="fa fa-envelope"></span> &nbsp; &nbsp;
+                            <span class="fa fa-route"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="item-cont">
+                      <h2 class="mini-heading">Munnar</h2>
+                      <p class="para">
+                        <span class="fa fa-location-dot"></span> &nbsp; India
+                      </p>
+                      <hr />
+                      <p class="para">
+                        Visit the temples and the Chiang Mai Night Bazaar, a
+                        huge huge market located on Chiang Klan Road.
+                      </p>
+                      <hr />
+                      <div class="price-cont">
+                        <a href="" class="btns">Details</a>
+                        <div>
+                          <p class="para">From</p>
+                          <p class="sub-heading">₹ 15,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="package-box mb-4">
+              <div class="item-box">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="item-img">
+                      <img
+                        class="img-fluid"
+                        src="asset/images/girl3.jpg"
+                        alt=""
+                        srcset=""
+                      />
+                      <div class="img-cont">
+                        <div class="row">
+                          <div class="col-md-9">
+                            <p class="para">
+                              <span class="fa fa-clock"></span>&nbsp; 3 Days
+                            </p>
+                          </div>
+                          <div class="col-md-3">
+                            <span class="fa fa-envelope"></span> &nbsp; &nbsp;
+                            <span class="fa fa-route"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="item-cont">
+                      <h2 class="mini-heading">Munnar</h2>
+                      <p class="para">
+                        <span class="fa fa-location-dot"></span> &nbsp; India
+                      </p>
+                      <hr />
+                      <p class="para">
+                        Visit the temples and the Chiang Mai Night Bazaar, a
+                        huge huge market located on Chiang Klan Road.
+                      </p>
+                      <hr />
+                      <div class="price-cont">
+                        <a href="" class="btns">Details</a>
+                        <div>
+                          <p class="para">From</p>
+                          <p class="sub-heading">₹ 15,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="package-box mb-4">
+              <div class="item-box">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="item-img">
+                      <img
+                        class="img-fluid"
+                        src="asset/images/girl3.jpg"
+                        alt=""
+                        srcset=""
+                      />
+                      <div class="img-cont">
+                        <div class="row">
+                          <div class="col-md-9">
+                            <p class="para">
+                              <span class="fa fa-clock"></span>&nbsp; 3 Days
+                            </p>
+                          </div>
+                          <div class="col-md-3">
+                            <span class="fa fa-envelope"></span> &nbsp; &nbsp;
+                            <span class="fa fa-route"></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="item-cont">
+                      <h2 class="mini-heading">Munnar</h2>
+                      <p class="para">
+                        <span class="fa fa-location-dot"></span> &nbsp; India
+                      </p>
+                      <hr />
+                      <p class="para">
+                        Visit the temples and the Chiang Mai Night Bazaar, a
+                        huge huge market located on Chiang Klan Road.
+                      </p>
+                      <hr />
+                      <div class="price-cont">
+                        <a href="" class="btns">Details</a>
+                        <div>
+                          <p class="para">From</p>
+                          <p class="sub-heading">₹ 15,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- package Section End -->
 
-   <!-- Package list Section End -->
+    <!-- Section 11 -->
+    <section class="footer-sec">
+      <div class="footer-sec-inn container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="txt-box" data-aos="fade-right" data-aos-duration="1000">
+              <p class="main-heading">
+                Travel beyond your imagination, with our Travel Agency!
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="footer-box">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="add-box">
+                    <p class="mini-heading">Address</p>
+                    <address>
+                      A, Munusamy Garden Street, <br />
+                      Behind Audi Car Showroom, <br />
+                      near Suguna HERO Motors, <br />
+                      Coimbatore 641018.
+                    </address>
+                    <div class="social-icons">
+                      <a href="#"
+                        ><span class="fa-brands fa-xl fa-instagram"></span
+                      ></a>
+                      <a href="#"
+                        ><span class="fa-brands fa-xl fa-facebook"></span
+                      ></a>
+                      <a href="#"
+                        ><span class="fa-brands fa-xl fa-linkedin"></span
+                      ></a>
+                      <a href="#"
+                        ><span class="fa-brands fa-xl fa-youtube"></span
+                      ></a>
+                      <a href="#"
+                        ><span class="fa-brands fa-xl fa-twitter"></span
+                      ></a>
+                      <a href="#"
+                        ><span class="fa-brands fa-xl fa-whatsapp"></span
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="contact-box">
+                    <p class="mini-heading">Contact</p>
+                    <a href="" class="btns">info@aspire.com</a>
+                    <div class="phone-box">
+                      <a href="tel:9362266666" class="sub-heading"
+                        >+91 9362266666</a
+                      >
+                      <a href="tel:9514433334" class="sub-heading"
+                        >+91 9514433334</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section 11 End -->
 
-   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- infy Section  -->
+    <div class="infy-sec">
+      <div class="infy-box">
+        <a href="#">
+          <p>Developed & Maitained By</p>
+          <img
+            src="https://infygain.com/images/logo-alt.svg"
+            alt="Infygain Logo"
+          />
+        </a>
+      </div>
+    </div>
+    <!-- Infy Section End  -->
 
-   <!-- JS  -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
       integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
-      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
-
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
 </html>

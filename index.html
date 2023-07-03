@@ -68,7 +68,7 @@
   <!--  Section 2 -->
   <section class="banner-sec">
     <div id="banner" class="main-banner">
-      <video width="100%" autoplay loop>
+      <video width="100%" autoplay loop muted>
         <source src="asset/videos/Banner_Video.mp4" type="video/mp4" />
       </video>
       <div class="slider-cont">
@@ -98,7 +98,7 @@
           <button class="btns">More info</button>
         </div>
         <div class="col-md-5">
-          <img class="img-fluid" src="asset/images/worldmap.png">
+          <img class="img-fluid img-trend" src="asset/images/worldmap.png">
         </div>
       </div>
 
@@ -285,10 +285,10 @@
     <div class="search-inn container">
       <div class="search-cont text-center">
         <p class="cursive-heading">Choose your Trip</p>
-      <h2 class="sub-heading">Start your Vacation Now</h2>
-      <p class="para">Looking for your dream vacation destination but don't know where to start? With the help of
-        experienced and knowledgeable travel agents, you can plan the trip of a lifetime with ease.
-      </p>
+        <h2 class="sub-heading">Start your Vacation Now</h2>
+        <p class="para">Looking for your dream vacation destination but don't know where to start? With the help of
+          experienced and knowledgeable travel agents, you can plan the trip of a lifetime with ease.
+        </p>
       </div>
       <div class="search-box" data-aos="fade-up" data-aos-duration="800">
         <div class="row">
@@ -442,11 +442,24 @@
   <!-- Section 6  -->
   <section class="travel-video">
     <div class="travel-video-box">
-      <h1 class="large-heading">Travel Itineraries</h1>
+      <h1 data-aos="zoom-in" data-aos-duration="1000" class="large-heading zoom-txt">Travel Itineraries</h1>
       <div class="video-box">
-        <video width="85%" autoplay loop preload>
-          <source src="asset/videos/Banner_Video.mp4" type="video/mp4" />
+        <video data-aos="zoom-out" data-aos-duration="1000" class="zoom-vid" width="85%" autoplay loop muted>
+          <source src="asset/videos/travel_girls.mp4" type="video/mp4">
         </video>
+      </div>
+      <div class="partner-box container">
+        <div class="owl-carousel partner-slide owl-theme">
+          <div class="item">
+            <img class="img-fluid" src="asset/images/logo-07.png" alt="">
+          </div>
+          <div class="item">
+            <img class="img-fluid" src="asset/images/logo-09.png" alt="">
+          </div>
+          <div class="item">
+            <img class="img-fluid" src="asset/images/logo-10.png" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -455,13 +468,20 @@
   <!-- Section 7  -->
   <section class="review-sec">
     <div class="review-title container">
-      <h2 class="main-heading">Custome Reviews</h2>
+      <div class="row">
+        <div class="col-md-8">
+          <h2 class="main-heading">Custome Reviews</h2>
       <p>
         Our customer's feedback is essential in building a great reputation
         and maintaining excellent service. By listening to our customer's
         needs, we can improve our offerings and provide an exceptional travel
         experience.
       </p>
+        </div>
+        <div class="col-md-4 re-img" data-aos="fade-left" data-aos-duration="1500">
+          <img src="asset/images/girl6.jpg" alt="">
+        </div>
+      </div>
     </div>
     <div class="review-box container">
       <div class="owl-carousel review-slide owl-theme">
@@ -775,7 +795,7 @@
     integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/owl.carousel.min.js"></script>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     $(".pop-package").owlCarousel({
       loop: true,
@@ -831,12 +851,33 @@
         },
       },
     });
+    $(".partner-slide").owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: false,
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: false,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 4,
+        },
+        1000: {
+          items: 5,
+        },
+      },
+    });
   </script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-      once: true
+      once: true,
+      easing: 'ease'
     });
+  </script>
+  <script>
   </script>
 </body>
 

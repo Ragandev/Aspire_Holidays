@@ -126,3 +126,53 @@
 .abt-blog-box .cont .mini-heading{
     margin-top: 20px;
 }
+.progress{
+    height: 5px;
+}
+.progress div{
+    background-color: var(--sec);
+}
+.bar-2{
+    width: 90%;
+}
+
+/* About Main Section */
+.main-sec{
+    padding: 100px 0;
+}
+.main-img-box{
+    position: relative;
+    height: 500px;
+}
+.main-img-box img{
+    position: absolute;
+}
+.img-1{
+    width: 80%;
+    top: 75px;
+    left: 60px;
+    border-radius: 20px;
+}
+.img-2{
+   width: 150px;
+   border-radius: 15px;
+   left: 180px;
+   top:20px
+}
+.img-3{
+    width: 200px;
+    border-radius: 15px;
+    right: 0;
+    z-index: -1;
+}
+.img-4{
+    width: 120px;
+    border-radius: 15px;
+    right: 0;
+    bottom: 20px;
+}
+.img-5{
+    height: 180px;
+    border-radius: 20px;
+    bottom: 0;
+}

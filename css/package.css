@@ -1,0 +1,94 @@
+.package-sec {
+  padding: 150px 0;
+}
+
+.package-sec .package-box {
+  box-shadow: 0px 0px 10px lightgrey;
+  border-radius: 10px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.filter-box hr {
+  margin: 50px 0;
+}
+
+.filter-box select,
+.filter-box input:not(input[type="checkbox"]) {
+  width: 100%;
+  height: 50px;
+  border: none;
+}
+
+.package-box .item-box .item-cont {
+  padding: 30px;
+}
+
+.item-box .item-cont .para span {
+  color: var(--main);
+}
+
+.item-box .item-cont .price-cont {
+  display: flex;
+  align-items: center;
+}
+
+.item-box .item-cont .price-cont div {
+  text-align-last: right;
+  width: 80%;
+}
+
+.item-box .item-cont .price-cont div .para {
+  margin: 0;
+}
+.package-box .item-box .item-img {
+  position: relative;
+}
+.package-box .item-box .item-img .img-cont {
+  position: absolute;
+  width: 90%;
+  height: 43px;
+  left: 15px;
+  background-color: #fff;
+  padding: 10px;
+  bottom: 40px;
+  border-radius: 5px;
+}
+.package-box .item-box .item-img {
+  height: 100%;
+}
+.package-box .item-box .item-img img {
+  height: 100%;
+}
+.package-box .item-box .item-img .img-cont span {
+  color: var(--main);
+}
+
+.filter-box input[type="range"] {
+  -webkit-appearance: none;
+}
+
+.filter-box input[type="range"]::-webkit-slider-runnable-track {
+  height: 5px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+
+.filter-box input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--main);
+  margin-top: -5px;
+}
+
+.filter-box input[type="range"]:focus {
+  outline: none;
+}
+
+.filter-box input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: var(--sec);
+}
