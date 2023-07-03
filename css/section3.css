@@ -4,6 +4,13 @@
 .box-inn{
     padding: 50px 10px;
 }
+.min-about li{
+    list-style-type: none;
+    padding:8px;
+}
+.min-about i{
+    padding:15px;
+ }
 .main-tour-box{
     margin:0 auto;
 }
@@ -22,10 +29,29 @@
 .tour-box-5{
     background-image: url(/asset/images/banner1.jpg);
 }
-.img-trend{
-    opacity: 0.3;
+.box-inn .icon-box{
+    background-image: url("../asset/images/orangemap.png");
+    background-repeat: no-repeat;
+    background-position: -150px 0px;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 10px;
 }
-
+.box-inn .icons-box{
+    background-image: url("../asset/images/orangemap.png");
+    background-repeat: no-repeat;
+    background-position: -180px 0px;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 10px;
+    
+}
+.icons-box, .txt-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+}
 .icon-box, .txt-box{
     display: flex;
     justify-content: center;
@@ -45,7 +71,7 @@
     color:var(--gray);
 }
 .trend .trend-title{
-    margin-bottom: 20px;;
+    margin-bottom: 20px;
 }
 .trend .card{
     position: relative;
@@ -69,7 +95,7 @@
     left:5%;
     border-radius: 5px;
     background-color: white;
-    box-shadow: 2px 2px 10px lightgrey;
+    box-shadow: 0px 2px 3px 0px;
     color:var(--gray);
     padding:10px;
 }
@@ -83,7 +109,8 @@
     background-image: url(/asset/images/banner1.jpg);
     background-size: cover;
     background-repeat:no-repeat ;
-    padding: 100px 0;
+    margin:80px auto;
+    padding:100px;
     color:white;
 }
 .about-row{
@@ -111,10 +138,11 @@
     padding:30px;
 }
 .price-content-box .box1-con{
-    background-color:#f9f4f0;
+    background-color:#1e2d58;
     height:500px;
     border-radius: 10px;
     padding:50px;
+    color:#fff;
 }
 .price-content-box .box2-con{
     background-color:#d57c48;
@@ -153,5 +181,14 @@
     margin:0 auto;
     display: flex;
     align-items: center;
+}
+.price-content-box{
+    background-image:url(/asset/images/flight\ path@3x-100.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.travel-video-box{
+    background-image:url(/asset/images/Map\ -\ 1.@3x-100.jpg);
+    background-size: cover;
 }
 
