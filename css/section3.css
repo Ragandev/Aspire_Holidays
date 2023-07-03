@@ -15,19 +15,20 @@
     margin:0 auto;
 }
 .tour-box-1{
-    background-image: url(/asset/images/banner1.jpg);
+    background-image: url(/asset/images/Rome.jpg);
+    object-fit: cover;
 }
 .tour-box-2{
-    background-image: url(/asset/images/banner1.jpg);
+    background-image: url(/asset/images/Taj-Mahal-In-India\ \(1\).jpgs);
 }
 .tour-box-3{
-    background-image: url(/asset/images/banner1.jpg);
+    background-image: url(/asset/images/Iv\ Students.jpg);
 }
 .tour-box-4{
-    background-image: url(/asset/images/banner1.jpg);
+    background-image: url(/asset/images/couple-.jpg);
 }
 .tour-box-5{
-    background-image: url(/asset/images/banner1.jpg);
+    background-image: url(/asset/images/Crusies.jpg);
 }
 .box-inn .icon-box{
     background-image: url("../asset/images/orangemap.png");
