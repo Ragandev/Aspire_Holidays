@@ -22,46 +22,57 @@
   <link rel="stylesheet" href="css/section11.css" />
 </head>
 
+<style>
+  *{
+    /* border: 1px solid red; */
+  }
+</style>
+
 <body>
   <!--  section 1-->
   <section class="main-menu">
-    <div class="row">
-      <div class="col-md-2 logo-box">
-        <img src="asset/images/logo.png" alt="Aspire-logo" />
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="asset/images/logo.png" alt="aspire_logo" srcset="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll nav-scr">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Packages
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">International</a></li>
+                <li><a class="dropdown-item" href="#">Domestic</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Educational</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Honeymoon</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Cruises</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+          </ul>
+            <button class="btns" type="submit">Enquiry</button>
+        </div>
       </div>
-      <div class="col-md-8 list-box">
-        <nav class="navbar navbar-expand-lg">
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Home <span class="sr-only"></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Packages</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Educational Tours</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Honeymoon Packages</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Cruises Tour</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-      <div class="col-md-2 icons-box">
-        <button class="btns b-main">Enquiry</button>
-      </div>
-    </div>
+    </nav>
   </section>
   <!--  section 1 end -->
 
@@ -72,7 +83,7 @@
         <source src="asset/videos/Banner_Video.mp4" type="video/mp4" />
       </video>
       <div class="slider-cont">
-        <h5 class="large-heading">Explore the world now</h5>
+        <h5 class="large-heading">Explore the <span>world</span> now</h5>
         <p>
           Our team of experienced travel experts will helpeyopran.your
           from start to finish, ensuring your dream vacation
@@ -786,10 +797,19 @@
   </div>
   <!-- Infy Section End  -->
 
+    <!-- Social  -->
+    <div class="social">
+      <div class="s-media1"><i class="fa-brands fa-facebook-f"></i></div>
+      <div class="s-media2"><i class="fa-brands fa-instagram"></i></div>
+      <div class="s-media3"><i class="fa-brands fa-youtube"></i></div>
+      <div class="s-media4"><i class="fa-brands fa-whatsapp"></i></div>
+  </div>
+    <!-- Social End  -->
+
   <!-- jQuery cdn  -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"
     integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- JS  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
     integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
