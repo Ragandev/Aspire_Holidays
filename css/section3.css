@@ -16,10 +16,10 @@
 }
 .tour-box-1{
     background-image: url(/asset/images/Rome.jpg);
-    object-fit: cover;
 }
 .tour-box-2{
-    background-image: url(/asset/images/Taj-Mahal-In-India\ \(1\).jpgs);
+    background-image: url(/asset/images/Taj-Mahal-In-India.jpg);
+    
 }
 .tour-box-3{
     background-image: url(/asset/images/Iv\ Students.jpg);
@@ -31,15 +31,22 @@
     background-image: url(/asset/images/Crusies.jpg);
 }
 .box-inn .icon-box{
-    background-image: url("../asset/images/orangemap.png");
+    background-color: var(--main);
     background-repeat: no-repeat;
     background-position: -150px 0px;
     background-size: cover;
     overflow: hidden;
     border-radius: 10px;
 }
+.box-inn .icon-box img{
+    width: 60px;
+    /* filter: hue-rotate(-151deg); */
+    filter: invert(100) hue-rotate(3890deg) saturate(250%);
+}
+.img-trend{
+    opacity: 0.3;
+}
 .box-inn .icons-box{
-    background-image: url("../asset/images/orangemap.png");
     background-repeat: no-repeat;
     background-position: -180px 0px;
     background-size: cover;
@@ -52,6 +59,7 @@
     justify-content: center;
     align-items: center;
     color: #FFF;
+    filter: drop-shadow(0 0 5px black);
 }
 .icon-box, .txt-box{
     display: flex;
@@ -76,7 +84,9 @@
 }
 .trend .card{
     position: relative;
+    box-shadow: 0 0 10px lightgrey;
 }
+
 .trend .card-img-top{
     height:250px;
 }
@@ -88,11 +98,14 @@
     color: black;
     text-align: end;
 }
+.card-img-top{
+    height: 400px !important;
+}
 .trend .day-plan{
     height:40px;
     width: 90%;
     position: absolute;
-    top:43%;
+    top:55%;
     left:5%;
     border-radius: 5px;
     background-color: white;
@@ -113,6 +126,11 @@
     margin:80px auto;
     padding:100px;
     color:white;
+}
+@media (max-width:576px) {
+    .about-sec{
+    padding:30px;
+    }
 }
 .about-row{
     display: flex;
@@ -192,4 +210,3 @@
     background-image:url(/asset/images/Map\ -\ 1.@3x-100.jpg);
     background-size: cover;
 }
-
