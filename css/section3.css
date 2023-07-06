@@ -141,7 +141,6 @@
     height: 100%;
 }
 .price-content-box{
-    height:100%;
     padding: 100px 0;
 }
 .price-first-box{
@@ -151,37 +150,42 @@
 }
 .price-content-box .para{
     width:60%;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
 }
-.price-content-box .row{   
-    padding:30px;
+@media (max-width:992px) {
+    .price-content-box .para{
+        width:100%;
+    }
 }
 .price-content-box .box1-con{
     background-color:#1e2d58;
-    height:500px;
     border-radius: 10px;
-    padding:50px;
+    padding:50px 0;
     color:#fff;
+}
+.price-content-box ul{
+    width: fit-content;
+    margin: 0 auto 20px auto;
+    padding: 0;
 }
 .price-content-box .box2-con{
     background-color:#d57c48;
-    height:500px;
     border-radius: 10px;
-    padding:50px;
+    padding:50px 0;
     color:#fff;
 }
 .price-content-box .box3-con{
     background-color:#1e2d58;
-    height:500px;
     border-radius: 10px;
-    padding:50px;
+    padding:50px 0;
     color:#fff;
 }
 .price-content-box li{
     list-style-type: none;
+    margin-top: 20px;
 }
 .price-content-box i{
-   padding:15px;
+   margin-right: 10px;
 }
 .price-content-box .mini-heading{
     margin:0 auto;

@@ -1,11 +1,10 @@
 .travel-video{
-    padding: 150px 0;
     background-image: url(/asset/images/side_map_bg.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 .travel-video-box .large-heading{
-    padding-bottom: 50px;
+    padding: 50px 0;
     text-align: center;
 }
 .video-box{
@@ -13,5 +12,5 @@
     justify-content: center;
 }
 .partner-box{
-    padding: 100px 0 50px 0;
+    padding: 100px 0 100px 0;
 }

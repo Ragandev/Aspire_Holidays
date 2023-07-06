@@ -41,7 +41,6 @@
 .pop-package .item img {
   filter: saturate(2);
   height: 400px;
-  border: 1px solid red;
 }
 .pop-package .item .item-cont {
   position: absolute;

@@ -1,6 +1,11 @@
 .data-sec{
     padding: 100px 0;
 }
+@media (max-width: 786px) {
+    .data-sec{
+        padding: 50px 0;
+    }
+}
 .data-sec .data-cont .para{
     margin-top: 30px;
 }
@@ -13,9 +18,7 @@
 }
 .data-img img{ 
     height: 400px;
-
-    aspect-ratio: 16/9!important;
-}S
+}
 .progress{
     height: 5px;
 }

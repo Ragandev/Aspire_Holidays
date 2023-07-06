@@ -3,7 +3,7 @@
   background-image: url(/asset/images/girl3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: fit-content;
+  /* height: fit-content; */
   position: relative;
 }
 .review-sec::before {
@@ -23,11 +23,7 @@
   z-index: 1;
   margin-bottom: 50px;
 }
-.review-title p {
-  width: 100%;
-}
 .review-slide .item {
-  height: 330px;
   background-color: var(--main);
   border-radius: 20px;
   padding: 50px;
@@ -35,7 +31,7 @@
 .re-img img{
   height: 150px;
   border-radius: 50%;
-  margin-left: 100px;
+  margin-left: 80px;
 }
 .review-txt {
   color: #fff;
