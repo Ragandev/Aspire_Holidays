@@ -12,9 +12,10 @@
     overflow: hidden; 
 }
 .data-img img{ 
-    height: 600px;
-    aspect-ratio: 1 !important;
-}
+    height: 400px;
+
+    aspect-ratio: 16/9!important;
+}S
 .progress{
     height: 5px;
 }

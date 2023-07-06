@@ -2,23 +2,29 @@
     padding: 20px;
     background-color: #f9f4f0;
 }
+
 .pd-banner .item{
     height: 400px;
 }
+
 .pd-header{
     padding: 40px 0;
 }
+
 .pd-header .pd-head-cont{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .pd-head-cont div{
     flex-basis: 33.3%;
 }
+
 .pd-head-cont div p{
     margin: 0;
 }
+
 .pd-head-cont .icon-box{
     background-color: var(--main);
     height: 55px;
@@ -28,7 +34,61 @@
     justify-content: center;
     align-items: center;
 }
+
 .pd-head-cont .icon-box span{
     color: #fff;
     font-size: 25px;
+}
+
+.pd-main-sec{
+    padding: 100px 0;
+}
+
+.pd-main-sec hr{
+    margin: 50px 0;
+}
+
+.pd-main-sec .detail-box{
+    padding: 30px;
+}
+
+.pd-main-sec .inclusion-box li{
+    list-style: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.pd-main-sec .inclusion-box li span{
+    color: var(--main);
+}
+
+.pd-main-sec iframe{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.pd-main-sec .price-box{
+    box-shadow: 0 0 10px lightgrey;
+    padding: 30px;
+    border-radius: 20px;
+    top: 0;
+}
+
+.pd-main-sec .price-box .price-head{
+    display: flex;
+}
+
+.pd-main-sec .price-box .price-head .price{
+    width: 80%;
+    text-align: right;
+}
+
+.pd-main-sec .price-box .price-head p{
+    padding: 0;
+    margin: 0;
+}
+
+.pd-main-sec .price-box .form-box input,
+.pd-main-sec .price-box .form-box textarea{
+    width: 80%;
 }

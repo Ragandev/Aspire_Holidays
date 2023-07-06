@@ -1,32 +1,66 @@
 .main-menu{
-    height: 80px;
-    width: 100%;
+    height: 85px;
 }
-.main-menu .row{
-    height: 100%;
-}
-.main-menu img{
+.main-menu .navbar-brand img{
     height:60px;
-}
-.main-menu .icons-box,
-.main-menu .list-box,
-.main-menu .logo-box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .main-menu .nav-link:hover{
     color:var(--main);
 }
 .main-menu .nav-item .active{
     color:var(--main);
-    font-weight: 500;
+    font-weight: 600;
+}
+.main-menu .nav-item{
+    margin-right: 30px;
+}
+@media (max-width:1200px) {
+    .main-menu .nav-item{
+        margin-right: 0px;
+    }
 }
 .main-menu .nav-link{
-    color: var(--dgrey);
-    margin-left:5px;
+    color: black;
+    font-weight: 500;
 }
-.main-menu .nav-link:not(:first-child){
-    color: var(--dgrey);
-    margin-left:5px;
+.nav-scr{
+    --bs-scroll-height: 300px;
 }
+.social {
+    position: fixed;
+    right: 10px;
+    top: 200px;
+  }
+  .social div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: azure;
+    font-size: 20px;
+  }
+  .social div:hover i {
+    animation-name: social;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes social {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .s-media1 {
+    background-image: var(--blueG);
+  }
+  .s-media2 {
+    background-image: var(--instaG);
+  }
+  .s-media3 {
+    background-image: var(--youG);
+  }
+  .s-media4 {
+    background-image: var(--whatG);
+  }

@@ -6,6 +6,10 @@
   --main: #f0870d;
   --sec: #1e2d58;
   --gray: #929292;
+  --blueG: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  --instaG: linear-gradient(to right top, #ae00a6, #e1007f, #f93057, #fa6833, #eb9612);
+  --youG: linear-gradient(to right top, #ff0000, #ef0000, #df0000, #cf0000, #c00000);
+  --whatG: linear-gradient(to right top, #22ff00, #1dd803, #18b304, #138f04, #0e6d04);
 }
 *{
   margin: 0;
@@ -24,6 +28,21 @@ body{
   font-weight: 800;
 }
 
+@media (max-width:1200px) {
+  .large-heading{
+    font-size: 80px;
+  }
+}
+@media (max-width:992px) {
+  .large-heading{
+    font-size: 70px;
+  }
+}
+@media (max-width:768px) {
+  .large-heading{
+    font-size: 60px;
+  }
+}
 .main-heading{
   font-size: 50px;
   font-weight: 700;
@@ -50,6 +69,7 @@ body{
   font-size: 35px;
   font-weight: 700;
 }
+
 @media (max-width:992px){
   .sub-heading{
     font-size:30px;
