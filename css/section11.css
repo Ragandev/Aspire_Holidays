@@ -45,3 +45,16 @@ color: #fff;
 .infy-box a img{
     width: 100px;
 }
+.add-box{
+    margin-bottom: 30px !important;
+}
+.second-row .mini-heading{
+    color: var(--main);
+}
+.second-row li{
+    list-style: none;
+    margin-bottom: 15px;
+}
+.second-row li a{
+    color: #fff;
+}
