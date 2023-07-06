@@ -95,6 +95,10 @@
 .abt-blog-sec{
     padding: 100px 0;
 }
+.abt-blog-sec{
+    background-image: url(/asset/images/side_map_bg.jpg);
+    background-size:contain;
+}
 .blog-row-1{
     margin-bottom: 50px;
 }
@@ -138,17 +142,22 @@
 
 /* About Main Section */
 .main-sec{
-    padding: 100px 0;
+    padding: 0px 0px 20px 0px;
 }
+/* .main-sec{
+    background-image: url(/asset/images/world-flight.jpg);
+    background-size:cover;
+} */
 .main-img-box{
-    position: relative;
-    height: 500px;
+    width: 100%;
+    margin:auto 0;
 }
 .main-img-box img{
-    position: absolute;
+    width:100%;
+    height:auto;
 }
 .img-1{
-    width: 80%;
+    width: 100%;
     top: 75px;
     left: 60px;
     border-radius: 20px;

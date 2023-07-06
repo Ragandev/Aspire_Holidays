@@ -1,11 +1,14 @@
-.about-service .about-service{
+.about-service{
     margin:0 auto;
-    padding:60px 0px;
-    
 }
 .about-service .about-top-sec{
     padding:50px 0px;
-    
+}
+@media (max-width:768px){
+    .about-top-sec{
+        margin:0 auto;
+        text-align: center;
+    }
 }
 .about-service .service-sec{
     padding:20px 0px;
@@ -16,14 +19,14 @@
 .about-service .cursive-heading{
     margin-bottom:20px;
 }
-.about-service .main-heading span{
-    
+.about-service .main-heading span, .anima{
     color:#fff;
     position: relative;
     animation: vacation 3s infinite;
     z-index: 1;
 }
-.about-service .main-heading span::before{
+.about-service .main-heading span::before,
+.anima::before{
     content: "";
     height: 100%;
     position: absolute;
@@ -43,17 +46,38 @@
 }
 .about-book{
     background-color: #1e2d59;
-    width: 100%;
     color:#fff;
+    overflow: hidden;
 }
-.about-book .book-sec{
-    margin-top:40px;
+.ran{
+    overflow: hidden;
 }
-.about-book img{
+.ran img{
+    width: 100%;
     height: 100%;
 }
-.about-book button{
-    margin-top:80px;
+@media (max-width:992px){
+    .about-book img{
+        height: 100px;
+        width: auto;
+        overflow: hidden;
+    }
+}
+@media (max-width:768px){
+    .about-book img{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-width:576px){
+    .about-book img{
+        width: 100%;
+        height: auto;
+    }
+    .book-sec{
+        margin:20px auto;
+        text-align: center;
+    }
 }
 .about-service .about-testimonial{
     margin:0 auto;
@@ -86,19 +110,24 @@
 }
 .testimonial-con{
     margin:0 auto;
-    padding:50px;
+    padding:50px 50px;
 }
 .testimonial-con .imgbox{
     width:100px;
     height:100px;
     border-radius: 50%;
-    object-fit: cover;
+    overflow: hidden;
+}
+.testimonial-con .imgbox img{
+    height: 100%;
+    width: 100%;
 }
 .testimonial-con .testi-author{
     margin:0 auto;
     padding:20px;
 }
 .testimonial-imgallery{
+    margin:0 auto;
     padding-top:20px;
 }
 .testimonial-imgallery .testbox{
@@ -111,4 +140,30 @@
     object-fit: cover;
     padding:5px;
 }
-
+@media (max-width:992px){
+    .testimonial-con .testi-author{
+        margin:0 60px;
+        padding:0px;
+    }
+}
+@media (max-width:768px){
+    .testimonial-con .testi-author{
+        margin:60px;
+        padding:0px;
+    }
+    .testimonial-imgallery{
+        display: none;
+    }
+}
+@media (max-width:768px){
+    .abt-blog-sec{
+        padding:0px !important;
+    }
+}
+.footer-bg{
+    height: 80px;
+    background-image: url(/asset/images/Blue\ -\ Map@3x-100.jpg);
+    background-size: 300px ;
+    background-repeat: no-repeat;
+    background-position: auto 0 0 0;
+}
