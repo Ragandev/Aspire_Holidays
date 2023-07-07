@@ -1,6 +1,6 @@
 .cont-banner {
   height: 400px;
-  background-image: url(../asset/images/banner1.jpg);
+  background-image: url(./asset/images/banner1.jpg);
   background-size: cover;
   background-position: bottom;
   display: flex;
