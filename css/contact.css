@@ -1,3 +1,42 @@
+.cont-banner{
+   height: 400px;
+   background-image: url(/asset/images/banner1.jpg);
+   background-size: cover;
+   background-position: bottom;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.cont-banner .banner-box{
+    color: #fff;
+    text-align: center;
+}
+.cont-sec{
+    padding: 100px 0;
+    background-image: url(/asset/images/world-full-map.jpg);
+    background-size: cover;
+}
+.cont-head{
+    display: flex;
+    align-items: center;
+}
+.cont-head p{
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+.cont-head .circle{
+    background-color: var(--main);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-head .circle span{
+    color: #fff;
+}
 .cont-sec {
   padding: 100px 0;
 }
@@ -67,6 +106,56 @@
   margin: 0 auto;
   margin-bottom: 20px;
 }
+  
+/* About Main Section */
+.main-sec{
+    margin:50px 0px 20px 0px;
+}
+@media (max-width:768px) {
+    .main-img-box img{
+        margin:50px auto 0px auto;
+    }
+}
+/* .main-sec{
+    background-image: url(/asset/images/world-flight.jpg);
+    background-size:cover;
+} */
+.main-img-box{
+    width: 100%;
+    margin:auto 0;
+}
+.main-img-box img{
+    width:100%;
+    height:auto;
+}
+.img-1{
+    width: 100%;
+    top: 75px;
+    left: 60px;
+    border-radius: 20px;
+}
+.img-2{
+   width: 150px;
+   border-radius: 15px;
+   left: 180px;
+   top:20px
+}
+.img-3{
+    width: 200px;
+    border-radius: 15px;
+    right: 0;
+    z-index: -1;
+}
+.img-4{
+    width: 120px;
+    border-radius: 15px;
+    right: 0;
+    bottom: 20px;
+}
+.img-5{
+    height: 180px;
+    border-radius: 20px;
+    bottom: 0;
 
 .form-box .btns {
   background-color: var(--main);

@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/menu.css" />
-    <link rel="stylesheet" href="css/section11.css" />
-    <link rel="stylesheet" href="css/service.css" />
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/section3.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/section11.css" />
+  <link rel="stylesheet" href="css/service.css" />
+  <link rel="stylesheet" href="css/about-res.css">
+</head>
+
+<body>
     <!--  section 1-->
     <section class="main-menu">
       <nav class="navbar navbar-expand-lg bg-light">
@@ -97,34 +95,93 @@
       <div class="banner-box">
         <h2 class="main-heading">OUR SERVICE</h2>
       </div>
-    </section>
-    <!-- Banner Section End  -->
+      <div class="col-md-7 list-box">
+        <nav class="navbar navbar-expand-lg">
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home<span class="sr-only"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Packages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Educational Tours</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Honeymoon Packages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cruises Tour</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="col-md-3 icon-box">
+        <div class="social-icons">
+          <a href="#"><span class="fa-brands fa-xl fa-instagram fa-flip"></span></a>
+          <a href="#"><span class="fa-brands fa-xl fa-facebook fa-flip"></span></a>
+          <a href="#"><span class="fa-brands fa-xl fa-linkedin fa-flip"></span></a>
+          <a href="#"><span class="fa-brands fa-xl fa-youtube fa-flip"></span></a>
+          <a href="#"><span class="fa-brands fa-xl fa-twitter fa-flip"></span></a>
+          <a href="#"><span class="fa-brands fa-xl fa-whatsapp fa-flip"></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  section 1 end -->
+
+  <!-- Banner Section  -->
+  <section class="cont-banner">
+    <div class="banner-box">
+      <h2 class="main-heading">Services</h2>
+      <p class="mini-heading">Our Major Services</p>
+    </div>
+  </section>
+  <!-- Banner Section End  -->
 
     <!-- tab menu section  -->
     <section class="tab-menu-sec">
       <div class="tab-menu container">
         <div class="row">
-          <a href="" class="col-md-1"></a>
-          <a
+          <div class="col-lg-6">
+            <div class="row">
+              <a
             onclick="service('pr')"
             href="#prv"
-            class="col-md-3 tab-box pr active"
+            class="col-4 col-md-4 tab-box pr active"
           >
             <p class="tab-name">Passport</p>
           </a>
-          <a onclick="service('sv')" href="#sv" class="col-md-2 sv tab-box">
+          <a onclick="service('sv')" href="#sv" class="col-4 col-md-4 sv tab-box">
             <p class="tab-name">VISA</p>
           </a>
-          <a onclick="service('tv')" href="#tv" class="col-md-2 tv tab-box">
+          <a onclick="service('tv')" href="#tv" class="col-4 col-md-4 tv tab-box">
             <p class="tab-name">Ticket</p>
           </a>
-          <a onclick="service('wpv')" href="#wpv" class="col-md-2 wpv tab-box">
-            <p class="tab-name">Hotel</p>
-          </a>
-          <a onclick="service('ti')" href="#ti" class="col-md-2 ti tab-box">
-            <p class="tab-name">Travel Insurance</p>
-          </a>
-          <a href="" class="col-md-1"></a>
+            </div>
+          
+          </div>
+          <div class="col-lg-6">
+           <div class="row">
+            <a onclick="service('wpv')" href="#wpv" class="cl1 col-4 col-md-4 wpv tab-box">
+              <p class="tab-name">Hotel</p>
+            </a>
+            <a onclick="service('ti')" href="#ti" class="cl1 col-4 col-md-4 ti tab-box">
+              <p class="tab-name">Insurance</p>
+            </a>
+            <a onclick="service('ce')" href="#ce" class="cl1 col-4 col-md-4 ce tab-box">
+              <p class="tab-name">Currency</p>
+            </a>
+           </div>
+          </div>
         </div>
       </div>
     </section>
@@ -145,18 +202,93 @@
           </div>
           <div class="col-md-6">
             <div class="cont-box">
-              <h2 class="sub-heading">PR Visa - (Permanent Resident Visa)</h2>
+              <h2 class="sub-heading">Fresh Passport</h2>
               <p class="para">
-                PR Visa is for the purpose of immigrating to other country as
-                permanent resident of the applying country. Each country has its
-                own limitations and rules for accepting the PR Visa. Applying
-                individual has certain terms and eligibility Criteria to be
-                qualified. To know more about PR Visa for each and every country
-                contact our Executive or fill the details and Requirements in
-                the given below query form.
+                Applying a fresh passport is not a big deal, 
+                Provide the required documents and our Executives
+                will take care of the applicant's appointment. 
+                Appoinment can be applied through Online and the 
+                basic required documents are mentioned below
+                <ul>
+                  <li>Age Proof</li>
+                  <li>Residential address proof</li>
+                  <li>Proof of Identity</li>
+                  <li>2 passport-sized photographs</li>
+                  <li>Attested photocopies of the first and last pages of your existing passport booklet</li>
+                  <li>Original existing Passport booklet</li>
+                  <li>Appointment application receipt or the final page of the online application page. 
+                    This page is considered proof of application fee payment and appointment schedule.</li>
+                </ul>
               </p>
-            </div>
-          </div>
+            </div>              
+        </div>
+        <div>        
+          <h2 class="sub-heading">Tatkal Passport</h2>
+          <span>Planing to travel on urgent basis?</span>
+          <p class="para">
+            Tatkal passports are provided for those who need passport urgently. 
+            Tatkal passport can be received faster than normal passport. Additional 
+            processing fees is collected for Tatkal passports. Documents Needed are 
+            same for the Normal passport without any spelling or Change in address 
+            documents.
+            </p>
+            </div> 
+        <div>
+          <h2 class="sub-heading">Renewal of passport</h2>
+          <p class="para">
+            Every passport has a tenure period, 5 yrs till 18 and 10 years above 18years
+            of age. After every tenure Passport should be renewed. Documents required for 
+            Passport renewal. Appoinment can be applied through Online.
+            </p>
+            <ul>
+              <li>Age Proof</li>
+              <li>Residential address proof</li>
+              <li>Proof of Identity</li>
+              <li>2 passport-sized photographs</li>
+              <li>Attested photocopies of the first and last pages of your existing passport booklet</li>
+              <li>Original existing Passport booklet</li>
+              <li>Appointment application receipt or the final page of the online application page. 
+                This page is considered proof of application fee payment and appointment schedule.</li>
+            </ul>                 
+     </div>
+     <div>
+      <h2 class="sub-heading">Minors Passport</h2>
+      <p class="para">
+        Minor passports are issued only for applicants those are below 18 years of age. 
+        Documents requied for applying Minor passports are 
+        </p>
+        <ul>
+          <li>For minor applicants, current address proof document in the name of parent can be provided.</li>
+          <li>It is advised to carry original and self-attested copies of parents passport to Passport offices, in case parents holds Indian Passport.</li>
+          <li>For minor applicants, documents can be attested by parents.</li>
+          <li>The minor applicant is eligible for Non-ECR till he/she attains the age of 18 years.</li>
+        </ul>                 
+ </div>
+ <div>
+  <h2 class="sub-heading">Change The Name/Address On Passport</h2>
+  <p class="para">
+    To change or update name or address in the Passport, due to relocation or name change. 
+    Applicant must have any government document that has done the present changes in name 
+    or address. Any of these documents mention below can be providded to update in Passport.
+    </p>
+    <ul>
+      <li>Marriage certificate if available (original and a photocopy)</li>
+      <li>Self-attested photocopy of your spouse's passport</li>
+      <li>Proof of current address</li>
+      <li>Old passport with self-attested photocopy of its first and last two pages. It should also include 
+        the ECR/Non-ECR page.</li>
+      <li>The old passport should contain a validity extension page and the observation page, if any.</li>
+      <li>Nationalised bank Passbook front page with Seal and signature of Bank authority.</li>
+      <li>A divorcee needs to submit a court-certified copy of the divorce decree or copy of the divorce 
+        certificate (self-attested) to change the surname in his/her passport</li>
+    </ul>                 
+</div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    
         </div>
       </div>
     </div>
@@ -168,19 +300,15 @@
         <div class="row">
           <div class="col-md-6">
             <div class="cont-box">
-              <h2 class="sub-heading">Study Abroad / Student Visa</h2>
+              <h2 class="sub-heading">PR Visa - (Permanent Resident Visa)</h2>
               <p class="para">
-                Student / Study Visa is applicable only for those are in need to
-                pursue education in Foreign countries. Student / Study Visa is
-                the document that is needed to enter any country legally for
-                educational purpose. Study/ Student Visa can only ba applied
-                after the application or admission Process is completed from the
-                desired College / university, this visa has a permitted time as
-                the course selected by the candidate (let it be any Graduation/
-                Diploma/ Doctorate). Tenure of this visa is dependent on how
-                long the selected program would be. To know more about Student
-                Visa for each and every country contact our Executive or fill
-                the details and Requirements in the given below query form.
+                PR Visa is for the purpose of immigrating to other country as
+                permanent resident of the applying country. Each country has
+                its own limitations and rules for accepting the PR Visa.
+                Applying individual has certain terms and eligibility Criteria
+                to be qualified. To know more about PR Visa for each and every 
+                country contact our Executive or fill the details and Requirements
+                in the given below query form.
               </p>
               <ul>
                 <li>Study in USA</li>
@@ -194,11 +322,46 @@
             <div class="img-box">
               <img
                 class="img-fluid"
-                src="asset/images/cuple-vector.jpg"
+                src="https://img.freepik.com/free-photo/american-visa-document_1101-820.jpg?w=826&t=st=1688707403~exp=1688708003~hmac=25d545761f77006ec1d784d6fbaecddeb785b54363acdaecfd0ab959aacbaa42"
                 alt=""
               />
             </div>
           </div>
+          <h2 class="sub-heading">Study Abroad / Student Visa</h2>
+          <p class="para">
+            Student / Study Visa is applicable only for those are in need to
+            pursue education in Foreign countries. Student / Study Visa is
+            the document that is needed to enter any country legally for
+            educational purpose. Study/ Student Visa can only ba applied
+            after the application or admission Process is completed from the
+            desired College / university, this visa has a permitted time as
+            the course selected by the candidate (let it be any Graduation/
+            Diploma/ Doctorate). Tenure of this visa is dependent on how
+            long the selected program would be. To know more about Student
+            Visa for each and every country contact our Executive or fill
+            the details and Requirements in the given below query form.
+          </p>
+          <h2 class="sub-heading">Tourist Visa</h2>
+          <p class="para">
+            Tourist visa as the name refers, these types of visas are issued 
+            exclusively for tourism. Tourist visa is a pass for an individual
+            to enter a foreign country for the purpose of leisure and tourism. 
+            This visa has certain restrictions such as short period of time, 
+            Maximum of 30 days. Tourist visas cannot be used for working purpose 
+            or Educational purpose. Multiple entry visas are the part of the tourist 
+            visa that is used for connecting cities in between the travel. To know 
+            more about Tourist Visa for each and every country contact our Executive 
+            or fill the details and Requirements in the given below query form.
+          </p>
+          <h2 class="sub-heading">Work Permit Visa</h2>
+          <p class="para">
+            Work permit visa allows business people, permanent workers, temporary 
+            workers and others to work in any foreign country. Applicants should 
+            have return to their home country after the end of their employment. 
+            Open work permit and an employer-specific work permit. To know more 
+            about Work permit Visa for each and every country contact our Executive 
+            or fill the details and Requirements in the given below query form.
+          </p>
         </div>
       </div>
     </div>
@@ -212,7 +375,7 @@
             <div class="img-box">
               <img
                 class="img-fluid"
-                src="asset/images/cuple-vector.jpg"
+                src="https://img.freepik.com/free-vector/vintage-golden-cinema-tickets-movie-pass-template_1017-23457.jpg?w=996&t=st=1688707984~exp=1688708584~hmac=9755405ee047924daadd6b6b5adf2d78a911f190006d47ad39d53785427ed5d2"
                 alt=""
               />
             </div>
@@ -295,7 +458,7 @@
             <div class="img-box">
               <img
                 class="img-fluid"
-                src="asset/images/cuple-vector.jpg"
+                src="https://img.freepik.com/free-vector/flat-hotel-facade-background_23-2148161522.jpg?w=740&t=st=1688708042~exp=1688708642~hmac=1a29ab10035c12f5464209c319482b9e2e65282f155879046ef3a123e0cf56ab"
                 alt=""
               />
             </div>
@@ -310,8 +473,44 @@
       <div class="service-box container">
         <div class="row">
           <div class="col-md-6">
+            <div class="img-box">
+              <img
+                class="img-fluid"
+                src="https://img.freepik.com/free-vector/travel-insurance-policy-isometric_1284-21827.jpg?w=740&t=st=1688708387~exp=1688708987~hmac=4f0886ce1e25bf982896eab0f5271088f7cc6bab64767191cd8ab2fc5318d8c2"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
             <div class="cont-box">
               <h2 class="sub-heading">Travel Insurance</h2>
+              <p class="para">
+                Tourist visa as the name refers, these types of visas are issued
+                exclusively for tourism. Tourist visa is a pass for an
+                individual to enter a foreign country for the purpose of leisure
+                and tourism. This visa has certain restrictions such as short
+                period of time, Maximum of 30 days. Tourist visas cannot be used
+                for working purpose or Educational purpose. Multiple entry visas
+                are the part of the tourist visa that is used for connecting
+                cities in between the travel. To know more about Tourist Visa
+                for each and every country contact our Executive or fill the
+                details and Requirements in the given below query form.
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Travel Insurance End  -->
+
+    <!-- Travel Insurance  -->
+    <div class="service-sec" id="ce-box">
+      <div class="service-box container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="cont-box">
+              <h2 class="sub-heading">Currency Exchange</h2>
               <p class="para">
                 Tourist visa as the name refers, these types of visas are issued
                 exclusively for tourism. Tourist visa is a pass for an
@@ -330,7 +529,7 @@
             <div class="img-box">
               <img
                 class="img-fluid"
-                src="asset/images/cuple-vector.jpg"
+                src="https://img.freepik.com/free-vector/illustration-characters-exchanging-currency_53876-37251.jpg?w=740&t=st=1688708437~exp=1688709037~hmac=7c271d7780c6708b252e0c66887c2646b3d5b864f766fd0b0fc5070e9a02e1cd"
                 alt=""
               />
             </div>
@@ -514,6 +713,8 @@
       let wpvb = $("#wpv-box");
       let ti = $(".ti");
       let tib = $("#ti-box");
+      let ce = $(".ce");
+      let cex = $("#ce-box");
 
       function dis() {
         prb.addClass("dis-none");
@@ -521,6 +722,7 @@
         tvb.addClass("dis-none");
         wpvb.addClass("dis-none");
         tib.addClass("dis-none");
+        cex.addClass("dis-none");
       }
       function service(box) {
         pr.removeClass("active");
@@ -528,6 +730,7 @@
         tv.removeClass("active");
         wpv.removeClass("active");
         ti.removeClass("active");
+        ce.removeClass("active");
 
         if (box == "pr") {
           dis();
@@ -549,7 +752,13 @@
           ti.addClass("active");
           tib.removeClass("dis-none");
           tib.addClass("dis-box");
-        } else {
+        }else if (box == "ce") {
+          dis();
+          ce.addClass("active");
+          cex.removeClass("dis-none");
+          cex.addClass("dis-box");
+        }
+         else {
           dis();
           wpv.addClass("active");
           wpvb.removeClass("dis-none");
