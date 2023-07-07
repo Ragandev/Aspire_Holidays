@@ -1,16 +1,3 @@
-.cont-banner {
-  height: 400px;
-  background-image: url(../asset/images/banner1.jpg);
-  background-size: cover;
-  background-position: bottom;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.cont-banner .banner-box {
-  color: #fff;
-  text-align: center;
-}
 .cont-sec {
   padding: 100px 0;
 }
