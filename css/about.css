@@ -163,7 +163,7 @@
 }
 .footer-bg {
   height: 80px;
-  background-image: url('../asset/images/Blue\-\Map@3x-100.jpg');
+  background-image: url(./asset/images/Blue\-\Map@3x-100.jpg);
   background-size: 300px;
   background-repeat: no-repeat;
   background-position: auto 0 0 0;
@@ -173,7 +173,7 @@
   padding: 100px 0;
 }
 .abt-blog-sec {
-  background-image: url(../asset/images/side_map_bg.jpg);
+  background-image: url(./asset/images/side_map_bg.jpg);
   background-size: contain;
 }
 .blog-row-1 {
