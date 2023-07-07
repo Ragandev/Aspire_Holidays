@@ -15,20 +15,20 @@
     margin:0 auto;
 }
 .tour-box-1{
-    background-image: url(./asset/images/Rome.jpg);
+    background-image: url(../asset/images/Rome.jpg);
 }
 .tour-box-2{
-    background-image: url(./asset/images/Taj-Mahal-In-India.jpg);
+    background-image: url(../asset/images/Taj-Mahal-In-India.jpg);
     
 }
 .tour-box-3{
-    background-image: url(./asset/images/Iv\ Students.jpg);
+    background-image: url(../asset/images/Iv\ Students.jpg);
 }
 .tour-box-4{
-    background-image: url(./asset/images/couple-.jpg);
+    background-image: url(../asset/images/couple-.jpg);
 }
 .tour-box-5{
-    background-image: url(./asset/images/Crusies.jpg);
+    background-image: url(../asset/images/Crusies.jpg);
 }
 .box-inn .icon-box{
     background-color: var(--main);
@@ -120,7 +120,7 @@
     margin-right:10px;
 }
 .about-sec{
-    background-image: url(./asset/images/banner1.jpg);
+    background-image: url(../asset/images/banner1.jpg);
     background-size: cover;
     background-repeat:no-repeat ;
     margin:80px auto;
@@ -206,11 +206,11 @@
     align-items: center;
 }
 .price-content-box{
-    background-image:url(./asset/images/flight\ path@3x-100.jpg);
+    background-image:url(../asset/images/flight\ path@3x-100.jpg);
     background-size: contain;
     background-repeat: no-repeat;
 }
 .travel-video-box{
-    background-image:url(./asset/images/Map\ -\ 1.@3x-100.jpg);
+    background-image:url(../asset/images/Map\ -\ 1.@3x-100.jpg);
     background-size: cover;
 }

@@ -1,170 +1,171 @@
-.services-main{
-    margin:0 auto;
-    text-align: center;
-    padding:50px 10px;
+.services-main {
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px 10px;
 }
-.services-main .headtitle{
-    padding-bottom:30px !important;
+.services-main .headtitle {
+  padding-bottom: 30px !important;
 }
-.service-list li{
-    list-style-type:none;
+.service-list li {
+  list-style-type: none;
 }
-.service-list i{
-    padding:15px;
+.service-list i {
+  padding: 15px;
 }
-.about-top-sec{
-    margin:0px auto 50px auto;
-    background-image: url(../asset/images/world-full-map.jpg);
-    background-size:contain;
+.about-top-sec {
+  margin: 0px auto 50px auto;
+  background-image: url(../asset/images/world-full-map.jpg);
+  background-size: contain;
 }
-@media (max-width:360px){
-    .about-top-sec .animate-text{
-        font-size:medium;
-    }
+@media (max-width: 360px) {
+  .about-top-sec .animate-text {
+    font-size: medium;
+  }
 }
-.about-top-sec .cursive-heading{
-    padding-bottom:50px;
+.about-top-sec .cursive-heading {
+  padding-bottom: 50px;
 }
-.service-sec img{
-    width:100px;
+.service-sec img {
+  width: 100px;
 }
-.about-top-sec .ser{
-    padding-bottom:10px;
+.about-top-sec .ser {
+  padding-bottom: 10px;
 }
-.service-bg{
-    margin:0 auto;
-    display: flex;
-    align-items: center;
-    background-image: url(../asset/images/girl4.jpg);
-    background-size:cover;
-    height: 500px;
-    color:black;
+.service-bg {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  background-image: url(../asset/images/girl4.jpg);
+  background-size: cover;
+  height: 500px;
+  color: black;
 }
-.service-counter{
-    margin:0 auto;
-    padding:80px;
+.service-counter {
+  margin: 0 auto;
+  padding: 80px;
 }
-.service-counter .counter-box{
-    margin:20px;
-    border: 1px solid grey;
-    text-align:center;
-    padding:40px;
+.service-counter .counter-box {
+  margin: 20px;
+  border: 1px solid grey;
+  text-align: center;
+  padding: 40px;
 }
-.service-counter .counter-para{
-    margin-top:50px;
-    padding:20px;
+.service-counter .counter-para {
+  margin-top: 50px;
+  padding: 20px;
 }
-.form-section{
-    height: 100%;
-    width:100%;
-    padding:40px;
+.form-section {
+  height: 100%;
+  width: 100%;
+  padding: 40px;
 }
-.form-section .row{
-    background-color: antiquewhite;
+.form-section .row {
+  background-color: antiquewhite;
 }
-.form-section .form-img-box{
-    height: 100%;
+.form-section .form-img-box {
+  height: 100%;
 }
-.form-section .form-img-box img{
-    height: 100%;
+.form-section .form-img-box img {
+  height: 100%;
 }
-.form-section .mini-form{
-    margin: 0px 0px;
-    background-color: antiquewhite;
-    padding:20px 30px;
+.form-section .mini-form {
+  margin: 0px 0px;
+  background-color: antiquewhite;
+  padding: 20px 30px;
 }
-.form-section .bg1{
-    padding:0;
+.form-section .bg1 {
+  padding: 0;
 }
-.form-section .quick-form{
-    margin:10px auto;
-    text-align: center;
+.form-section .quick-form {
+  margin: 10px auto;
+  text-align: center;
 }
-.form-section .quick-form-box input, textarea{
-   margin:10px auto;
-   display: block;
-   padding:10px;
-   width:100%;
+.form-section .quick-form-box input,
+textarea {
+  margin: 10px auto;
+  display: block;
+  padding: 10px;
+  width: 100%;
 }
-.form-section .portfolio-slides{
-    height: 150px;
-    background-color: var(--sec);
+.form-section .portfolio-slides {
+  height: 150px;
+  background-color: var(--sec);
 }
-.service-im-box{
-    margin:20px;
-    padding:20px;
-    height: 100%;
+.service-im-box {
+  margin: 20px;
+  padding: 20px;
+  height: 100%;
 }
-.service-im-box img{
-    object-fit: cover;
-    width: 100%;
+.service-im-box img {
+  object-fit: cover;
+  width: 100%;
 }
-.main-box{
-    margin:50px 0px 0px 0px;
+.main-box {
+  margin: 50px 0px 0px 0px;
 }
-.service-main{
-    background-image: none;
-    color:black;
-    background-color: antiquewhite;
+.service-main {
+  background-image: none;
+  color: black;
+  background-color: antiquewhite;
 }
-.service-main button{
-    margin-top:20px;
+.service-main button {
+  margin-top: 20px;
 }
-.visa-banner{
-    height: 500px;
-    background-image: url(../asset/images/travel_bg.webp);
-    background-size: cover;
-    background-position: 0 -200px;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.visa-banner {
+  height: 500px;
+  background-image: url(../asset/images/travel_bg.webp);
+  background-size: cover;
+  background-position: 0 -200px;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.tab-menu-sec{
-    background-color: #eff3f6 !important;
-    width: 100%;
+.tab-menu-sec {
+  background-color: #eff3f6 !important;
+  width: 100%;
 }
-.tab-menu .row{
-    height: 50px;
+.tab-menu .row {
+  height: 50px;
 }
 
-.tab-box{
-    text-align: center;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color:var(--main);
+.tab-box {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--main);
 }
-.tab-name{
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
+.tab-name {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
 }
-.tab-menu .row .active{
-    background-color: #009ee0 !important;
-    color: #fff;
+.tab-menu .row .active {
+  background-color: #009ee0 !important;
+  color: #fff;
 }
-.service-box .row{
-    justify-content: center;
-    align-items: center;
+.service-box .row {
+  justify-content: center;
+  align-items: center;
 }
 #sv-box,
 #tv-box,
 #ti-box,
 #wpv-box {
-    display: none;
+  display: none;
 }
-.dis-box{
-    display: block !important;
+.dis-box {
+  display: block !important;
 }
-.dis-none{
-    display: none !important;
+.dis-none {
+  display: none !important;
 }
-.port .item{
-    padding:30px;
+.port .item {
+  padding: 30px;
 }
-.main-box{
-    margin:50px 0px;
+.main-box {
+  margin: 50px 0px;
 }
