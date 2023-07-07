@@ -2,100 +2,121 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* Root */
-:root{
+:root {
   --main: #f0870d;
   --sec: #1e2d58;
   --gray: #929292;
   --blueG: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
-  --instaG: linear-gradient(to right top, #ae00a6, #e1007f, #f93057, #fa6833, #eb9612);
-  --youG: linear-gradient(to right top, #ff0000, #ef0000, #df0000, #cf0000, #c00000);
-  --whatG: linear-gradient(to right top, #22ff00, #1dd803, #18b304, #138f04, #0e6d04);
+  --instaG: linear-gradient(
+    to right top,
+    #ae00a6,
+    #e1007f,
+    #f93057,
+    #fa6833,
+    #eb9612
+  );
+  --youG: linear-gradient(
+    to right top,
+    #ff0000,
+    #ef0000,
+    #df0000,
+    #cf0000,
+    #c00000
+  );
+  --whatG: linear-gradient(
+    to right top,
+    #22ff00,
+    #1dd803,
+    #18b304,
+    #138f04,
+    #0e6d04
+  );
 }
-*{
+* {
   margin: 0;
   padding: 0;
 }
-body{
+body {
   overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
-.para{
+.para {
   color: var(--gray);
 }
-.large-heading{
+.large-heading {
   font-size: 100px;
   font-weight: 800;
 }
 
-@media (max-width:1200px) {
-  .large-heading{
+@media (max-width: 1200px) {
+  .large-heading {
     font-size: 80px;
   }
 }
-@media (max-width:992px) {
-  .large-heading{
+@media (max-width: 992px) {
+  .large-heading {
     font-size: 70px;
   }
 }
-@media (max-width:768px) {
-  .large-heading{
+@media (max-width: 768px) {
+  .large-heading {
     font-size: 60px;
   }
 }
-.main-heading{
+.main-heading {
   font-size: 50px;
   font-weight: 700;
 }
-@media (max-width:1200px){
-  .main-heading{
-    font-size:40px;
-    font-weight:600;
+@media (max-width: 1200px) {
+  .main-heading {
+    font-size: 40px;
+    font-weight: 600;
   }
 }
-@media (max-width:992px){
-  .main-heading{
-    font-size:30px;
-    font-weight:600;
+@media (max-width: 992px) {
+  .main-heading {
+    font-size: 30px;
+    font-weight: 600;
   }
 }
-@media (max-width:768px){
-  .main-heading{
-    font-size:20px;
-    font-weight:600;
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 20px;
+    font-weight: 600;
   }
 }
-.sub-heading{
+.sub-heading {
   font-size: 35px;
   font-weight: 700;
 }
 
-@media (max-width:992px){
-  .sub-heading{
-    font-size:30px;
+@media (max-width: 992px) {
+  .sub-heading {
+    font-size: 30px;
   }
 }
-@media (max-width:768px){
-  .sub-heading{
-    font-size:25px;
+@media (max-width: 768px) {
+  .sub-heading {
+    font-size: 25px;
   }
 }
-@media (max-width:576px){
-  .sub-heading{
-    font-size:20px;
+@media (max-width: 576px) {
+  .sub-heading {
+    font-size: 20px;
   }
 }
-.mini-heading{
+.mini-heading {
   font-size: 20px;
   font-weight: 700;
 }
-.cursive-heading{
-  font-family: 'Dancing Script', cursive;
+.cursive-heading {
+  font-family: "Dancing Script", cursive;
   font-size: 30px;
   font-weight: 700;
   color: var(--main);
 }
-.btns{
+.btns {
   padding: 10px 20px;
   font-weight: 600;
   background-color: var(--main);
@@ -103,7 +124,7 @@ body{
   color: #fff;
   border-radius: 5px;
 }
-a{
+a {
   text-decoration: none;
   font-weight: bold;
 }

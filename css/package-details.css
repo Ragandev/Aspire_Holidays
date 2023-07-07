@@ -3,9 +3,6 @@
     background-color: #f9f4f0;
 }
 
-.pd-banner .item{
-    height: 400px;
-}
 
 .pd-header{
     padding: 40px 0;
@@ -13,16 +10,18 @@
 
 .pd-header .pd-head-cont{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 }
 
-.pd-head-cont div{
-    flex-basis: 33.3%;
+.pd-head-cont > div:not(:first-child){
+    margin-left: 30px;
 }
+
 
 .pd-head-cont div p{
     margin: 0;
+    margin-left: 5px;
 }
 
 .pd-head-cont .icon-box{
@@ -38,6 +37,11 @@
 .pd-head-cont .icon-box span{
     color: #fff;
     font-size: 25px;
+}
+@media (width < 560px) {
+    .pd-header .pd-head-cont{
+        display: none;
+    }
 }
 
 .pd-main-sec{
@@ -66,11 +70,14 @@
     width: 100%;
     border-radius: 20px;
 }
-
+.price-col{
+    position: relative;
+}
 .pd-main-sec .price-box{
     box-shadow: 0 0 10px lightgrey;
     padding: 30px;
     border-radius: 20px;
+    position: sticky;
     top: 0;
 }
 

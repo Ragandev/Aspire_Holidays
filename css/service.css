@@ -14,7 +14,7 @@
 }
 .about-top-sec{
     margin:0px auto 50px auto;
-    background-image: url(/asset/images/world-full-map.jpg);
+    background-image: url(../asset/images/world-full-map.jpg);
     background-size:contain;
 }
 @media (max-width:360px){
@@ -35,9 +35,8 @@
     margin:0 auto;
     display: flex;
     align-items: center;
-    background-image: url(/asset/images/girl4.jpg);
+    background-image: url(../asset/images/girl4.jpg);
     background-size:cover;
-    background-
     height: 500px;
     color:black;
 }
@@ -113,7 +112,7 @@
 }
 .visa-banner{
     height: 500px;
-    background-image: url(/asset/images/travel_bg.webp);
+    background-image: url(../asset/images/travel_bg.webp);
     background-size: cover;
     background-position: 0 -200px;
     background-repeat: no-repeat;
