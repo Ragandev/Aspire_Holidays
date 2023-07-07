@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Home</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="css/owl.carousel.min.css" />
   <link rel="stylesheet" href="css/common.css" />
-  <link rel="stylesheet" href="css/slider.css" />
   <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/slider.css" />
   <link rel="stylesheet" href="css/search.css" />
   <link rel="stylesheet" href="css/section3.css" />
   <link rel="stylesheet" href="css/section4.css" />
@@ -36,34 +36,34 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
           <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll nav-scr">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="package.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Packages
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">International</a></li>
-                <li><a class="dropdown-item" href="#">Domestic</a></li>
+                <li><a class="dropdown-item" href="package.html">International</a></li>
+                <li><a class="dropdown-item" href="package.html">Domestic</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Educational</a>
+              <a href="package-details.html" class="nav-link">Educational</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Honeymoon</a>
+              <a href="package-details.html" class="nav-link">Honeymoon</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Cruises</a>
+              <a href="package-details.html" class="nav-link">Cruises</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Contact</a>
+              <a href="contact.html" class="nav-link">Contact</a>
             </li>
           </ul>
-            <button class="btns" type="submit">Enquiry</button>
+            <a href="contact.html"><button class="btns" type="submit">Enquiry</button></a>
         </div>
       </div>
     </nav>
@@ -449,7 +449,7 @@
     <div class="travel-video-box">
       <h1 data-aos="zoom-in" data-aos-duration="1000" class="large-heading zoom-txt">Travel Itineraries</h1>
       <div class="video-box">
-        <video data-aos="zoom-out" data-aos-duration="1000" class="zoom-vid" width="85%" autoplay loop muted>
+        <video data-aos="zoom-out" data-aos-duration="1000" class="zoom-vid" width="85%" playsinline autoplay loop muted autobuffer preload="auto" poster="asset/images/2.webp">
           <source src="asset/videos/travel_girls.mp4" type="video/mp4">
         </video>
       </div>
@@ -733,15 +733,15 @@
   <section class="footer-bg"></section>
   <section class="footer-sec">
     <div class="footer-sec-inn container">
-      <div class="row">
-        <div class="col-md-6">
+      <div class="row first-row">
+        <div class="col-md-12 col-lg-6 mb-5">
           <div class="txt-box" data-aos="fade-right" data-aos-duration="1000">
             <p class="main-heading">
               Travel beyond your imagination, with our Travel Agency!
             </p>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12 col-lg-6">
           <div class="footer-box">
             <div class="row">
               <div class="col-md-6">
@@ -768,12 +768,55 @@
                   <p class="mini-heading">Contact</p>
                   <a href="" class="btns">info@aspire.com</a>
                   <div class="phone-box">
-                    <a href="tel:9362266666" class="sub-heading">+91 9362266666</a>
-                    <a href="tel:9514433334" class="sub-heading">+91 9514433334</a>
+                    <a href="tel:9362266666" class="mini-heading">+91 9362266666</a><br>
+                    <a href="tel:9514433334" class="mini-heading">+91 9514433334</a>
                   </div>
+                  <br> <br>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="row second-row">
+        <div class="col-md-6 col-lg-3 mb-5">
+          <div class="ql-list">
+            <p class="mini-heading">Quick Links</p>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Packages</a></li>
+            <li><a href="#">Enquire</a></li>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-5">
+          <div class="p-list">
+            <p class="mini-heading">Package Category</p>
+            <li><a href="#">International</a></li>
+            <li><a href="#">Domestic</a></li>
+            <li><a href="#">Educational</a></li>
+            <li><a href="#">Honeymoon</a></li>
+            <li><a href="#">Cruises</a></li>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-5">
+          <div class="pp-list">
+            <p class="mini-heading">Popular Packages</p>
+            <li><a href="#">Ooty</a></li>
+            <li><a href="#">Bali</a></li>
+            <li><a href="#">Munnar</a></li>
+            <li><a href="#">Thailand</a></li>
+            <li><a href="#">America</a></li>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-5">
+          <div class="pp-list">
+            <p class="mini-heading">Our Services</p>
+            <li><a href="#">Ticketing</a></li>
+            <li><a href="#">Passport</a></li>
+            <li><a href="#">VISA</a></li>
+            <li><a href="#">Travel Insurance</a></li>
+            <li><a href="#">Currency Exchange</a></li>
           </div>
         </div>
       </div>
@@ -811,6 +854,13 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/owl.carousel.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease'
+    });
+  </script>
+
   <script>
     $(".pop-package").owlCarousel({
       loop: true,
@@ -892,14 +942,7 @@
       },
     });
   </script>
-  <script>
-    AOS.init({
-      once: true,
-      easing: 'ease'
-    });
-  </script>
-  <script>
-  </script>
+
 </body>
 
 </html>
