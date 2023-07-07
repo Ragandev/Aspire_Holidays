@@ -144,7 +144,12 @@
 
 /* About Main Section */
 .main-sec{
-    padding: 0px 0px 20px 0px;
+    margin:50px 0px 20px 0px;
+}
+@media (max-width:768px) {
+    .main-img-box img{
+        margin:50px auto 0px auto;
+    }
 }
 /* .main-sec{
     background-image: url(/asset/images/world-flight.jpg);

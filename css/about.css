@@ -162,8 +162,7 @@
 }
 .footer-bg{
     height: 80px;
-    background-image: url(/asset/images/Blue\ -\ Map@3x-100.jpg);
+    background-image: url(/asset/images/footer-map.png);
     background-size: 300px ;
     background-repeat: no-repeat;
-    background-position: auto 0 0 0;
 }

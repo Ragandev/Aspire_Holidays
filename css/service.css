@@ -42,7 +42,7 @@
 }
 .service-counter{
     margin:0 auto;
-    padding:80px;
+    padding:10px;
 }
 .service-counter .counter-box{
     margin:20px;
@@ -51,7 +51,7 @@
     padding:40px;
 }
 .service-counter .counter-para{
-    margin-top:50px;
+    margin:0 auto;
     padding:20px;
 }
 .form-section{
