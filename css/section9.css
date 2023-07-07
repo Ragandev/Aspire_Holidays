@@ -1,5 +1,8 @@
 .data-sec{
     padding: 100px 0;
+    background-image: url(../asset/images/World\ Round1@3x-100.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 @media (max-width: 786px) {
     .data-sec{

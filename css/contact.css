@@ -1,6 +1,6 @@
 .cont-banner{
    height: 400px;
-   background-image: url(/asset/images/banner1.jpg);
+   background-image: url(../asset/images/banner1.jpg);
    background-size: cover;
    background-position: bottom;
    display: flex;
@@ -13,7 +13,7 @@
 }
 .cont-sec{
     padding: 100px 0;
-    background-image: url(/asset/images/world-full-map.jpg);
+    background-image: url(../asset/images/world-full-map.jpg);
     background-size: cover;
 }
 .cont-head{

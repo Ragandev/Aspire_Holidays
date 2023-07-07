@@ -41,7 +41,7 @@
 .box-inn .icon-box img{
     width: 60px;
     /* filter: hue-rotate(-151deg); */
-    filter: invert(100) hue-rotate(3890deg) saturate(250%);
+    filter: invert(100) hue-rotate(-360deg) saturate(200%);
 }
 .img-trend{
     opacity: 0.3;
