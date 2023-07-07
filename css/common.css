@@ -54,38 +54,45 @@ body {
     font-size: 80px;
   }
 }
+
 @media (max-width: 992px) {
   .large-heading {
     font-size: 70px;
   }
 }
+
 @media (max-width: 768px) {
   .large-heading {
     font-size: 60px;
   }
 }
+
 .main-heading {
   font-size: 50px;
   font-weight: 700;
 }
+
 @media (max-width: 1200px) {
   .main-heading {
     font-size: 40px;
     font-weight: 600;
   }
 }
+
 @media (max-width: 992px) {
   .main-heading {
     font-size: 30px;
     font-weight: 600;
   }
 }
+
 @media (max-width: 768px) {
   .main-heading {
     font-size: 20px;
     font-weight: 600;
   }
 }
+
 .sub-heading {
   font-size: 35px;
   font-weight: 700;
@@ -96,26 +103,31 @@ body {
     font-size: 30px;
   }
 }
+
 @media (max-width: 768px) {
   .sub-heading {
     font-size: 25px;
   }
 }
+
 @media (max-width: 576px) {
   .sub-heading {
     font-size: 20px;
   }
 }
+
 .mini-heading {
   font-size: 20px;
   font-weight: 700;
 }
+
 .cursive-heading {
   font-family: "Dancing Script", cursive;
   font-size: 30px;
   font-weight: 700;
   color: var(--main);
 }
+
 .btns {
   padding: 10px 20px;
   font-weight: 600;
@@ -124,10 +136,12 @@ body {
   color: #fff;
   border-radius: 5px;
 }
+
 a {
   text-decoration: none;
   font-weight: bold;
 }
+
 .cont-banner {
   height: 400px;
   background-image: url(../asset/images/banner1.jpg);
@@ -137,6 +151,7 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 .cont-banner .banner-box {
   color: #fff;
   text-align: center;
