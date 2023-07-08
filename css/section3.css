@@ -15,28 +15,25 @@
     margin:0 auto;
 }
 .tour-box-1{
-    background-image: url(../asset/images/Rome.jpg);
+    background-image: url(../asset/images/others/rome_international.webp);
 }
 .tour-box-2{
-    background-image: url(../asset/images/Taj-Mahal-In-India.jpg);
-    
+    background-image: url(../asset/images/others/tajmahal_Domestic.webp);
+    background-position: 50px -10px;
 }
 .tour-box-3{
-    background-image: url(../asset/images/Iv\ Students.jpg);
+    background-image: url(../asset/images/others/iv_edu.webp);
 }
 .tour-box-4{
-    background-image: url(../asset/images/couple-.jpg);
+    background-image: url(../asset/images/others/couple_honeymoon.webp);
 }
 .tour-box-5{
-    background-image: url(../asset/images/Crusies.jpg);
+    background-image: url(../asset/images/others/girl_cruises.webp);
 }
 .box-inn .icon-box{
     background-color: var(--main);
-    background-repeat: no-repeat;
-    background-position: -150px 0px;
-    background-size: cover;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
 }
 .box-inn .icon-box img{
     width: 60px;

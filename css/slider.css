@@ -14,6 +14,9 @@
   left: 200px;
   animation: slide 0.8s;
 }
+.slider-cont .large-heading{
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+}
 .slider-cont .large-heading span {
   color: var(--main);
 }
