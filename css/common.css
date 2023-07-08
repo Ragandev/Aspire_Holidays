@@ -37,7 +37,8 @@
   padding: 0;
 }
 body {
-  overflow-x: hidden;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }

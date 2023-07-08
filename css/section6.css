@@ -1,10 +1,10 @@
 .travel-video{
-    background-image: url(../asset/images/side_map_bg.jpg);
+    background-image: url(../asset/images/bg/map-2side.webp);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 .travel-video-box .large-heading{
-    padding: 50px 0;
+    padding: 100px 0 50px 0;
     text-align: center;
 }
 .video-box{

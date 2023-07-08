@@ -1,9 +1,8 @@
 .review-sec {
   padding: 100px 0;
-  background-image: url(../asset/images/girl3.jpg);
+  background-image: url(../asset/images/others/girl5.webp);
   background-repeat: no-repeat;
   background-size: cover;
-  /* height: fit-content; */
   position: relative;
 }
 .review-sec::before {
