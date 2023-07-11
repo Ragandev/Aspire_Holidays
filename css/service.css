@@ -15,7 +15,8 @@
 }
 .about-top-sec{
     margin:0px auto 50px auto;
-    background-image: url(../asset/images/world-full-map.jpg);
+    background-image: url(../asset/images/bg/map-bg1.webp);
+    background-repeat: no-repeat;
     background-size:contain;
 }
 @media (max-width:360px){
