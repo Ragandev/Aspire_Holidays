@@ -173,7 +173,7 @@
   padding: 100px 0;
 }
 .abt-blog-sec {
-  background-image: url(../asset/images/side_map_bg.jpg);
+  background-image: url(../asset/images/bg/map-2side-fill.webp);
   background-size: contain;
 }
 .blog-row-1 {
@@ -299,7 +299,7 @@
 }
 .footer-bg{
     height: 80px;
-    background-image: url(/asset/images/footer-map.png);
+    background-image: url(/asset/images/bg/footer-map.webp);
     background-size: 300px ;
     background-repeat: no-repeat;
 }
