@@ -89,7 +89,7 @@
 }
 
 .trend .card-img-top{
-    height:250px;
+    /*height:250px;*/
 }
 .trend .mini-heading{
     margin-top: 20px;
@@ -100,7 +100,12 @@
     text-align: end;
 }
 .card-img-top{
-    height: 400px !important;
+    height: 250px !important;
+}
+@media (width<=800px) {
+    .card-img-top{
+    height: 320px !important;
+}
 }
 .trend .day-plan{
     height:40px;
@@ -121,9 +126,9 @@
     margin-right:10px;
 }
 .about-sec{
-    background-image: url(../asset/images/others/green-falls.webp);
+    background-image: url(../asset/images/others/bg111.webp);
     background-size: cover;
-    background-repeat:no-repeat ;
+    background-repeat:no-repeat;
     /* margin:80px auto; */
     margin-top: 50px;
     padding:100px;
@@ -212,6 +217,7 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
+
 /* .travel-video-box{
     background-image:url(../asset/images/Map\ -\ 1.@3x-100.jpg);
     background-size: cover;

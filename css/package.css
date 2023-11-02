@@ -51,10 +51,10 @@
   position: absolute;
   width: 90%;
   height: 43px;
+  top:250px;
   transform: translate(5%); 
   background-color: #fff;
   padding: 10px;
-  bottom: 2cqb;
   border-radius: 5px;
 }
 .package-box .item-box .item-img {

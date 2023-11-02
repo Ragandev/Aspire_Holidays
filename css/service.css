@@ -15,7 +15,7 @@
 }
 .about-top-sec{
     margin:0px auto 50px auto;
-    background-image: url(../asset/images/bg/map-bg1.webp);
+    background-image: url(asset/images/bg/map-bg1.webp);
     background-repeat: no-repeat;
     background-size:contain;
 }
@@ -37,7 +37,7 @@
     margin:0 auto;
     display: flex;
     align-items: center;
-    background-image: url(../asset/images/girl4.jpg);
+    background-image: url(asset/images/girl4.jpg);
     background-size:cover;
     height: 500px;
     color:black;
@@ -48,50 +48,17 @@
 }
 .service-counter .counter-box{
     margin:20px;
-    border: 1px solid grey;
+    /*border: 1px solid grey;*/
     text-align:center;
     padding:40px;
+    background-color:antiquewhite;
+    border-radius:20px;
 }
 .service-counter .counter-para{
     margin:0 auto;
     padding:20px;
 }
-.form-section{
-    height: 100%;
-    width:100%;
-    padding:40px;
-}
-.form-section .row{
-    background-color: antiquewhite;
-}
-.form-section .form-img-box{
-    height: 100%;
-}
-.form-section .form-img-box img{
-    height: 100%;
-}
-.form-section .mini-form{
-    margin: 0px 0px;
-    background-color: antiquewhite;
-    padding:20px 30px;
-}
-.form-section .bg1{
-    padding:0;
-}
-.form-section .quick-form{
-    margin:10px auto;
-    text-align: center;
-}
-.form-section .quick-form-box input, textarea{
-   margin:10px auto;
-   display: block;
-   padding:10px;
-   width:100%;
-}
-.form-section .portfolio-slides{
-    height: 150px;
-    background-color: var(--sec);
-}
+
 .service-im-box{
     margin:20px;
     padding:20px;
@@ -131,7 +98,7 @@
     text-align: center;
     height: 50px;
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
     align-items: center;
     text-decoration: none;
     color:#fff;
@@ -152,7 +119,7 @@
 .service-box .row{
     justify-content: center;
     align-items: center;
-=======
+}
 .services-main {
   margin: 0 auto;
   text-align: center;
@@ -169,7 +136,7 @@
 }
 .about-top-sec {
   margin: 0px auto 50px auto;
-  background-image: url(../asset/images/world-full-map.jpg);
+  background-image: url(../asset/images/world-full-map.webp);
   background-size: contain;
 }
 @media (max-width: 360px) {
@@ -190,7 +157,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  background-image: url(../asset/images/girl4.jpg);
+  background-image: url(../asset/images/others/girl2.webp);
   background-size: cover;
   height: 500px;
   color: black;
@@ -199,20 +166,37 @@
   margin: 0 auto;
   padding: 80px;
 }
-.service-counter .counter-box {
-  margin: 20px;
-  border: 1px solid grey;
-  text-align: center;
-  padding: 40px;
-}
+/*.service-counter .counter-box {*/
+/*  margin: 20px;*/
+  /*border: 1px solid grey;*/
+/*  text-align: center;*/
+/*  padding: 40px;*/
+/*}*/
 .service-counter .counter-para {
   margin-top: 50px;
   padding: 20px;
+}
+@media (max-width: 576px) {
+ .service-counter{
+   padding:30px;  
+ }
 }
 .form-section {
   height: 100%;
   width: 100%;
   padding: 40px;
+}
+.ser-box{
+    height:150px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.serv-box{
+    height:100px;
+    /*display:flex;*/
+    /*justify-content:center;*/
+    /*align-items:left;*/
 }
 .form-section .row {
   background-color: antiquewhite;
@@ -243,8 +227,11 @@ textarea {
   width: 100%;
 }
 .form-section .portfolio-slides {
-  height: 150px;
+  height: 150px !important;
   background-color: var(--sec);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 .service-im-box {
   margin: 20px;
@@ -255,9 +242,12 @@ textarea {
   object-fit: cover;
   width: 100%;
 }
-.main-box {
-  margin: 50px 0px 0px 0px;
+.nav{
+    background-color:var(--sec) !important;
 }
+/*.main-box {*/
+/*  margin: 20px 0px 0px 0px;*/
+/*}*/
 .service-main {
   background-image: none;
   color: black;
@@ -298,8 +288,8 @@ textarea {
   padding: 0;
   font-weight: bold;
 }
-.tab-menu .row .active {
-  background-color: #009ee0 !important;
+.tab-menu .row{
+  background-color: var(--sec) !important;
   color: #fff;
 }
 .service-box .row {
@@ -323,4 +313,12 @@ textarea {
 }
 .main-box {
   margin: 50px 0px;
+}
+@media(width<991px){
+    .tap-menu-sec{
+        height:100px !important;
+    }
+    .tab-content{
+        margin-top:80px !important;
+    }
 }

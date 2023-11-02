@@ -10,12 +10,12 @@
     text-align: center;
   }
 }
-.about-service .service-sec {
-  padding: 20px 0px;
-}
-.about-service .service-sec .mini-heading {
-  padding-top: 40px;
-}
+/*.about-service .service-sec {*/
+/*  padding: 20px 0px;*/
+/*}*/
+/*.about-service .service-sec .mini-heading {*/
+/*  padding-top: 40px;*/
+/*}*/
 .about-service .cursive-heading {
   margin-bottom: 20px;
 }
@@ -198,9 +198,10 @@
   bottom: 0;
   color: #fff;
 }
+
 .abt-blog-box a {
   color: #fff;
-  background-color: var(--sec);
+  background-color: #e17149;
   padding: 3px 10px;
   border-radius: 30px;
 }
@@ -299,7 +300,10 @@
 }
 .footer-bg{
     height: 80px;
-    background-image: url(/asset/images/bg/footer-map.webp);
+    background-image: url(../asset/images/bg/footer-map.webp);
     background-size: 300px ;
     background-repeat: no-repeat;
+}
+.cont a:hover{
+    color:var(--sec) !important;
 }

@@ -1,8 +1,7 @@
 .pd-banner-sec{
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
     background-color: #f9f4f0;
 }
-
 
 .pd-header{
     padding: 40px 0;
@@ -11,11 +10,11 @@
 .pd-header .pd-head-cont{
     display: flex;
     justify-content: end;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 .pd-head-cont > div:not(:first-child){
-    margin-left: 30px;
+    /*margin-left: 30px;*/
 }
 
 
@@ -38,14 +37,22 @@
     color: #fff;
     font-size: 25px;
 }
-@media (width < 560px) {
-    .pd-header .pd-head-cont{
-        display: none;
-    }
+/*@media (width < 560px) {*/
+/*    .pd-header .pd-head-cont{*/
+/*        display: none;*/
+/*    }*/
+/*}*/
+.filter-box{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 30px;
 }
-
+.filter-box select{
+    height:60px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
 .pd-main-sec{
-    padding: 100px 0;
+    padding: 10px 0;
 }
 
 .pd-main-sec hr{
@@ -77,6 +84,9 @@
     box-shadow: 0 0 10px lightgrey;
     padding: 30px;
     border-radius: 20px;
+    background: url("../asset/images/others/enquiry-map.png");
+    /*background-color:#faebd7;*/
+    background-size: cover;
     position: sticky;
     top: 0;
 }
@@ -98,4 +108,18 @@
 .pd-main-sec .price-box .form-box input,
 .pd-main-sec .price-box .form-box textarea{
     width: 80%;
+}
+
+.package-box{
+    height:300px;
+    overflow:hidden;
+}
+@media (width < 992px){
+    .package-box{
+    height:fit-content;
+    overflow:visible;
+}
+.img-cont{
+    display: none;
+}
 }

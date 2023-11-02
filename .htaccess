@@ -1,0 +1,8 @@
+RewriteEngine On
+# RewriteBase /aspire-web/
+
+# Rewrite /package-details/package-id to package-details.php?id=package-id
+RewriteRule ^package-details/([^/]+)/?$ package-details.php?id=$1 [L,QSA]
+
+
+RewriteRule ^blog_details/([^/]+)/?$ blog_details.php?id=$1 [L,QSA]
