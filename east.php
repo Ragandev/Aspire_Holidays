@@ -110,18 +110,18 @@ $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-md-6 col-lg-3 p-3">
                     <a href="package.php?country=<?php echo $row['country'] ?>">
                         <div class="cnt-card as">
-                            <img class="country-img" src="asset/images/country/<?php echo $row['country'] ?>.webp" <div
-                                class="card-name">
-                            <p class="mini-heading">
-                                <?php echo $row['country'] ?>
-                            </p>
+                            <img class="country-img" src="asset/images/country/<?php echo $row['country'] ?>.webp">
+                            <div class="card-name">
+                                <p class="mini-heading">
+                                    <?php echo $row['country'] ?>
+                                </p>
+                            </div>
                         </div>
+                    </a>
                 </div>
-                </a>
-            </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+        </div>
     </div>
-</div>
 </div>
 
 <?php
