@@ -56,10 +56,19 @@ $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
         background-size: auto 100%;
         background-position: center;
         background-repeat: no-repeat;
+        transition: all 300ms;
     }
 
-    .as {
-        background-image: url("asset/images/country/asia.webp");
+    .cnt-card:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .cnt-card:hover .card-name p {
+        color: var(--main);
+    }
+
+    .card-name p {
+        transition: all 300ms;
     }
 
     .card-name {
@@ -70,10 +79,6 @@ $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
         align-items: end;
         color: #fff;
         filter: drop-shadow(5px 5px 5px black);
-    }
-
-    .card-name p {
-        transition: all 100ms;
     }
 
     .cnt-card-cont {
@@ -87,17 +92,16 @@ $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
         transition: all 500ms;
     }
 
-    .cnt-card:hover .cnt-card-cont {
-        top: 0;
-    }
-
-    .cnt-card:hover .card-name p {
-        visibility: hidden;
-    }
-
     .cnt-sec {
         background: url("asset/images/bg/world1.webp");
         background-size: cover;
+    }
+
+    .country-img {
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        object-position: -200px 0;
     }
 </style>
 
@@ -123,17 +127,18 @@ $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-md-6 col-lg-3 p-3">
                     <a href="package.php?country=<?php echo $row['country'] ?>">
                         <div class="cnt-card as">
-                            <div class="card-name">
-                                <p class="sub-heading">
-                                    <?php echo $row['country'] ?>
-                                </p>
-                            </div>
+                            <img class="country-img" src="asset/images/country/<?php echo $row['country'] ?>.webp" <div
+                                class="card-name">
+                            <p class="sub-heading">
+                                <?php echo $row['country'] ?>
+                            </p>
                         </div>
-                    </a>
                 </div>
-            <?php endforeach; ?>
-        </div>
+                </a>
+            </div>
+        <?php endforeach; ?>
     </div>
+</div>
 </div>
 
 <?php

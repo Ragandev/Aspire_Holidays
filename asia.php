@@ -57,10 +57,19 @@ $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
         background-size: auto 100%;
         background-position: center;
         background-repeat: no-repeat;
+        transition: all 300ms;
     }
 
-    .as {
-        background-image: url("asset/images/country/asia.webp");
+    .cnt-card:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .cnt-card:hover .card-name p {
+        color: var(--main);
+    }
+
+    .card-name p {
+        transition: all 300ms;
     }
 
     .card-name {
@@ -73,10 +82,6 @@ $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
         filter: drop-shadow(5px 5px 5px black);
     }
 
-    .card-name p {
-        transition: all 100ms;
-    }
-
     .cnt-card-cont {
         position: absolute;
         height: 100%;
@@ -87,9 +92,17 @@ $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
         top: 450px;
         transition: all 500ms;
     }
+
     .cnt-sec {
         background: url("asset/images/bg/world1.webp");
         background-size: cover;
+    }
+
+    .country-img {
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        object-position: -200px 0;
     }
 </style>
 
@@ -112,9 +125,11 @@ $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
                 echo '<h3 class="text-center text-warning">No packages found</h3>';
             }
             foreach ($country as $row): ?>
-                <div class="col-md-6 col-lg-3 p-3">
+                <div class="col-md-6 col-lg-3 p-3 country-col">
                     <a href="package.php?country=<?php echo $row['country'] ?>">
                         <div class="cnt-card as">
+                            <img class="country-img" src="asset/images/country/<?php echo $row['country'] ?>.webp"
+                                alt="country images">
                             <div class="card-name">
                                 <p class="mini-heading">
                                     <?php echo $row['country'] ?>

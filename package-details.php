@@ -54,6 +54,12 @@ if (!$package) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   <style>
+    /* Country Flag Position */
+    .iti--allow-dropdown .iti__flag-container,
+    .iti--separate-dial-code .iti__flag-container {
+      margin-top: 38px !important;
+    }
+
     .social1 {
       margin-right: 20px;
       display: flex;
@@ -281,12 +287,8 @@ if (!$package) {
               Packages
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../package.php">All Packages</a></li>
-              <li><a class="dropdown-item" href="../package.php?cat=1">International</a></li>
+              <li><a class="dropdown-item" href="../continental.php">International</a></li>
               <li><a class="dropdown-item" href="../package.php?cat=2">Domestic</a></li>
-              <li><a class="dropdown-item" href="../package.php?sub=1">Educational</a></li>
-              <li><a class="dropdown-item" href="../package.php?sub=2">Honeymoon</a></li>
-              <li><a class="dropdown-item" href="../package.php?sub=3">Cruises</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -607,10 +609,8 @@ if (!$package) {
                 <div class="add-box">
                   <p class="mini-heading">Address</p>
                   <address>
-                    5A, Munusamy Garden Street, <br />
-                    Behind Audi Car Showroom, <br />
-                    Avinashi Road <br />
-                    Coimbatore 641018.
+                   Second Floor, 
+                    Nagammai Building,<br/> Dr Nanjappa Road, Near Park Gate Roundana, Park Gate, Ram Nagar, Coimbatore, Tamil Nadu 641018
                   </address>
                   <div class="social-icons">
                     <a href="https://www.instagram.com/aspireholidays.in/"><span

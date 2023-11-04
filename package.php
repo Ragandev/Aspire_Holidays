@@ -8,8 +8,8 @@ function generateSlug($text)
   return $slug;
 }
 
-// Pagination Sript
-$perPage = 10; // Number of packages per page
+// Pagination Route
+$perPage = 10;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $offset = ($page - 1) * $perPage;
 
@@ -127,14 +127,9 @@ for ($i = 0; $i < $dataCount - 1; $i++) {
   }
 }
 
-
-// Base SQL query
+// Filters 
 $countSql = "SELECT COUNT(*) FROM package WHERE 1=1 AND status=1";
-
-// Array to hold conditions
 $conditions = array();
-
-// Parameters to bind
 $params = array();
 
 if (isset($_GET['world']) && $_GET['world'] !== "") {
@@ -272,9 +267,7 @@ include("common/header.php");
               <select name="country" id="" onchange="this.form.submit()">
                 <option value="">All Destination</option>
                 <?php
-                $selectedCountry = $_GET['country']; // Get the selected country from the URL
-                
-                // Define an array of countries
+                $selectedCountry = $_GET['country'];
                 $countries = [
                   'Thailand',
                   'Malaysia',
@@ -351,10 +344,8 @@ include("common/header.php");
                   'Spain',
                   'Switzerland'
                 ];
-
-                // Loop through the countries and create an option for each
                 foreach ($countries as $country) {
-                  $selected = ($selectedCountry === $country) ? 'selected' : ''; // Check if this is the selected country
+                  $selected = ($selectedCountry === $country) ? 'selected' : '';
                   echo '<option ' . $selected . ' value="' . $country . '">' . $country . '</option>';
                 }
                 ?>
@@ -562,6 +553,7 @@ include("common/header.php");
 
 
 <script>
+  // Pagination Script 
   let package = <?php echo $totalCount ?>;
   let pages = Math.ceil(package / 10);
   let currentPage = <?php echo $page; ?>;
@@ -582,7 +574,7 @@ include("common/header.php");
     const link = document.createElement('a');
     link.classList.add('pagination');
 
-    // Use JavaScript to handle navigation
+
     link.addEventListener('click', () => {
       const queryParams = new URLSearchParams(window.location.search);
       queryParams.set('page', pageNumber);
@@ -593,7 +585,6 @@ include("common/header.php");
     return link;
   }
 
-  // Show the current page with two pages before and two pages after it
   let startPage = currentPage - 1;
   let endPage = currentPage + 1;
 
@@ -607,7 +598,7 @@ include("common/header.php");
     startPage = Math.max(endPage - 1, 1);
   }
 
-  if(currentPage != 1){
+  if (currentPage != 1) {
     pagesBox.appendChild(createPaginationButton('<<', 1));
   }
 
@@ -617,8 +608,7 @@ include("common/header.php");
   }
 
   // Page Buttons
-  
-    pagesBox.appendChild(createPaginationButton(currentPage, currentPage));
+  pagesBox.appendChild(createPaginationButton(currentPage, currentPage));
 
 
   // Next Button
@@ -626,10 +616,11 @@ include("common/header.php");
     pagesBox.appendChild(createPaginationButton('>', currentPage + 1));
   }
 
-  if(currentPage != pages){
+  if (currentPage != pages) {
     pagesBox.appendChild(createPaginationButton('>>', pages));
-}
+  }
 
+  // Price Range Input 
   const rangeInput = document.getElementById('amount');
   const currentValueDisplay = document.getElementById('amount-val');
 
@@ -639,11 +630,6 @@ include("common/header.php");
     currentValueDisplay.textContent = `${currentValue}`;
   });
 </script>
-
-
-
-
-
 
 <?php
 include("common/footer.php");
