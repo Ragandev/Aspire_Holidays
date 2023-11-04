@@ -1,3 +1,4 @@
+<?php error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);?>
 <html lang="en">
 
 <head>
@@ -104,12 +105,8 @@
               Packages
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="package.php">All Packages</a></li>
-              <li><a class="dropdown-item" href="package.php?cat=1">International</a></li>
+              <li><a class="dropdown-item" href="continental.php">International</a></li>
               <li><a class="dropdown-item" href="package.php?cat=2">Domestic</a></li>
-              <li><a class="dropdown-item" href="package.php?sub=1">Educational</a></li>
-              <li><a class="dropdown-item" href="package.php?sub=2">Honeymoon</a></li>
-              <li><a class="dropdown-item" href="package.php?sub=3">Cruises</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -124,13 +121,7 @@
 
         </ul>
         <div>
-          <!--             <div class="sm"><a class=" sm1" href="https://wa.me/+919362266666"><i class="fa-brands fa-whatsapp"></i></a></div>-->
-          <!--             <div class="insta"><a class="sm1" href="https://www.instagram.com/aspireholidays.in/"><i class="fa-brands fa-instagram"></i></a>-->
-          <!--</div>-->
-          <!--             <div class="sm"><a class="sm1" href="https://facebook.com/aspireholidays"><i class="fa-brands fa-facebook-f"></i></a></div>-->
-          <!--             <div class="youtube"><a class="sm1" href="https://www.youtube.com/@AspireHolidays"><i class="fa-brands fa-youtube"></i></a></div>-->
-          <!--             <div class="sm"><a class="sm1" href="https://www.linkedin.com/in/aspire-holidays-52b626144/?originalSubdomain=in"><i class="fa-brands fa-linkedin"></i></a></div>-->
-          <!--             <div class="sm"><a class="sm1" href="https://twitter.com/aspireholidays"><i class="fa-brands fa-twitter"></i></a></div>-->
+
 
           <div class="social1">
             <a class="sm1" href="https://facebook.com/aspireholidays">
@@ -147,13 +138,6 @@
             </a>
           </div>
 
-
-
-          <!--<img  src="asset/images/others/Instagram.png">-->
-          <!--     <img class="sm" src="asset/images/others/Linkdin.png">-->
-          <!--     <img class="sm" src="asset/images/others/Whatsapp.png">-->
-          <!--     <img class="sm" src="asset/images/others/Twitter.png">-->
-          <!--     <img class="sm" src="asset/images/others/Youtube.png">-->
         </div>
       </div>
     </div>

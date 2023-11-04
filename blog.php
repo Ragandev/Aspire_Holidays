@@ -1,6 +1,7 @@
 <?php
 // Including the database connection configuration
 require('config.php');
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
 function generateSlug($text) {
     $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $text)));

@@ -87,47 +87,93 @@
                     <label for="">Country <span class='text-danger'>*</span></label>
                     <select required name="country" id="country" class="form-control">
                         <option value="">country</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Austria">Austria</option>
-                        <option value="Bangladesh">Bangladesh</option>
-                        <option value="Belgium">Belgium</option>
-                        <option value="Brazil">Brazil</option>
-                        <option value="Canada">Canada</option>
-                        <option value="China">China</option>
-                        <option value="Denmark">Denmark</option>
-                        <option value="Egypt">Egypt</option>
-                        <option value="France">France</option>
-                        <option value="Germany">Germany</option>
-                        <option value="India">India</option>
-                        <option value="Indonesia">Indonesia</option>
-                        <option value="Italy">Italy</option>
-                        <option value="Japan">Japan</option>
-                        <option value="Malaysia">Malaysia</option>
-                        <option value="Maldives">Maldives</option>
-                        <option value="Mexico">Mexico</option>
-                        <option value="Nepal">Nepal</option>
-                        <option value="New Zealand">New Zealand</option>
-                        <option value="Nicaragua">Nicaragua</option>
-                        <option value="Pakistan">Pakistan</option>
-                        <option value="Panama">Panama</option>
-                        <option value="Philippines">Philippines</option>
-                        <option value="Poland">Poland</option>
-                        <option value="Portugal">Portugal</option>
-                        <option value="Qatar">Qatar</option>
-                        <option value="Russian Federation">Russia</option>
-                        <option value="Saudi Arabia">Saudi Arabia</option>
-                        <option value="Singapore">Singapore</option>
-                        <option value="South Africa">South Africa</option>
-                        <option value="Spain">Spain</option>
-                        <option value="Sri Lanka">Sri Lanka</option>
-                        <option value="Sweden">Sweden</option>
-                        <option value="Switzerland">Switzerland</option>
-                        <option value="Thailand">Thailand</option>
-                        <option value="Ukraine">Ukraine</option>
-                        <option value="United Arab Emirates">United Arab Emirates</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="United States">United States</option>
-                        <option value="Venezuela">Venezuela</option>
+                <?php
+                $selectedCountry = $_GET['country']; // Get the selected country from the URL
+                
+                // Define an array of countries
+                $countries = array(
+                  'Thailand',
+                  'Malaysia',
+                  'Singapore',
+                  'Malaysia',
+                  'Singapore',
+                  'Bali',
+                  'Philippines',
+                  'China',
+                  'Hong Kong',
+                  'Japan',
+                  'Taiwan',
+                  'Kazakhstan',
+                  'South Korea',
+                  'Uzbekistan',
+                  'Vietnam',
+                  'Cambodia',
+                  'Vietnam',
+                  'Cambodia',
+                  'Sri Lanka',
+                  'Azerbaijan',
+                  'Indonesia',
+                  'Maldives',
+                  'Myanmar',
+                  'Bhutan',
+                  'Nepal',
+                  'Georgia',
+                  'Armenia',
+                  'Mongolia',
+                  'Australia',
+                  'New Zealand',
+                  'Fiji',
+                  'Turkey',
+                  'Israel',
+                  'Jordan',
+                  'Oman',
+                  'Egypt',
+                  'Qatar',
+                  'Saudi',
+                  'United Arab Emirates',
+                  'Kenya',
+                  'Morocco',
+                  'Mauritius',
+                  'Seychelles',
+                  'Zimbabwe',
+                  'Madagascar',
+                  'Tanzania',
+                  'South Africa',
+                  'Alaska',
+                  'Canada',
+                  'USA',
+                  'South America',
+                  'Austria',
+                  'Belgium',
+                  'Bulgaria',
+                  'Croatia',
+                  'Czech',
+                  'Denmark',
+                  'Finland',
+                  'France',
+                  'Germany',
+                  'Greece',
+                  'Greenland',
+                  'Hungary',
+                  'Iceland',
+                  'Ireland',
+                  'Italy',
+                  'Netherlands',
+                  'Norway',
+                  'Portugal',
+                  'Romania',
+                  'Sweden',
+                  'UK',
+                  'Spain',
+                  'Switzerland'
+                );
+
+                // Loop through the countries and create an option for each
+                foreach ($countries as $country) {
+                  $selected = ($selectedCountry === $country) ? 'selected' : ''; // Check if this is the selected country
+                  echo '<option ' . $selected . ' value="' . $country . '">' . $country . '</option>';
+                }
+                ?>
                     </select>
                 </div>
             </div>
@@ -263,6 +309,7 @@
             let inputCount = 1;
         
             CKEDITOR.replace('content');
+            CKEDITOR.replace('highlights');
             CKEDITOR.replace('days[]');
     
             addInputButton.addEventListener('click', function() {

@@ -112,47 +112,93 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
                     <label for="">Country <span class='text-danger'>*</span></label>
                     <select name="country" id="country" class="form-control" required>
                         <option value="">country</option>
-                        <option value="Australia" <?php if ($blog['country'] === 'Australia') { echo 'selected'; } ?>>Australia</option>
-                        <option value="Austria" <?php if ($blog['country'] === 'Austria') { echo 'selected'; } ?>>Austria</option>
-                        <option value="Bangladesh" <?php if ($blog['country'] === 'Bangladesh') { echo 'selected'; } ?>>Bangladesh</option>
-                        <option value="Belgium" <?php if ($blog['country'] === 'Belgium') { echo 'selected'; } ?>>Belgium</option>
-                        <option value="Brazil" <?php if ($blog['country'] === 'Brazil') { echo 'selected'; } ?>>Brazil</option>
-                        <option value="Canada" <?php if ($blog['country'] === 'Canada') { echo 'selected'; } ?>>Canada</option>
-                        <option value="China" <?php if ($blog['country'] === 'China') { echo 'selected'; } ?>>China</option>
-                        <option value="Denmark" <?php if ($blog['country'] === 'Denmark') { echo 'selected'; } ?>>Denmark</option>
-                        <option value="Egypt" <?php if ($blog['country'] === 'Egypt') { echo 'selected'; } ?>>Egypt</option>
-                        <option value="France" <?php if ($blog['country'] === 'France') { echo 'selected'; } ?>>France</option>
-                        <option value="Germany" <?php if ($blog['country'] === 'Germany') { echo 'selected'; } ?>>Germany</option>
-                        <option value="India" <?php if ($blog['country'] === 'India') { echo 'selected'; } ?>>India</option>
-                        <option value="Indonesia" <?php if ($blog['country'] === 'Indonesia') { echo 'selected'; } ?>>Indonesia</option>
-                        <option value="Italy" <?php if ($blog['country'] === 'Italy') { echo 'selected'; } ?>>Italy</option>
-                        <option value="Japan" <?php if ($blog['country'] === 'Japan') { echo 'selected'; } ?>>Japan</option>
-                        <option value="Malaysia" <?php if ($blog['country'] === 'Malaysia') { echo 'selected'; } ?>>Malaysia</option>
-                        <option value="Maldives" <?php if ($blog['country'] === 'Maldives') { echo 'selected'; } ?>>Maldives</option>
-                        <option value="Mexico" <?php if ($blog['country'] === 'Mexico') { echo 'selected'; } ?>>Mexico</option>
-                        <option value="Nepal" <?php if ($blog['country'] === 'Nepal') { echo 'selected'; } ?>>Nepal</option>
-                        <option value="New Zealand" <?php if ($blog['country'] === 'New Zealand') { echo 'selected'; } ?>>New Zealand</option>
-                        <option value="Nicaragua" <?php if ($blog['country'] === 'Nicaragua') { echo 'selected'; } ?>>Nicaragua</option>
-                        <option value="Pakistan" <?php if ($blog['country'] === 'Pakistan') { echo 'selected'; } ?>>Pakistan</option>
-                        <option value="Panama" <?php if ($blog['country'] === 'Panama') { echo 'selected'; } ?>>Panama</option>
-                        <option value="Philippines" <?php if ($blog['country'] === 'Philippines') { echo 'selected'; } ?>>Philippines</option>
-                        <option value="Poland" <?php if ($blog['country'] === 'Poland') { echo 'selected'; } ?>>Poland</option>
-                        <option value="Portugal" <?php if ($blog['country'] === 'Portugal') { echo 'selected'; } ?>>Portugal</option>
-                        <option value="Qatar" <?php if ($blog['country'] === 'Qatar') { echo 'selected'; } ?>>Qatar</option>
-                        <option value="Russian Federation" <?php if ($blog['country'] === 'Russian Federation') { echo 'selected'; } ?>>Russia</option>
-                        <option value="Saudi Arabia" <?php if ($blog['country'] === 'Saudi Arabia') { echo 'selected'; } ?>>Saudi Arabia</option>
-                        <option value="Singapore" <?php if ($blog['country'] === 'Singapore') { echo 'selected'; } ?>>Singapore</option>
-                        <option value="South Africa" <?php if ($blog['country'] === 'South Africa') { echo 'selected'; } ?>>South Africa</option>
-                        <option value="Spain" <?php if ($blog['country'] === 'Spain') { echo 'selected'; } ?>>Spain</option>
-                        <option value="Sri Lanka" <?php if ($blog['country'] === 'Sri Lanka') { echo 'selected'; } ?>>Sri Lanka</option>
-                        <option value="Sweden" <?php if ($blog['country'] === 'Sweden') { echo 'selected'; } ?>>Sweden</option>
-                        <option value="Switzerland" <?php if ($blog['country'] === 'Switzerland') { echo 'selected'; } ?>>Switzerland</option>
-                        <option value="Thailand" <?php if ($blog['country'] === 'Thailand') { echo 'selected'; } ?>>Thailand</option>
-                        <option value="Ukraine" <?php if ($blog['country'] === 'Ukraine') { echo 'selected'; } ?>>Ukraine</option>
-                        <option value="United Arab Emirates" <?php if ($blog['country'] === 'United Arab Emirates') { echo 'selected'; } ?>>United Arab Emirates</option>
-                        <option value="United Kingdom" <?php if ($blog['country'] === 'United Kingdom') { echo 'selected'; } ?>>United Kingdom</option>
-                        <option value="United States" <?php if ($blog['country'] === 'United States') { echo 'selected'; } ?>>United States</option>
-                        <option value="Venezuela" <?php if ($blog['country'] === 'Venezuela') { echo 'selected'; } ?>>Venezuela</option>
+                <?php
+                $selectedCountry = $blog['country']; // Get the selected country from the URL
+                
+                // Define an array of countries
+                $countries = array(
+                  'Thailand',
+                  'Malaysia',
+                  'Singapore',
+                  'Malaysia',
+                  'Singapore',  
+                  'Bali',
+                  'Philippines',
+                  'China',
+                  'Hong Kong',
+                  'Japan',
+                  'Taiwan',
+                  'Kazakhstan',
+                  'South Korea',
+                  'Uzbekistan',
+                  'Vietnam',
+                  'Cambodia',
+                  'Vietnam',
+                  'Cambodia',
+                  'Sri Lanka',
+                  'Azerbaijan',
+                  'Maldives',
+                  'Myanmar',
+                  'Bhutan',
+                  'Indonesia',
+                  'Nepal',
+                  'Georgia',
+                  'Armenia',
+                  'Mongolia',
+                  'Australia',
+                  'New Zealand',
+                  'Fiji',
+                  'Turkey',
+                  'Israel',
+                  'Jordan',
+                  'Oman',
+                  'Egypt',
+                  'Qatar',
+                  'Saudi',
+                  'United Arab Emirates',
+                  'Kenya',
+                  'Morocco',
+                  'Mauritius',
+                  'Seychelles',
+                  'Zimbabwe',
+                  'Madagascar',
+                  'Tanzania',
+                  'South Africa',
+                  'Alaska',
+                  'Canada',
+                  'USA',
+                  'South America',
+                  'Austria',
+                  'Belgium',
+                  'Bulgaria',
+                  'Croatia',
+                  'Czech',
+                  'Denmark',
+                  'Finland',
+                  'France',
+                  'Germany',
+                  'Greece',
+                  'Greenland',
+                  'Hungary',
+                  'Iceland',
+                  'Ireland',
+                  'Italy',
+                  'Netherlands',
+                  'Norway',
+                  'Portugal',
+                  'Romania',
+                  'Sweden',
+                  'UK',
+                  'Spain',
+                  'Switzerland'
+                );
+
+                // Loop through the countries and create an option for each
+                foreach ($countries as $country) {
+                  $selected = ($selectedCountry === $country) ? 'selected' : ''; // Check if this is the selected country
+                  echo '<option ' . $selected . ' value="' . $country . '">' . $country . '</option>';
+                }
+                ?>
                     </select>
                 </div>
             </div>
@@ -292,6 +338,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
             let inputCount = inputContainer.children.length;
         
             CKEDITOR.replace('content');
+            CKEDITOR.replace('highlights');
            
             
             Array.from(document.querySelectorAll('textarea[name="days[]"]')).forEach(function(textarea) {
