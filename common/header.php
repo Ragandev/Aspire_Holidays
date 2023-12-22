@@ -106,7 +106,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="continental.php">International</a></li>
-              <li><a class="dropdown-item" href="package.php?cat=2">Domestic</a></li>
+              <li><a class="dropdown-item" href="india.php">Domestic</a></li>
             </ul>
           </li>
           <li class="nav-item">

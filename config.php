@@ -16,16 +16,16 @@
     
     
     // DB Main
-    // $host = 'localhost';
-    // $dbname = 'aspire_website';
-    // $username = 'aspire_website_user';
-    // $password = 'Aspire@123';
+    $host = 'localhost';
+    $dbname = 'aspire_website';
+    $username = 'aspire_website_user';
+    $password = 'Aspire@123';
 
     // DB XAMPP
-    $host = 'localhost';
-    $dbname = 'aspire';
-    $username = 'root';
-    $password = '';
+    // $host = 'localhost';
+    // $dbname = 'aspire';
+    // $username = 'root';
+    // $password = '';
     
     try {
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

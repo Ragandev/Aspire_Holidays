@@ -49,6 +49,11 @@ if (isset($_GET['country']) && $_GET['country'] !== "") {
   $packagesql .= " AND country = :country";
 }
 
+if (isset($_GET['state']) && $_GET['state'] !== "") {
+  $state = $_GET['state'];
+  $packagesql .= " AND state = :state";
+}
+
 if (isset($_GET['cat']) && $_GET['cat'] !== "") {
   $category = $_GET['cat'];
   $packagesql .= " AND categoryid = :category";
@@ -80,6 +85,9 @@ $stmt = $pdo->prepare($packagesql);
 
 if (isset($country)) {
   $stmt->bindParam(':country', $country, PDO::PARAM_STR);
+}
+if (isset($state)) {
+  $stmt->bindParam(':state', $state, PDO::PARAM_STR);
 }
 if (isset($category)) {
   $stmt->bindParam(':category', $category, PDO::PARAM_STR);

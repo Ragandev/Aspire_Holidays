@@ -56,7 +56,7 @@
             <div class="row mb-4">
                <div class="col">
                     <label for="">Category <span class='text-danger'>*</span></label>
-                    <select required name="category" id="" class="form-control">
+                    <select required name="category" id="category" class="form-control">
                         <option value="0">Select Category</option>
                         <?php
                             foreach ($data as $row) {
@@ -113,6 +113,7 @@
                   'Sri Lanka',
                   'Azerbaijan',
                   'Indonesia',
+                  'India',
                   'Maldives',
                   'Myanmar',
                   'Bhutan',
@@ -172,6 +173,56 @@
                 foreach ($countries as $country) {
                   $selected = ($selectedCountry === $country) ? 'selected' : ''; // Check if this is the selected country
                   echo '<option ' . $selected . ' value="' . $country . '">' . $country . '</option>';
+                }
+                ?>
+                    </select>
+                </div>
+                <div class="col d-none">
+                    <label for="">State <span class='text-danger'>*</span></label>
+                    <select required name="state" id="state" class="form-control">
+                        <option value="State">State</option>
+                <?php
+                $selectedState = $_GET['state']; // Get the selected state from the URL
+                
+                // Define an array of states
+                $states = array(
+                    'Tamil Nadu',
+                    'Chhattishgarh',
+                    'Maharashtra',
+                    'Andra Pradesh',
+                    'Arunachal Pradesh',
+                    'Assam',
+                    'Bihar',
+                    'Delhi',
+                    'Goa',
+                    'Gujarat',
+                    'Haryana',
+                    'Himachal Pradesh',
+                    'Jammu & Kashmir',
+                    'Jharkhand',
+                    'Karnataka',
+                    'Kerala',
+                    'Madhya Pradesh',
+                    'Maharashtra',
+                    'Manipur',
+                    'Meghalaya',
+                    'Mizoram',
+                    'Nagaland',
+                    'Orissa',
+                    'Pondichery',
+                    'Punjab',
+                    'Rajasthan',
+                    'Sikkim',
+                    'Uttar Pradesh',
+                    'Tripura',
+                    'Uttarakhand',
+                    'West Bengal'
+                    );
+
+                // Loop through the states and create an option for each
+                foreach ($states as $state) {
+                  $selected = ($selectedState === $state) ? 'selected' : ''; // Check if this is the selected country
+                  echo '<option ' . $selected . ' value="' . $state . '">' . $state . '</option>';
                 }
                 ?>
                     </select>
@@ -329,7 +380,35 @@
             });
         });
 
-    </script>                                                                                                                                                                           
+    </script> 
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const categorySelect = document.getElementById('category');
+        const stateSelect = document.getElementById('state').closest('.col');
+        const countrySelect = document.getElementById('country').closest('.col');
+        function showHide(){
+            if(categorySelect.value == '2'){
+            stateSelect.classList.remove('d-none');
+            countrySelect.classList.add('d-none');
+            document.getElementById('country').value = 'India';
+            document.getElementById('country').removeAttribute('required');
+        }else{
+            countrySelect.classList.remove('d-none');
+            stateSelect.classList.add('d-none');
+            document.getElementById('state').value = 'State';
+            document.getElementById('state').removeAttribute('required');
+        }
+        }
+        
+        
+        categorySelect.addEventListener('change', function() {
+            showHide();
+        });
+        showHide();
+    });
+</script>
+
 
 <?php
     include('common/footer.php');

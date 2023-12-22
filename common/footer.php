@@ -337,12 +337,12 @@
   }
 );
 
-function updateURLWithLocation(latitude, longitude) {
-  var baseUrl = "https://www.aspireholidays.in/";
-  var newURL = baseUrl + "?lat=" + latitude + "&lng=" + longitude;
+// function updateURLWithLocation(latitude, longitude) {
+//   var baseUrl = window.history;
+//   var newURL = baseUrl + "?lat=" + latitude + "&lng=" + longitude;
   
-  window.history.replaceState({}, document.title, newURL);
-}
+//   window.history.replaceState({}, document.title, newURL);
+// }
 
 
     </script>

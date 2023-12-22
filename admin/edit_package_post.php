@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $category = $_POST['category'];
     $amount = $_POST['amount'];
     $country = $_POST['country'];
+    $state = $_POST['state'];
     $metaDescription = $_POST['mdes'];
     $metaKeywords = $_POST['mkey'];
     $content = $_POST['content'];
@@ -65,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $pdo->beginTransaction(); // Start a transaction
 
-        $updatePostQuery = "UPDATE package SET name = :name, categoryid = :catid, amount = :amount, country = :country, mdes = :mdes, mkey = :mkey, content = :content, status = :status, tdays = :tdays, subid = :subid, priority = :priority, quote = :quote, highlights = :highlights ";
+        $updatePostQuery = "UPDATE package SET name = :name, categoryid = :catid, amount = :amount, country = :country, state = :state, mdes = :mdes, mkey = :mkey, content = :content, status = :status, tdays = :tdays, subid = :subid, priority = :priority, quote = :quote, highlights = :highlights ";
 
         if (!empty($img1FileName)) {
             $updatePostQuery .= ", img1 = :img1";
@@ -86,6 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':catid', $category);
         $stmt->bindParam(':amount', $amount);
         $stmt->bindParam(':country', $country);
+        $stmt->bindParam(':state', $state);
         $stmt->bindParam(':mdes', $metaDescription);
         $stmt->bindParam(':mkey', $metaKeywords);
         $stmt->bindParam(':content', $content);

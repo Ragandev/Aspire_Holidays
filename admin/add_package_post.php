@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $category = $_POST['category'];
     $amount = $_POST['amount'];
     $country = $_POST['country'];
+    $state = $_POST['state'];
     $metaDescription = $_POST['mdes'];
     $metaKeywords = $_POST['mkey'];
     $content = $_POST['content'];
@@ -44,14 +45,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $pdo->beginTransaction(); // Start a transaction
 
-        $insertQuery = "INSERT INTO package (categoryid, name, amount, country, mdes, mkey, content, img1, img2, img3, status, tdays, subid, quote, highlights, priority)
-                        VALUES (:categoryid, :name, :amount, :country, :mdes, :mkey, :content, :img1, :img2, :img3, :status, :tdays, :subid, :quote, :highlights, :priority)";
+        $insertQuery = "INSERT INTO package (categoryid, name, amount, country, state, mdes, mkey, content, img1, img2, img3, status, tdays, subid, quote, highlights, priority)
+                        VALUES (:categoryid, :name, :amount, :country, :state, :mdes, :mkey, :content, :img1, :img2, :img3, :status, :tdays, :subid, :quote, :highlights, :priority)";
 
         $stmt = $pdo->prepare($insertQuery);
         $stmt->bindParam(':name', $title);
         $stmt->bindParam(':categoryid', $category);
         $stmt->bindParam(':amount', $amount);
         $stmt->bindParam(':country', $country);
+        $stmt->bindParam(':state', $state);
         $stmt->bindParam(':mdes', $metaDescription);
         $stmt->bindParam(':mkey', $metaKeywords);
         $stmt->bindParam(':content', $content);
