@@ -267,7 +267,7 @@ if (!$blog) {
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="../asset/images/others/logo.webp" alt="aspire_logo" srcset="">
+          <img src="../asset/images/others/logo.webp" alt="aspire_logo" srcset="" title="aspire_logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
           aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -346,7 +346,7 @@ if (!$blog) {
   <div class="pd-main-sec position-relative">
     <div class="container">
       <div class="blog-img">
-        <img class="img-fluid" src="../uploads/blog/<?php echo $blog['img'] ?>" alt="" />
+        <img class="img-fluid" src="../uploads/blog/<?php echo $blog['img'] ?>" alt="blogs" title="blogs" />
       </div>
 
       <div class="detail-box">

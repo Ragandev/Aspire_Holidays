@@ -457,7 +457,7 @@ include("common/header.php");
                   <div class="col-lg-6">
                     <div class="item-img">
                       <a class='text-dark' href="package-details/<?php echo $p['id']; ?>">
-                        <img class="img-fluid" src="uploads/<?php echo $p['img1'] ?>" alt="" srcset="" />
+                        <img class="img-fluid" src="uploads/<?php echo $p['img1'] ?>" alt="package" title="package" srcset="" />
                       </a>
 
 
@@ -508,23 +508,23 @@ include("common/header.php");
                         <div class="in-inner d-flex align-items-center">
 
                           <?php if ($p['visa'] === 1) { ?>
-                            <img class="icons-img" src="asset/icons/visa.png" height="50px" width="50px">
+                            <img class="icons-img" src="asset/icons/visa.png" alt="visa" title="visa" height="50px" width="50px">
                           <?php } ?>
 
                           <?php if ($p['passport'] === 1) { ?>
-                            <img class="icons-img" src="asset/icons/pass.png" height="50px" width="50px">
+                            <img class="icons-img" src="asset/icons/pass.png" alt="passport" title="passport" height="50px" width="50px">
                           <?php } ?>
 
                           <?php if ($p['ticket'] === 1) { ?>
-                            <img class="icons-img" src="asset/icons/ticket.png" height="50px" width="50px">
+                            <img class="icons-img" src="asset/icons/ticket.png"  alt="ticket" title="ticket" height="50px" width="50px">
                           <?php } ?>
 
-                          <?php if ($p['transport'] === 1) { ?>
-                            <img class="icons-img" src="asset/icons/trans.png" height="50px" width="50px">
+                          <?php if ($p['transport'] === 1) { ?> 
+                            <img class="icons-img" src="asset/icons/trans.png"  alt="transport" title="transport" height="50px" width="50px">
                           <?php } ?>
 
                           <?php if ($p['hotel'] === 1) { ?>
-                            <img class="icons-img" src="asset/icons/hotel.png" height="50px" width="50px">
+                            <img class="icons-img" src="asset/icons/hotel.png" alt="hotel" title="hotel" height="50px" width="50px">
                           <?php } ?>
                         </div>
 

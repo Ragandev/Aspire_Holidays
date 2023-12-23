@@ -86,7 +86,7 @@
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="asset/images/others/logo.svg" alt="aspire_logo">
+        <img src="asset/images/others/logo.svg" alt="aspire_logo" title="aspire_logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
         aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">

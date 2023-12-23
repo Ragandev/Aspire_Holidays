@@ -18,8 +18,8 @@
     // DB Main
     $host = 'localhost';
     $dbname = 'aspire_website';
-    $username = 'aspire_website_user';
-    $password = 'Aspire@123';
+    $username = 'root';
+    $password = '';
 
     // DB XAMPP
     // $host = 'localhost';

@@ -133,7 +133,7 @@ if (!$package) {
     }
 
     .form-box {
-      background-image: url("asset/images/others/enquiry-bg.jpg");
+      background-image: url("asset/images/others/enquiry-bg.webp");
     }
 
     .in-icon {
@@ -268,7 +268,7 @@ if (!$package) {
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="../asset/images/others/logo.webp" alt="aspire_logo" srcset="">
+        <img src="../asset/images/others/logo.webp" alt="aspire_logo" srcset="" title="aspire_logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
         aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -327,13 +327,13 @@ if (!$package) {
   <div class="pd-banner-sec">
     <div class="owl-carousel pd-banner owl-theme">
       <div class="item">
-        <img src="../uploads/<?php echo $package['img1'] ?>" alt="" class="img-fluid" />
+        <img src="../uploads/<?php echo $package['img1'] ?>" alt="Package" title="Package" class="img-fluid" />
       </div>
       <div class="item">
-        <img src="../uploads/<?php echo $package['img2'] ?>" alt="" class="img-fluid" />
+        <img src="../uploads/<?php echo $package['img2'] ?>" alt="Package" title="Package" class="img-fluid" />
       </div>
       <div class="item">
-        <img src="../uploads/<?php echo $package['img3'] ?>" alt="" class="img-fluid" />
+        <img src="../uploads/<?php echo $package['img3'] ?>" alt="Package" title="Package" class="img-fluid" />
       </div>
     </div>
     <div class="pd-header container">
@@ -354,7 +354,7 @@ if (!$package) {
 
             <div class="row top-1">
               <div class="col-4">
-                <img class="icons-img" src="../asset/icons/time.png" height="50px" width="50px">
+                <img class="icons-img" alt="Duration" title="Duration" src="../asset/icons/time.png" height="50px" width="50px">
               </div>
               <div class="col-8 in-tit">
                 <p class="para">Duration</p>
@@ -366,8 +366,8 @@ if (!$package) {
 
             <?php if ($package['visa'] === 1) { ?>
               <div class="row top-1">
-                <div class="col-4">
-                  <img class="icons-img" src="../asset/icons/visa.png" height="50px" width="50px">
+                <div class="col-4"> 
+                  <img class="icons-img" alt="Visa" title="Visa" src="../asset/icons/visa.png" height="50px" width="50px">
                 </div>
                 <div class="col-8 in-tit">
                   <p class="para">Visa</p>
@@ -381,7 +381,7 @@ if (!$package) {
             <?php if ($package['passport'] === 1) { ?>
               <div class="row top-1">
                 <div class="col-4">
-                  <img class="icons-img" src="../asset/icons/pass.png" height="50px" width="50px">
+                  <img class="icons-img" alt="Passport" title="Passport" src="../asset/icons/pass.png" height="50px" width="50px">
                 </div>
                 <div class="col-8 in-tit">
                   <p class="para">Passport</p>
@@ -395,7 +395,7 @@ if (!$package) {
             <?php if ($package['ticket'] === 1) { ?>
               <div class="row top-1">
                 <div class="col-4">
-                  <img class="icons-img" src="../asset/icons/ticket.png" height="50px" width="50px">
+                  <img class="icons-img" alt="Ticket" title="Ticket" src="../asset/icons/ticket.png" height="50px" width="50px">
                 </div>
                 <div class="col-8 in-tit">
                   <p class="para">Ticket</p>
@@ -409,7 +409,7 @@ if (!$package) {
             <?php if ($package['transport'] === 1) { ?>
               <div class="row top-1">
                 <div class="col-4">
-                  <img class="icons-img" src="../asset/icons/trans.png" height="50px" width="50px">
+                  <img class="icons-img" alt="Transport" title="Transport" src="../asset/icons/trans.png" height="50px" width="50px">
                 </div>
                 <div class="col-8 in-tit">
                   <p class="para">Transport</p>
@@ -423,7 +423,7 @@ if (!$package) {
             <?php if ($package['hotel'] === 1) { ?>
               <div class="row top-1">
                 <div class="col-4">
-                  <img class="icons-img" src="../asset/icons/hotel.png" height="50px" width="50px">
+                  <img class="icons-img" alt="Hotel" title="Hotel" src="../asset/icons/hotel.png" height="50px" width="50px">
                 </div>
                 <div class="col-8 in-tit">
                   <p class="para">Hotel</p>
@@ -472,7 +472,7 @@ if (!$package) {
 
             <div class="highlights">
               <div class="d-flex align-items-center">
-                <img src="../asset/icons/high.gif" height="50px">
+                <img src="../asset/icons/high.gif" alt="Highlights" title="Highlights" height="50px">
                 <h5><b>Highlights</b></h5>
               </div><br>
               <p>
@@ -697,7 +697,7 @@ if (!$package) {
     <div class="infy-box">
       <a href="#">
         <p>Developed & Maitained By</p>
-        <img src="https://infygain.com/images/logo-alt.svg" alt="Infygain Logo" />
+        <img src="https://infygain.com/images/logo-alt.svg" alt="Infygain Logo" title="Infygain Logo"/>
       </a>
     </div>
   </div>

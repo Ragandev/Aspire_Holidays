@@ -32,11 +32,11 @@ include('common/header.php');
     }
 
     .pr {
-        background-image: url("asset/images/country/pacific.jpg");
+        background-image: url("asset/images/country/pacific.webp");
     }
 
     .me {
-        background-image: url("asset/images/country/east.jpg");
+        background-image: url("asset/images/country/east.webp");
     }
 
     .af {
@@ -44,7 +44,7 @@ include('common/header.php');
     }
 
     .am {
-        background-image: url("asset/images/country/america.jpg");
+        background-image: url("asset/images/country/america.webp");
     }
 
     .eu {
