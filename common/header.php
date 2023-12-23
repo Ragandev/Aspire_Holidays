@@ -27,6 +27,122 @@
   <link rel="stylesheet" href="css/service.css" />
   <link rel="stylesheet" href="css/package-details.css">
 
+  <!-- BreadcrumbList schema  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/", 
+    "@type": "BreadcrumbList", 
+    "itemListElement": [{
+      "@type": "ListItem", 
+      "position": 1, 
+      "name": "Home",
+      "item": "https://aspireholidays.in/"  
+    },{
+      "@type": "ListItem", 
+      "position": 2, 
+      "name": "About",
+      "item": "https://aspireholidays.in/about.php"  
+    },{
+      "@type": "ListItem", 
+      "position": 3, 
+      "name": "International Packages",
+      "item": "https://aspireholidays.in/continental.php"  
+    },{
+      "@type": "ListItem", 
+      "position": 4, 
+      "name": "Domestic Packages",
+      "item": "https://aspireholidays.in/india.php"  
+    },{
+      "@type": "ListItem", 
+      "position": 5, 
+      "name": "Services",
+      "item": "https://aspireholidays.in/service.php"  
+    },{
+      "@type": "ListItem", 
+      "position": 6, 
+      "name": "Blogs",
+      "item": "https://aspireholidays.in/blog.php"  
+    },{
+      "@type": "ListItem", 
+      "position": 7, 
+      "name": "Contact",
+      "item": "https://aspireholidays.in/contact.php"  
+    }]
+  }
+  </script>
+
+  <!-- Organization scehma  -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Corporation",
+    "name": "Aspire Holidays",
+    "alternateName": "Best travel agency in Coimbatore",
+    "url": "https://aspireholidays.in/",
+    "logo": "https://aspireholidays.in/asset/images/others/logo.svg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "9362266666",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": "en"
+    },
+    "sameAs": [
+      "https://facebook.com/aspireholidays",
+      "https://www.instagram.com/aspireholidays.in/",
+      "https://www.youtube.com/@AspireHolidays",
+      "https://aspireholidays.in/"
+    ]
+  }
+  </script>
+
+  <!-- Local Business  -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Aspire Holidays",
+    "image": "https://aspireholidays.in/asset/images/others/logo.svg",
+    "@id": "",
+    "url": "https://aspireholidays.in/",
+    "telephone": "9362266666",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Second Floor, Nagammai Building, Dr Nanjappa Road, Near Park Gate Roundana, Park Gate, Ram Nagar",
+      "addressLocality": "Coimbatore",
+      "postalCode": "641018",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 11.0014944,
+      "longitude": 76.9627405
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "sameAs": [
+      "https://facebook.com/aspireholidays",
+      "https://www.instagram.com/aspireholidays.in/",
+      "https://www.youtube.com/@AspireHolidays",
+      "https://www.linkedin.com/in/aspire-holidays-52b626144/?originalSubdomain=in",
+      "https://aspireholidays.in/"
+    ] 
+  }
+  </script>
+
+
 </head>
 
 <style>
