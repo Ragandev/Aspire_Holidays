@@ -169,7 +169,7 @@
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="asset/images/others/logo.webp" alt="aspire_logo" srcset="">
+          <img src="asset/images/others/logo.webp" alt="aspire_logo" srcset="" title="aspire_logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -259,7 +259,7 @@
             </div>
             <div class="col-md-12 col-lg-6">
               <div class="service-im-box">
-                <img class="im-1" src="asset/images/others/Image Grp3.webp" alt="" />
+                <img class="im-1" src="asset/images/others/Image Grp3.webp" alt="Adventure" title="Adventure"/>
               </div>
             </div>
           </div>
@@ -280,7 +280,7 @@
             <div class="service-sec">
             <div class="ser-box">
             <a href="main-service.php">
-                <img class="img-fluid" src="asset/images/others/passport-icon.webp" />
+                <img class="img-fluid" src="asset/images/others/passport-icon.webp" alt="Passport" title="Passport"/>
             </a>
             </div>
               <h6 class="mini-heading">Passport</h6>
@@ -293,7 +293,7 @@
             <div class="service-sec">
             <div class="ser-box">
             <a href="main-service.php">
-                <img class="img-fluid" src="asset/images/others/Hotel.webp" />
+                <img class="img-fluid" src="asset/images/others/Hotel.webp" alt="Hotel" title="Hotel"/>
             </a></div>
               <h6 class="mini-heading">Hotel</h6>
               <p class="para">
@@ -305,7 +305,7 @@
             <div class="service-sec">
                 <div class="ser-box">
                 <a href="main-service.php">
-                    <img class="img-fluid" src="asset/images/others/visa-1.webp" />
+                    <img class="img-fluid" src="asset/images/others/visa-1.webp"  alt="Visa" title="Visa"/>
                 </a></div>
             <h6 class="mini-heading">Visa</h6>
               <p class="para">
@@ -319,7 +319,7 @@
             <div class="service-sec">
                 <div class="ser-box">
                 <a href="main-service.php">
-              <img class="img-fluid" src="asset/images/others/insurance-icon.webp" />
+              <img class="img-fluid" src="asset/images/others/insurance-icon.webp" alt="Travel Insurance" title="Travel Insurance"/>
               </a></div>
               <h6 class="mini-heading">Travel Insurance</h6>
               <p class="para">
@@ -331,7 +331,7 @@
             <div class="service-sec">
                 <div class="ser-box">
             <a href="main-service.php">
-              <img class="img-fluid" src="asset/images/others/Ticket .webp" />
+              <img class="img-fluid" src="asset/images/others/Ticket .webp"  alt="Ticket" title="Ticket"/>
             </a></div>
               <h6 class="mini-heading">Ticket</h6>
               <p class="para">
@@ -343,7 +343,7 @@
             <div class="service-sec">
                 <div class="ser-box">
                     <a href="main-service.php">
-                    <img class="img-fluid" src="asset/images/others/currency-exchange.png" />
+                    <img class="img-fluid" src="asset/images/others/currency-exchange.png" alt="Currency" title="Currency"/>
                     </a>
                 </div>
               <h6 class="mini-heading">Currency Exchange</h6>
@@ -441,7 +441,7 @@
         <div class="row">
           <div class="col-md-6 bg1">
             <div class="form-img-box">
-              <img class="img-fluid" src="asset/images/others/banner1.webp" />
+              <img class="img-fluid" src="asset/images/others/banner1.webp" alt="contact" title="contact" />
             </div>
           </div>
           <div class="col-md-6">
@@ -472,29 +472,29 @@
       <div class="portfolio-slides container align-items-center justify-content-center">
         <div class="owl-carousel owl-theme port">
           <div class="item">
-            <img src="asset/images/partner_logo_wt/air-asia.webp" alt="" />
+            <img src="asset/images/partner_logo_wt/air-asia.webp" alt="air-asia"  title="air-asia"/>
           </div>
           <div class="item">
-            <img src="asset/images/partner_logo_wt/air-india.webp" alt="" />
+            <img src="asset/images/partner_logo_wt/air-india.webp" alt="air-india"  title="air-india" />
           </div>
           <div class="item">
-            <img src="asset/images/partner_logo_wt/american.webp" alt="" />
+            <img src="asset/images/partner_logo_wt/american.webp" alt="american"  title="american" />
           </div>
           <div class="item">
-            <img src="asset/images/partner_logo_wt/emirates.webp" alt="" />
+            <img src="asset/images/partner_logo_wt/emirates.webp" alt="emirates"  title="emirates" />
           </div>
-          <div class="item"><img src="asset/images/partner_logo_wt/etihad.webp" alt="" /></div>
+          <div class="item"><img src="asset/images/partner_logo_wt/etihad.webp" alt="etihad"  title="etihad" /></div>
           <div class="item">
-            <img src="asset/images/partner_logo_wt/malaysia.webp" alt="" />
+            <img src="asset/images/partner_logo_wt/malaysia.webp" alt="malaysia"  title="malaysia" />
           </div>
-          <div class="item"><img src="asset/images/partner_logo_wt/qatar.webp" alt="" /></div>
+          <div class="item"><img src="asset/images/partner_logo_wt/qatar.webp" alt="qatar"  title="qatar" /></div>
           <div class="item">
-            <img src="asset/images/partner_logo_wt/singapore.webp" alt="" />
+            <img src="asset/images/partner_logo_wt/singapore.webp" alt="singapore"  title="singapore" />
           </div>
           <div class="item">
-            <img src="asset/images/partner_logo_wt/spicejet.webp" alt="" />
+            <img src="asset/images/partner_logo_wt/spicejet.webp" alt="spicejet"  title="spicejet" />
           </div>
-          <div class="item"><img src="asset/images/partner_logo_wt/thai.webp" alt="" /></div>
+          <div class="item"><img src="asset/images/partner_logo_wt/thai.webp" alt="thai"  title="thai" /></div>
         </div>
       </div>
     </section>

@@ -123,7 +123,8 @@
             <img
               class="img-fluid"
               src="asset/images/others/service-couple.webp"
-              alt=""
+              alt="Passport"
+              title="Passport"
             />
           </div>
         </div>
@@ -249,7 +250,8 @@
                 <img
                   class="img-fluid"
                   src="https://img.freepik.com/free-photo/american-visa-document_1101-820.jpg?w=826&t=st=1688707403~exp=1688708003~hmac=25d545761f77006ec1d784d6fbaecddeb785b54363acdaecfd0ab959aacbaa42"
-                  alt=""
+                  alt="Visa"
+                  title="Visa"
                 />
               </div>
             </div>
@@ -307,7 +309,8 @@
                 <img
                   class="img-fluid"
                   src="https://img.freepik.com/free-vector/vintage-golden-cinema-tickets-movie-pass-template_1017-23457.jpg?w=996&t=st=1688707984~exp=1688708584~hmac=9755405ee047924daadd6b6b5adf2d78a911f190006d47ad39d53785427ed5d2"
-                  alt=""
+                  alt="Tickets"
+                  title="Tickets"
                 />
               </div>
             </div>
@@ -393,7 +396,8 @@
                 <img
                   class="img-fluid"
                   src="https://img.freepik.com/free-vector/hotel-building-concept-illustration_114360-14039.jpg?w=740&t=st=1694755998~exp=1694756598~hmac=455ae794d94af5cf6da4e679f3e80eb9facd36b757662b8fb794c3aaae8883cc"
-                  alt=""
+                  alt="Hotel"
+                  title="Hotel"
                 />
               </div>
             </div>
@@ -428,7 +432,8 @@
                 <img
                   class="img-fluid"
                   src="https://img.freepik.com/free-vector/travel-insurance-concept-illustration_114360-9937.jpg?w=740&t=st=1694756562~exp=1694757162~hmac=e316629707bfb9c9bf46759e07658c72b15ee69d1b5c9fe871bcaf5ed602406c"
-                  alt=""
+                  alt="Insurance"
+                  title="Insurance"
                 />
               </div>
             </div>
@@ -467,7 +472,8 @@
                 <img
                   class="img-fluid"
                   src="https://img.freepik.com/free-vector/illustration-characters-exchanging-currency_53876-37251.jpg?w=740&t=st=1688708437~exp=1688709037~hmac=7c271d7780c6708b252e0c66887c2646b3d5b864f766fd0b0fc5070e9a02e1cd"
-                  alt=""
+                  alt="Currency"
+                  title="Currency"
                 />
               </div>
             </div>

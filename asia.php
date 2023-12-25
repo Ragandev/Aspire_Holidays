@@ -128,7 +128,7 @@ $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-md-6 col-lg-3 p-3 country-col">
                     <a href="package.php?country=<?php echo $row['country'] ?>">
                         <div class="cnt-card as">
-                            <img class="country-img" src="asset/images/country/<?php echo $row['country'] ?>.webp"
+                            <img class="country-img" alt="country" title="country" src="asset/images/country/<?php echo $row['country'] ?>.webp"
                                 alt="country images">
                             <div class="card-name">
                                 <p class="mini-heading">

@@ -73,7 +73,7 @@ $data = $package->fetchAll(PDO::FETCH_ASSOC);
               <div class="row">
                 <div class="col-md-4">
                   <div class="blog-img">
-                    <a href="blog_details/<?php echo $b['id']; ?>"><img class="img-fluid" src="uploads/blog/<?php echo $b['img'] ?>" alt="" /></a>
+                    <a href="blog_details/<?php echo $b['id']; ?>"><img class="img-fluid" src="uploads/blog/<?php echo $b['img'] ?>" alt="blogs" title="blogs" /></a>
                   </div>
                 </div>
                 <div class="col-md-8">

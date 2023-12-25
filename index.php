@@ -103,7 +103,7 @@ include("common/header.php");
         <a href="package.php"><button class="btns">More Info</button></a>
       </div>
       <div class="col-md-5">
-        <img class="img-fluid j img-trend d-none d-md-block" src="asset/images/others/worldmap.webp">
+        <img class="img-fluid j img-trend d-none d-md-block" src="asset/images/others/worldmap.webp" alt="worldmap" title="worldmap">
       </div>
     </div>
 
@@ -116,7 +116,7 @@ include("common/header.php");
             <div class="box-inn">
               <div class="row tour tour-box-1">
                 <div class="col-3 icon-box">
-                  <img src="asset/gif/airplane-min.webp" alt="">
+                  <img src="asset/gif/airplane-min.webp" alt="International" title="International">
                 </div>
                 <div class="col-9 txt-box sub-heading">
                   International
@@ -131,7 +131,7 @@ include("common/header.php");
             <div class="box-inn">
               <div class="row tour tour-box-2">
                 <div class="col-3 icon-box">
-                  <img src="asset/gif/train-min.webp" alt="">
+                  <img src="asset/gif/train-min.webp" alt="Domestic" title="Domestic">
                 </div>
                 <div class="col-9 txt-box sub-heading">Domestic</div>
               </div>
@@ -150,7 +150,7 @@ include("common/header.php");
             <div class="box-inn">
               <div class="row tour tour-box-3">
                 <div class="col-3 icon-box">
-                  <img src="asset/gif/education-min.webp" alt="">
+                  <img src="asset/gif/education-min.webp" alt="Educational" title="Educational">
                 </div>
                 <div class="col-9 txt-box sub-heading">
                   Educational
@@ -165,7 +165,7 @@ include("common/header.php");
             <div class="box-inn">
               <div class="row  tour tour-box-4">
                 <div class="col-3 icon-box">
-                  <img src="asset/gif/honeymoon-min.webp" alt="">
+                  <img src="asset/gif/honeymoon-min.webp" alt="Honeymoon" title="Honeymoon">
                 </div>
                 <div class="col-9 txt-box sub-heading">Honeymoon</div>
               </div>
@@ -178,7 +178,7 @@ include("common/header.php");
             <div class="box-inn">
               <div class="row  tour tour-box-5">
                 <div class="col-3 icon-box">
-                  <img src="asset/gif/cruises-min.webp" alt="">
+                  <img src="asset/gif/cruises-min.webp" alt="Cruises" title="Cruises">
                 </div>
                 <div class="col-9 txt-box sub-heading">Cruises</div>
               </div>
@@ -197,7 +197,7 @@ include("common/header.php");
       <div class="owl-carousel trend-package owl-theme">
         <?php foreach ($tdata as $row) { ?>
           <div class="card border-0">
-            <a href="package-details/<?php echo $row['id']; ?>"><img src="uploads/<?php echo $row['img2']; ?>"
+            <a href="package-details/<?php echo $row['id']; ?>"><img alt="Tour Packages" title="Tour Packages" src="uploads/<?php echo $row['img2']; ?>"
                 class="card-img-top"></a>
             <div class="card-body">
               <div class="tit-box">
@@ -210,31 +210,31 @@ include("common/header.php");
               <div class="in-inner d-flex align-items-center">
                 <?php if ($row['visa'] === 1) { ?>
                   <a href="package-details/<?php echo $row['id']; ?>"><img class="img-cover icons-img"
-                      src="asset/icons/visa.png">
+                      src="asset/icons/visa.png" alt="visa" title="visa">
                   <?php } ?>
                 </a>
 
                 <?php if ($row['passport'] === 1) { ?>
                   <a href="package-details/<?php echo $row['id']; ?>"><img class="img-cover icons-img"
-                      src="asset/icons/pass.png">
+                      src="asset/icons/pass.png" alt="passport" title="passport">
                   <?php } ?>
                 </a>
 
                 <?php if ($row['ticket'] === 1) { ?>
                   <a href="package-details/<?php echo $row['id']; ?>"><img class="img-cover icons-img"
-                      src="asset/icons/ticket.png">
+                      src="asset/icons/ticket.png"  alt="ticket" title="ticket">
                   <?php } ?>
                 </a>
 
                 <?php if ($row['transport'] === 1) { ?>
                   <a href="package-details/<?php echo $row['id']; ?>"><img class="img-cover icons-img"
-                      src="asset/icons/trans.png">
+                      src="asset/icons/trans.png"  alt="transport" title="transport">
                   <?php } ?>
                 </a>
 
                 <?php if ($row['hotel'] === 1) { ?>
                   <a href="package-details/<?php echo $row['id']; ?>"><img class="img-cover icons-img"
-                      src="asset/icons/hotel.png">
+                      src="asset/icons/hotel.png"  alt="hotel" title="hotel">
                   <?php } ?>
                 </a>
               </div>
@@ -395,7 +395,7 @@ include("common/header.php");
     <div class="owl-carousel pop-package owl-theme">
       <div class="item">
         <div>
-          <img src="asset/images/others/3bali.jpg" alt="" />
+          <img src="asset/images/others/3bali.webp" alt="Indonesia" title="Indonesia"/>
           <div class="item-cont">
             <p class="mini-heading">Indonesia</p>
             <p>Here is filled with diverse culture and cities</p>
@@ -405,7 +405,7 @@ include("common/header.php");
       </div>
       <div class="item">
         <div>
-          <img src="asset/images/others/Japan.jpg" alt="" />
+          <img src="asset/images/others/Japan.webp" alt="Japan" title="Japan"/>
           <div class="item-cont">
             <p class="mini-heading">Japan</p>
             <p>Here is filled with diverse culture and cities</p>
@@ -424,8 +424,8 @@ include("common/header.php");
     <div class="row about-row">
       <div class="col-md-12 col-lg-6">
         <div class="owl-carousel about-owl owl-theme" data-aos="fade-right" data-aos-duration="1500">
-          <div class="item"><img height="100%" width="auto" src="asset/images/others/girl6.webp" alt=""></div>
-          <div class="item"><img height="100%" width="auto" src="asset/images/others/cap-boy.webp" alt=""></div>
+          <div class="item"><img height="100%" width="auto" src="asset/images/others/girl6.webp" alt="Vacation" title="Vacation"></div>
+          <div class="item"><img height="100%" width="auto" src="asset/images/others/cap-boy.webp"  alt="Vacation" title="Vacation"></div>
         </div>
       </div>
 
@@ -456,34 +456,34 @@ include("common/header.php");
     <div class="partner-box container">
       <div class="owl-carousel partner-slide owl-theme">
         <div class="item p-3">
-          <img class="img-fluid" src="asset/images/partner_logo/airasia-blue.webp" alt="">
+          <img class="img-fluid" src="asset/images/partner_logo/airasia-blue.webp" alt="airasia" title="airasia">
         </div>
         <div class="item p-3">
-          <img class="img-fluid" src="asset/images/partner_logo/airindia-blue.webp" alt="">
+          <img class="img-fluid" src="asset/images/partner_logo/airindia-blue.webp"  alt="airindia" title="airindia">
         </div>
         <div class="item p-3">
-          <img class="img-fluid" src="asset/images/partner_logo/american-blue.webp" alt="">
+          <img class="img-fluid" src="asset/images/partner_logo/american-blue.webp"  alt="american" title="american">
         </div>
         <div class="item p-3">
-          <img class="img-fluid" src="asset/images/partner_logo/emirates-blue.webp" alt="">
+          <img class="img-fluid" src="asset/images/partner_logo/emirates-blue.webp"  alt="emirates" title="emirates">
         </div>
         <div class="item p-3">
-          <img class="img-fluid" src="asset/images/partner_logo/etihad.webp" alt="">
+          <img class="img-fluid" src="asset/images/partner_logo/etihad.webp"  alt="etihad" title="etihad">
         </div>
         <div class="item p-3">
-          <img class="img-fluid" src="asset/images/partner_logo/malaysia-blue.webp" alt="">
+          <img class="img-fluid" src="asset/images/partner_logo/malaysia-blue.webp"  alt="malaysia" title="malaysia">
         </div>
         <div class="item p-3">
-          <img class="img-fluid" src="asset/images/partner_logo/qatar-blue.webp" alt="">
+          <img class="img-fluid" src="asset/images/partner_logo/qatar-blue.webp"  alt="qatar" title="qatar">
         </div>
         <div class="item p-3">
-          <img class="img-fluid" src="asset/images/partner_logo/singapore-blue.webp" alt="">
+          <img class="img-fluid" src="asset/images/partner_logo/singapore-blue.webp"  alt="singapore" title="singapore">
         </div>
         <div class="item p-3">
-          <img class="img-fluid" src="asset/images/partner_logo/spicejet-blue.webp" alt="">
+          <img class="img-fluid" src="asset/images/partner_logo/spicejet-blue.webp"  alt="spicejet" title="spicejet">
         </div>
         <div class="item p-3">
-          <img class="img-fluid" src="asset/images/partner_logo/thai-blue.webp" alt="">
+          <img class="img-fluid" src="asset/images/partner_logo/thai-blue.webp" alt="thai" title="thai">
         </div>
       </div>
     </div>
@@ -505,7 +505,7 @@ include("common/header.php");
         </p>
       </div>
       <div class="col-md-4 d-none d-md-block re-img" data-aos="fade-left" data-aos-duration="1500">
-        <img src="asset/images/others/girl1.webp" alt="">
+        <img src="asset/images/others/girl1.webp" alt="Customer Reviews" title="Customer Reviews">
       </div>
     </div>
   </div>
@@ -519,7 +519,7 @@ include("common/header.php");
         </p>
         <div class="review-person">
           <div class="img-box">
-            <img src="asset/images/others/girl1.webp" alt="" />
+            <img src="asset/images/others/girl1.webp" alt="Customer Reviews" title="Customer Reviews" />
           </div>
           <div class="name-box">
             <p class="mini-heading">JINS JANEL</p>
@@ -535,7 +535,7 @@ include("common/header.php");
         </p>
         <div class="review-person">
           <div class="img-box">
-            <img src="asset/images/others/girl1.webp" alt="" />
+            <img src="asset/images/others/girl1.webp" alt="Customer Reviews" title="Customer Reviews" />
           </div>
           <div class="name-box">
             <p class="mini-heading">Janani Angurajan</p>
@@ -638,7 +638,7 @@ include("common/header.php");
       <div class="mb-5 col-md-12 col-lg-6">
         <div class="data-img" data-aos="fade-left" data-aos-duration="1000">
           <a href="#">
-            <img class="img-fluid" src="asset/images/others/girl3.webp" alt="" />
+            <img class="img-fluid" src="asset/images/others/girl3.webp" alt="Adventure" title="Adventure"/>
           </a>
         </div>
       </div>
@@ -669,8 +669,8 @@ include("common/header.php");
         <div class="col-md-12 col-lg-6  mb-md-5">
           <div class="main-blog-item">
             <div class="blog-img">
-              <a href="blog_details/<?php echo $blogs1['id']; ?>"><img class="img-fluid"
-                  src="uploads/blog/<?php echo $blogs1['img'] ?>" alt="" /></a>
+              <a href="blog_details/<?php echo $blogs1['id']; ?>"><img alt="blog" title="blog" class="img-fluid"
+                  src="uploads/blog/<?php echo $blogs1['img'] ?>"  /></a>
             </div>
             <div class="blog-body">
               <a href="blog_details/<?php echo $blogs1['id']; ?>">
@@ -695,7 +695,7 @@ include("common/header.php");
               <div class="row">
                 <div class="col-md-4">
                   <div class="blog-img">
-                    <a href="blog_details/<?php echo $b['id']; ?>"><img class="img-fluid"
+                    <a href="blog_details/<?php echo $b['id']; ?>"><img alt="blog" title="blog" class="img-fluid"
                         src="uploads/blog/<?php echo $b['img'] ?>" alt="" /></a>
                   </div>
                 </div>

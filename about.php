@@ -56,7 +56,7 @@ require('config.php');
           </div>
           <div class="col-md-6">
             <div class="main-img-box">
-              <img class="img-1 img-fluid" src="asset/images/others/Image Grp3.webp" alt="">
+              <img class="img-1 img-fluid" src="asset/images/others/Image Grp3.webp" alt="About us" title="About us">
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@ require('config.php');
             <div class="service-sec">
             <div class="ser-box">
             <a href="main-service.php">
-                <img class="img-fluid" src="asset/images/others/passport-icon.webp" />
+                <img class="img-fluid" src="asset/images/others/passport-icon.webp" alt="Passport" title="Passport"/>
             </a>
             </div>
               <h6 class="mini-heading">Passport</h6>
@@ -97,7 +97,7 @@ require('config.php');
             <div class="service-sec">
             <div class="ser-box">
             <a href="main-service.php">
-                <img class="img-fluid" src="asset/images/others/Hotel.webp" />
+                <img class="img-fluid" src="asset/images/others/Hotel.webp" alt="Hotel" title="Hotel"/>
             </a></div>
               <h6 class="mini-heading">Hotel</h6>
               <p class="para">
@@ -109,7 +109,7 @@ require('config.php');
             <div class="service-sec">
                 <div class="ser-box">
                 <a href="main-service.php">
-                    <img class="img-fluid" src="asset/images/others/visa-1.webp" />
+                    <img class="img-fluid" src="asset/images/others/visa-1.webp" alt="Visa" title="Visa"/>
                 </a></div>
             <h6 class="mini-heading">Visa</h6>
               <p class="para">
@@ -123,7 +123,7 @@ require('config.php');
             <div class="service-sec">
                 <div class="ser-box">
                 <a href="main-service.php">
-              <img class="img-fluid" src="asset/images/others/insurance-icon.webp" />
+              <img class="img-fluid" src="asset/images/others/insurance-icon.webp" alt="Travel Insurance" title="Travel Insurance"/>
               </a></div>
               <h6 class="mini-heading">Travel Insurance</h6>
               <p class="para">
@@ -135,7 +135,7 @@ require('config.php');
             <div class="service-sec">
                 <div class="ser-box">
             <a href="main-service.php">
-              <img class="img-fluid" src="asset/images/others/Ticket .webp" />
+              <img class="img-fluid" src="asset/images/others/Ticket .webp" alt="Ticket" title="Ticket"/>
             </a></div>
               <h6 class="mini-heading">Ticket</h6>
               <p class="para">
@@ -147,7 +147,7 @@ require('config.php');
             <div class="service-sec">
                 <div class="ser-box">
                     <a href="main-service.php">
-                    <img class="img-fluid" src="asset/images/others/currency-exchange-removebg-preview.png" />
+                    <img class="img-fluid" src="asset/images/others/currency-exchange-removebg-preview.webp" alt="Currency Exchange" title="Currency Exchange" />
                     </a>
                 </div>
               <h6 class="mini-heading">Currency Exchange</h6>
@@ -162,7 +162,7 @@ require('config.php');
         <div class="row align-items-center ">
           <div class="col-md-3 col-sm-12 mb-md-0 mb-sm-4 test">
             <div class="ran">
-              <img class="" height="300px" src="asset/images/others/bali1.webp" alt="">
+              <img class="" height="300px" src="asset/images/others/bali1.webp" alt="dream vacation" title="dream vacation">
             </div>
           </div>
          <div class=" col-md-9 col-sm-12 book-sec">
@@ -187,7 +187,7 @@ require('config.php');
   
           <div class="col-md-6">
             <div class="abouttesti">
-                <img class="img-fluid" src="asset/images/others/customer.webp" alt="">
+                <img class="img-fluid" src="asset/images/others/customer.webp" alt="Customers" title="Customers">
             </div>
           </div>
           <div class="col-md-6">
@@ -199,7 +199,7 @@ require('config.php');
                   <div class="row align-items-center">
                     <div class="col-3">
                       <div class="imgbox">
-                        <img class="" src="asset/images/others/girl1.webp" alt="">
+                        <img class="" src="asset/images/others/girl1.webp" alt="Feedback" title="Feedback">
                       </div>
                     </div>
                     <div class="col-9">
@@ -215,7 +215,7 @@ require('config.php');
                   <div class="row align-items-center">
                     <div class="col-3">
                       <div class="imgbox">
-                        <img class="" src="asset/images/others/girl1.webp" alt="">
+                        <img class="" src="asset/images/others/girl1.webp" alt="Feedback" title="Feedback">
                       </div>
                     </div>
                     <div class="col-9">
@@ -235,25 +235,25 @@ require('config.php');
               <div class="row">
                 <div class="col-md-6">
                   <div class="abouttesti">
-                    <img class="img-fluid" src="asset/images/others/bali2.webp" alt="">
+                    <img class="img-fluid" src="asset/images/others/bali2.webp" alt="Satisfied Customers" title="Satisfied Customers">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="testbox">
                     <div class="row">
                       <div class="col-md-6">
-                        <img class="img-fluid" src="asset/images/others/bali3.webp" alt="">
+                        <img class="img-fluid" src="asset/images/others/bali3.webp" alt="Satisfied Customers" title="Satisfied Customers">
                       </div>
                       <div class="col-md-6">
-                        <img class="img-fluid" src="asset/images/others/bali4.webp" alt="">
+                        <img class="img-fluid" src="asset/images/others/bali4.webp" alt="Satisfied Customers" title="Satisfied Customers">
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-6">
-                        <img class="img-fluid" src="asset/images/others/kerala.webp" alt="">
+                        <img class="img-fluid" src="asset/images/others/kerala.webp" alt="Satisfied Customers" title="Satisfied Customers">
                       </div>
                       <div class="col-md-6">
-                        <img class="img-fluid" src="asset/images/others/customer1.webp" alt="">
+                        <img class="img-fluid" src="asset/images/others/customer1.webp" alt="Satisfied Customers" title="Satisfied Customers">
                       </div>
                     </div>
                   </div>
@@ -286,7 +286,7 @@ require('config.php');
                 ?>
           <div class="col-md-6 mb-3">
             <div class="abt-blog-box">
-              <img class="img-fluid" src="uploads/blog/<?php echo $b['img'] ?>" alt="">
+              <img class="img-fluid" src="uploads/blog/<?php echo $b['img'] ?>" alt="True Roaming Tales" title="True Roaming Tales">
               <div class="cont">
                 <a href="blog_details/<?php echo $b['id']; ?>" class="date-btn"><?php echo $formattedDate1 ?></a>
                 <p class="mini-heading"><?php echo $b['name'] ?></p>

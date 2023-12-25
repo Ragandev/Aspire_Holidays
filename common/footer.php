@@ -130,7 +130,7 @@
     <div class="infy-box">
       <a href="https://infygain.com/">
         <p>Developed & Maitained By</p>
-        <img src="https://infygain.com/images/logo-alt.svg" alt="Infygain Logo" />
+        <img src="https://infygain.com/images/logo-alt.svg" alt="Infygain Logo" title="Infygain Logo" />
       </a>
     </div>
   </div>

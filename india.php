@@ -136,7 +136,7 @@ $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
                     <a href="package.php?state=<?php echo $row['state'] ?>">
                         <div class="cnt-card as">
                             <img class="country-img" src="asset/images/state/<?php echo $row['state'] ?>.webp"
-                                alt="state images">
+                                alt="state images" title="state images">
                             <div class="card-name">
                                 <p class="mini-heading">
                                     <?php echo $row['state'] ?>
