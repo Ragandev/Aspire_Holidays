@@ -261,7 +261,214 @@ if (!$blog) {
     }
   </style>
 
+<style>
+  /* Submenu Style  */
+  .sub-menu-box {
+    position: absolute;
+    top: 0;
+    left: 160px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .sub-menu-box ul {
+    padding-left: 20px;
+  }
+
+  .sub-menu-box ul li {
+    margin-bottom: 5px;
+  }
+
+  .sub-menu-box .col-3 {
+    width: fit-content;
+  }
+
+  .sub-menu-box .row {
+    width: fit-content;
+  }
+
+  .sub-menu-row {
+    flex-wrap: nowrap;
+  }
+
+  .continetal-bx,
+  .india-bx {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .cbox1:hover .continetal-bx,
+  .cbox2:hover .india-bx {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .india-bx .col-12 {
+    width: fit-content;
+    white-space: nowrap;
+  }
+
+  .cm-ul a {
+    color: black;
+    font-weight: 400;
+  }
+  .cm-ul a:hover {
+    color: #f0870d !important;
+    font-weight: 400;
+  }
+</style>
+
 </head>
+
+<?php
+  require('config.php');
+
+  // <!-- Get Packages  -->
+  $eastSql = "SELECT DISTINCT country FROM `package` WHERE country IN('Turkey',
+'Israel',
+'jordan',
+'Oman',
+'Egypt',
+'Qatar',
+'Saudi',
+'United Arab Emirates'
+)";
+  $eastStmt = $pdo->prepare($eastSql);
+  $eastStmt->execute();
+  $east = $eastStmt->fetchAll(PDO::FETCH_ASSOC);
+
+  $africaSql = "SELECT DISTINCT country FROM `package` WHERE country IN(
+  'Kenya',
+  'Morocco',
+  'Mauritius',
+  'Seyschells', 
+  'zimbave',
+  'Madagascar',
+  'Tanzania',
+  'Southafrica'
+  )";
+  $africaStmt = $pdo->prepare($africaSql);
+  $africaStmt->execute();
+  $africa = $africaStmt->fetchAll(PDO::FETCH_ASSOC);
+
+  $americaSql = "SELECT DISTINCT country FROM `package` WHERE country IN(
+    'alaska',
+    'Canada',
+    'USA',
+    'Southamerica'
+    )";
+  $americaStmt = $pdo->prepare($americaSql);
+  $americaStmt->execute();
+  $america = $americaStmt->fetchAll(PDO::FETCH_ASSOC);
+
+  $asiaSql = "SELECT DISTINCT country FROM `package` WHERE country IN('Thailand', 'malaysia','Singapore','Malaysia',
+    'Singapore',
+    'Bali',
+    'Philipines',
+    'China',
+    'Hongkong',
+    'Indonesia',
+    'Japan',
+    'Taiwan',
+    'kazakhasthan',
+    'southkorea',
+    'uzbekisthan',
+    'vietnam',
+    'combodia',
+    'vietnam',
+    'combodia',
+    'srilanka',
+    'azerbijian',
+    'Maldives',
+    'Mynmar',
+    'bhutan',
+    'nepal',
+    'Georgia',
+    'Armenia',
+    'Mongolia')";
+  $asiaStmt = $pdo->prepare($asiaSql);
+  $asiaStmt->execute();
+  $asia = $asiaStmt->fetchAll(PDO::FETCH_ASSOC);
+
+  $europeSql = "SELECT DISTINCT country FROM `package` WHERE country IN(
+      'Austria',
+      'Belgium',
+      'Bulgaria',
+      'Crotia',
+      'Czech',
+      'Denmark',
+      'Finland',
+      'France',
+      'Germany',
+      'Greece',
+      'Geenland',
+      'Hungary',
+      'Iceland',
+      'Ireland',
+      'Italy',
+      'Netherland',
+      'Norway',
+      'Portugal',
+      'Romania',
+      'Sweden',
+      'UK',
+      'Spain',
+      'Switzerland'
+      
+      )";
+  $europeStmt = $pdo->prepare($europeSql);
+  $europeStmt->execute();
+  $europe = $europeStmt->fetchAll(PDO::FETCH_ASSOC);
+
+  $pacificSql = "SELECT DISTINCT country FROM `package` WHERE country IN('Australia',
+'Newzealand',
+'Fiji'
+)";
+  $pacificStmt = $pdo->prepare($pacificSql);
+  $pacificStmt->execute();
+  $pacific = $pacificStmt->fetchAll(PDO::FETCH_ASSOC);
+
+  $indiaSql = "SELECT DISTINCT state FROM `package` WHERE state IN(
+  'Tamil Nadu',
+  'Chhattishgarh',
+  'Maharashtra',
+  'Andra Pradesh',
+  'Arunachal Pradesh',
+  'Assam',
+  'Bihar',
+  'Delhi',
+  'Goa',
+  'Gujarat',
+  'Haryana',
+  'Himachal Pradesh',
+  'Jammu & Kashmir',
+  'Jharkhand',
+  'Karnataka',
+  'Kerala',
+  'Madhya Pradesh',
+  'Maharashtra',
+  'Manipur',
+  'Meghalaya',
+  'Mizoram',
+  'Nagaland',
+  'Orissa',
+  'Pondichery',
+  'Punjab',
+  'Rajasthan',
+  'Sikkim',
+  'Uttar Pradesh',
+  'Tripura',
+  'Uttarakhand',
+  'West Bengal')";
+  $indiaStmt = $pdo->prepare($indiaSql);
+  $indiaStmt->execute();
+  $india = $indiaStmt->fetchAll(PDO::FETCH_ASSOC);
+  ?>
 
 <body>
   <!--  section 1-->
@@ -288,8 +495,99 @@ if (!$blog) {
                 Packages
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../continental.php">International</a></li>
-                <li><a class="dropdown-item" href="../package.php?cat=2">Domestic</a></li>
+                <li class="cbox1"><a class="dropdown-item" href="../continental.php">International</a>
+                  <div class="sub-menu-box continetal-bx">
+                    <div class="row sub-menu-row">
+                      <div class="col-3">
+                      <?php if (!empty($europe)) { ?>
+                        <h6>Europe</h6>
+                        <?php } ?>
+                        <ul class="cm-ul">
+                          <?php
+                          foreach ($europe as $row) {
+                            echo '<a href="../package.php?country='.$row['country'].'"><li class="cm-li">' . $row['country'] . '</li></a>';
+                          }
+                          ?>
+                        </ul>
+                      </div>
+                      <div class="col-3">
+                      <?php if (!empty($asia)) { ?>
+                        <h6>Asia</h6>
+                        <?php } ?>
+                        <ul class="cm-ul">
+                          <?php
+                          foreach ($asia as $row) {
+                            echo '<a href="../package.php?country='.$row['country'].'"><li class="cm-li">' . $row['country'] . '</li></a>';
+                          }
+                          ?>
+                        </ul>
+                      </div>
+                      <div class="col-3">
+                      <?php if (!empty($east)) { ?>
+                        <h6>East</h6>
+                        <?php } ?>
+                        <ul class="cm-ul">
+                          <?php
+                          foreach ($east as $row) {
+                            $uae = $row['country'];
+                            if($row['country'] == 'United Arab Emirates'){
+                              $uae = 'UAE';
+                            }
+                            echo '<a href="../package.php?country='.$row['country'].'"><li class="cm-li">' . $uae . '</li></a>';
+                          }
+                          ?>
+                        </ul>
+                        <?php if (!empty($pacific)) { ?>
+                        <h6>Pacific</h6>
+                        <?php } ?>
+                        <ul class="cm-ul">
+                          <?php
+                          foreach ($pacific as $row) {
+                            echo '<a href="../package.php?country='.$row['country'].'"><li class="cm-li">' . $row['country'] . '</li></a>';
+                          }
+                          ?>
+                        </ul>
+                      </div>
+                      <div class="col-3">
+                      <?php if (!empty($africa)) { ?>
+                        <h6>Africa</h6>
+                        <?php } ?>
+                        <ul class="cm-ul">
+                          <?php
+                          foreach ($africa as $row) {
+                            echo '<a href="../package.php?country='.$row['country'].'"><li class="cm-li">' . $row['country'] . '</li></a>';
+                          }
+                          ?>
+                        </ul>
+                        <?php if (!empty($america)) { ?>
+                        <h6>America</h6>
+                        <?php } ?>
+                        <ul class="cm-ul">
+                          <?php
+                          foreach ($america as $row) {
+                            echo '<a href="../package.php?country='.$row['country'].'"><li class="cm-li">' . $row['country'] . '</li></a>';
+                          }
+                          ?>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="cbox2"><a class="dropdown-item" href="../india.php">Domestic</a>
+                <div class="sub-menu-box india-bx">
+                    <div class="row sub-menu-row">
+                      <div class="col-12">
+                        <ul class="cm-ul">
+                          <?php
+                          foreach ($india as $row) {
+                            echo '<a href="../package.php?state='.$row['state'].'"><li class="cm-li">' . $row['state'] . '</li></a>';
+                          }
+                          ?>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+              </li>
               </ul>
             </li>
             <li class="nav-item">
@@ -529,6 +827,31 @@ if (!$blog) {
         "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
     });
   </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const cbox1 = document.querySelector('.cbox1');
+    const cbox2 = document.querySelector('.cbox2');
+    const continetalBx = document.querySelector('.continetal-bx');
+    const indiaBx = document.querySelector('.india-bx');
+
+    cbox1.addEventListener('mouseenter', function () {
+      continetalBx.style.opacity = '1';
+    });
+
+    cbox1.addEventListener('mouseleave', function () {
+      continetalBx.style.opacity = '0';
+    });
+
+    cbox2.addEventListener('mouseenter', function () {
+      indiaBx.style.opacity = '1';
+    });
+
+    cbox2.addEventListener('mouseleave', function () {
+      indiaBx.style.opacity = '0';
+    });
+  });
+</script>
 
 </body>
 

@@ -30,39 +30,42 @@
   <!--Canonical tag-->
   <link rel="canonical" href="https://aspireholidays.in/">
   <meta name="robots" content="index,follow">
-    <!--End Canonical tag-->
-    <!-- google optimizer -->
-    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-NWGHP4M"></script>
-    <!-- end google optimizer -->
+  <!--End Canonical tag-->
+  <!-- google optimizer -->
+  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-NWGHP4M"></script>
+  <!-- end google optimizer -->
   <!-- Search Engine -->
-<meta name="description" content="Best Travel Agent in Coimbatore where you can find domestic & international package. Plan your trip as you wish. A single window to your travel needs.">
-<meta name="image" content="https://aspireholidays.in/asset/images/others/logo.svg">
-<!-- Schema.org for Google -->
-<meta itemprop="name" content="Aspire Holidays">
-<meta itemprop="description" content="Best Travel Agent in Coimbatore where you can find domestic & international package. Plan your trip as you wish. A single window to your travel needs.">
-<meta itemprop="image" content="https://aspireholidays.in/asset/images/others/logo.svg">
-<!-- Open Graph general (Facebook, Pinterest & Google+) -->
-<meta name="og:title" content="Aspire Holidays">
-<meta name="og:description" content="Best Travel Agent in Coimbatore where you can find domestic & international package. Plan your trip as you wish. A single window to your travel needs.">
-<meta name="og:image" content="https://aspireholidays.in/asset/images/others/logo.svg">
-<meta name="og:url" content="https://aspireholidays.in">
-<meta name="og:site_name" content="Aspire Holidays">
-<meta name="fb:admins" content="Aspire Holidays">
-<meta name="og:type" content="website">
-<!---02Feb23 Code for Facebook Open Graph Tag Ends -->
+  <meta name="description"
+    content="Best Travel Agent in Coimbatore where you can find domestic & international package. Plan your trip as you wish. A single window to your travel needs.">
+  <meta name="image" content="https://aspireholidays.in/asset/images/others/logo.svg">
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="Aspire Holidays">
+  <meta itemprop="description"
+    content="Best Travel Agent in Coimbatore where you can find domestic & international package. Plan your trip as you wish. A single window to your travel needs.">
+  <meta itemprop="image" content="https://aspireholidays.in/asset/images/others/logo.svg">
+  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+  <meta name="og:title" content="Aspire Holidays">
+  <meta name="og:description"
+    content="Best Travel Agent in Coimbatore where you can find domestic & international package. Plan your trip as you wish. A single window to your travel needs.">
+  <meta name="og:image" content="https://aspireholidays.in/asset/images/others/logo.svg">
+  <meta name="og:url" content="https://aspireholidays.in">
+  <meta name="og:site_name" content="Aspire Holidays">
+  <meta name="fb:admins" content="Aspire Holidays">
+  <meta name="og:type" content="website">
+  <!---02Feb23 Code for Facebook Open Graph Tag Ends -->
 
-<!-- Code for twitter cards-->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@aspireholidays" />
-<meta name="twitter:title" content="Aspire Holidays" />
-<meta name="twitter:description" content="Best Tour Agent in Coimbatore" />
-<meta name="twitter:image" content="https://aspireholidays.in/asset/images/others/logo.svg" />
-<!-- Code for twitter card ends-->
+  <!-- Code for twitter cards-->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@aspireholidays" />
+  <meta name="twitter:title" content="Aspire Holidays" />
+  <meta name="twitter:description" content="Best Tour Agent in Coimbatore" />
+  <meta name="twitter:image" content="https://aspireholidays.in/asset/images/others/logo.svg" />
+  <!-- Code for twitter card ends-->
 
   <!-- Google search results scripts  -->
-<!--HTML TAG-->
-<meta name="google-site-verification" content="ub_ZBL3e5cugs-F54YwAvByPa4P_rPB6JOwu8SlngXA" />
-<!--HTML TAG END-->
+  <!--HTML TAG-->
+  <meta name="google-site-verification" content="ub_ZBL3e5cugs-F54YwAvByPa4P_rPB6JOwu8SlngXA" />
+  <!--HTML TAG END-->
 
   <!-- BreadcrumbList schema  -->
   <script type="application/ld+json">
@@ -179,7 +182,7 @@
   }
   </script>
 
-  <style>
+  <!-- <style>
     .icons-img:hover {
       animation: flip 1s;
     }
@@ -275,8 +278,64 @@
       font-weight: 400;
     }
     
-  </style>
+  </style> -->
+  <style>
+    /* Submenu Style  */
+    .sub-menu-box {
+      position: absolute;
+      top: 0;
+      left: 160px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      opacity: 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: opacity 0.3s ease-in-out;
+    }
 
+    .sub-menu-box ul {
+      padding-left: 20px;
+    }
+
+    .sub-menu-box ul li {
+      margin-bottom: 5px;
+    }
+
+    .sub-menu-box .col-3 {
+      width: fit-content;
+    }
+
+    .sub-menu-box .row {
+      width: fit-content;
+    }
+
+    .sub-menu-row {
+      flex-wrap: nowrap;
+    }
+
+    .continetal-bx,
+    .india-bx {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .cbox1:hover .continetal-bx,
+    .cbox2:hover .india-bx {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .india-bx .col-12 {
+      width: fit-content;
+      white-space: nowrap;
+    }
+
+    .cm-ul a {
+      color: black;
+      font-weight: 400;
+    }
+  </style>
 
 </head>
 
@@ -454,73 +513,73 @@
                   <div class="sub-menu-box continetal-bx">
                     <div class="row sub-menu-row">
                       <div class="col-3">
-                      <?php if (!empty($europe)) { ?>
-                        <h6>Europe</h6>
+                        <?php if (!empty($europe)) { ?>
+                          <h6>Europe</h6>
                         <?php } ?>
                         <ul class="cm-ul">
                           <?php
                           foreach ($europe as $row) {
-                            echo '<a href="package.php?country='.$row['country'].'"><li class="cm-li">' . $row['country'] . '</li></a>';
+                            echo '<a href="package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
                           }
                           ?>
                         </ul>
                       </div>
                       <div class="col-3">
-                      <?php if (!empty($asia)) { ?>
-                        <h6>Asia</h6>
+                        <?php if (!empty($asia)) { ?>
+                          <h6>Asia</h6>
                         <?php } ?>
                         <ul class="cm-ul">
                           <?php
                           foreach ($asia as $row) {
-                            echo '<a href="package.php?country='.$row['country'].'"><li class="cm-li">' . $row['country'] . '</li></a>';
+                            echo '<a href="package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
                           }
                           ?>
                         </ul>
                       </div>
                       <div class="col-3">
-                      <?php if (!empty($east)) { ?>
-                        <h6>East</h6>
+                        <?php if (!empty($east)) { ?>
+                          <h6>East</h6>
                         <?php } ?>
                         <ul class="cm-ul">
                           <?php
                           foreach ($east as $row) {
                             $uae = $row['country'];
-                            if($row['country'] == 'United Arab Emirates'){
+                            if ($row['country'] == 'United Arab Emirates') {
                               $uae = 'UAE';
                             }
-                            echo '<a href="package.php?country='.$row['country'].'"><li class="cm-li">' . $uae . '</li></a>';
+                            echo '<a href="package.php?country=' . $row['country'] . '"><li class="cm-li">' . $uae . '</li></a>';
                           }
                           ?>
                         </ul>
                         <?php if (!empty($pacific)) { ?>
-                        <h6>Pacific</h6>
+                          <h6>Pacific</h6>
                         <?php } ?>
                         <ul class="cm-ul">
                           <?php
                           foreach ($pacific as $row) {
-                            echo '<a href="package.php?country='.$row['country'].'"><li class="cm-li">' . $row['country'] . '</li></a>';
+                            echo '<a href="package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
                           }
                           ?>
                         </ul>
                       </div>
                       <div class="col-3">
-                      <?php if (!empty($africa)) { ?>
-                        <h6>Africa</h6>
+                        <?php if (!empty($africa)) { ?>
+                          <h6>Africa</h6>
                         <?php } ?>
                         <ul class="cm-ul">
                           <?php
                           foreach ($africa as $row) {
-                            echo '<a href="package.php?country='.$row['country'].'"><li class="cm-li">' . $row['country'] . '</li></a>';
+                            echo '<a href="package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
                           }
                           ?>
                         </ul>
                         <?php if (!empty($america)) { ?>
-                        <h6>America</h6>
+                          <h6>America</h6>
                         <?php } ?>
                         <ul class="cm-ul">
                           <?php
                           foreach ($america as $row) {
-                            echo '<a href="package.php?country='.$row['country'].'"><li class="cm-li">' . $row['country'] . '</li></a>';
+                            echo '<a href="package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
                           }
                           ?>
                         </ul>
@@ -529,20 +588,20 @@
                   </div>
                 </li>
                 <li class="cbox2"><a class="dropdown-item" href="india.php">Domestic</a>
-                <div class="sub-menu-box india-bx">
+                  <div class="sub-menu-box india-bx">
                     <div class="row sub-menu-row">
                       <div class="col-12">
                         <ul class="cm-ul">
                           <?php
                           foreach ($india as $row) {
-                            echo '<a href="package.php?state='.$row['state'].'"><li class="cm-li">' . $row['state'] . '</li></a>';
+                            echo '<a href="package.php?state=' . $row['state'] . '"><li class="cm-li">' . $row['state'] . '</li></a>';
                           }
                           ?>
                         </ul>
                       </div>
                     </div>
                   </div>
-              </li>
+                </li>
               </ul>
             </li>
             <li class="nav-item">
@@ -588,6 +647,31 @@
       $("ul >li.navbar-nav").click(function (e) {
         $("ul >li.navbar-nav").removeClass("active");
         $(this).addClass("active");
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cbox1 = document.querySelector('.cbox1');
+      const cbox2 = document.querySelector('.cbox2');
+      const continetalBx = document.querySelector('.continetal-bx');
+      const indiaBx = document.querySelector('.india-bx');
+
+      cbox1.addEventListener('mouseenter', function () {
+        continetalBx.style.opacity = '1';
+      });
+
+      cbox1.addEventListener('mouseleave', function () {
+        continetalBx.style.opacity = '0';
+      });
+
+      cbox2.addEventListener('mouseenter', function () {
+        indiaBx.style.opacity = '1';
+      });
+
+      cbox2.addEventListener('mouseleave', function () {
+        indiaBx.style.opacity = '0';
       });
     });
   </script>

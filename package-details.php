@@ -24,7 +24,151 @@ if (!$package) {
   exit();
 }
 ?>
-  <meta name="robots" content="index,follow">
+
+<?php
+require('config.php');
+
+// <!-- Get Packages  -->
+$eastSql = "SELECT DISTINCT country FROM `package` WHERE country IN('Turkey',
+'Israel',
+'jordan',
+'Oman',
+'Egypt',
+'Qatar',
+'Saudi',
+'United Arab Emirates'
+)";
+$eastStmt = $pdo->prepare($eastSql);
+$eastStmt->execute();
+$east = $eastStmt->fetchAll(PDO::FETCH_ASSOC);
+
+$africaSql = "SELECT DISTINCT country FROM `package` WHERE country IN(
+  'Kenya',
+  'Morocco',
+  'Mauritius',
+  'Seyschells', 
+  'zimbave',
+  'Madagascar',
+  'Tanzania',
+  'Southafrica'
+  )";
+$africaStmt = $pdo->prepare($africaSql);
+$africaStmt->execute();
+$africa = $africaStmt->fetchAll(PDO::FETCH_ASSOC);
+
+$americaSql = "SELECT DISTINCT country FROM `package` WHERE country IN(
+    'alaska',
+    'Canada',
+    'USA',
+    'Southamerica'
+    )";
+$americaStmt = $pdo->prepare($americaSql);
+$americaStmt->execute();
+$america = $americaStmt->fetchAll(PDO::FETCH_ASSOC);
+
+$asiaSql = "SELECT DISTINCT country FROM `package` WHERE country IN('Thailand', 'malaysia','Singapore','Malaysia',
+    'Singapore',
+    'Bali',
+    'Philipines',
+    'China',
+    'Hongkong',
+    'Indonesia',
+    'Japan',
+    'Taiwan',
+    'kazakhasthan',
+    'southkorea',
+    'uzbekisthan',
+    'vietnam',
+    'combodia',
+    'vietnam',
+    'combodia',
+    'srilanka',
+    'azerbijian',
+    'Maldives',
+    'Mynmar',
+    'bhutan',
+    'nepal',
+    'Georgia',
+    'Armenia',
+    'Mongolia')";
+$asiaStmt = $pdo->prepare($asiaSql);
+$asiaStmt->execute();
+$asia = $asiaStmt->fetchAll(PDO::FETCH_ASSOC);
+
+$europeSql = "SELECT DISTINCT country FROM `package` WHERE country IN(
+      'Austria',
+      'Belgium',
+      'Bulgaria',
+      'Crotia',
+      'Czech',
+      'Denmark',
+      'Finland',
+      'France',
+      'Germany',
+      'Greece',
+      'Geenland',
+      'Hungary',
+      'Iceland',
+      'Ireland',
+      'Italy',
+      'Netherland',
+      'Norway',
+      'Portugal',
+      'Romania',
+      'Sweden',
+      'UK',
+      'Spain',
+      'Switzerland'
+      
+      )";
+$europeStmt = $pdo->prepare($europeSql);
+$europeStmt->execute();
+$europe = $europeStmt->fetchAll(PDO::FETCH_ASSOC);
+
+$pacificSql = "SELECT DISTINCT country FROM `package` WHERE country IN('Australia',
+'Newzealand',
+'Fiji'
+)";
+$pacificStmt = $pdo->prepare($pacificSql);
+$pacificStmt->execute();
+$pacific = $pacificStmt->fetchAll(PDO::FETCH_ASSOC);
+
+$indiaSql = "SELECT DISTINCT state FROM `package` WHERE state IN(
+  'Tamil Nadu',
+  'Chhattishgarh',
+  'Maharashtra',
+  'Andra Pradesh',
+  'Arunachal Pradesh',
+  'Assam',
+  'Bihar',
+  'Delhi',
+  'Goa',
+  'Gujarat',
+  'Haryana',
+  'Himachal Pradesh',
+  'Jammu & Kashmir',
+  'Jharkhand',
+  'Karnataka',
+  'Kerala',
+  'Madhya Pradesh',
+  'Maharashtra',
+  'Manipur',
+  'Meghalaya',
+  'Mizoram',
+  'Nagaland',
+  'Orissa',
+  'Pondichery',
+  'Punjab',
+  'Rajasthan',
+  'Sikkim',
+  'Uttar Pradesh',
+  'Tripura',
+  'Uttarakhand',
+  'West Bengal')";
+$indiaStmt = $pdo->prepare($indiaSql);
+$indiaStmt->execute();
+$india = $indiaStmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 <html lang="en">
 
@@ -32,6 +176,7 @@ if (!$package) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
+  <meta name="robots" content="index,follow">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -262,6 +407,69 @@ if (!$package) {
     }
   </style>
 
+  <style>
+    /* Submenu Style  */
+    .sub-menu-box {
+      position: absolute;
+      top: 0;
+      left: 160px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      opacity: 0;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .sub-menu-box ul {
+      padding-left: 20px;
+    }
+
+    .sub-menu-box ul li {
+      margin-bottom: 5px;
+    }
+
+    .sub-menu-box .col-3 {
+      width: fit-content;
+    }
+
+    .sub-menu-box .row {
+      width: fit-content;
+    }
+
+    .sub-menu-row {
+      flex-wrap: nowrap;
+    }
+
+    .continetal-bx,
+    .india-bx {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .cbox1:hover .continetal-bx,
+    .cbox2:hover .india-bx {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .india-bx .col-12 {
+      width: fit-content;
+      white-space: nowrap;
+    }
+
+    .cm-ul a {
+      color: black;
+      font-weight: 400;
+    }
+
+    .cm-ul a:hover {
+      color: #f0870d !important;
+      font-weight: 400;
+    }
+  </style>
+
 </head>
 
 <!--  section 1-->
@@ -288,8 +496,99 @@ if (!$package) {
               Packages
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../continental.php">International</a></li>
-              <li><a class="dropdown-item" href="../package.php?cat=2">Domestic</a></li>
+              <li class="cbox1"><a class="dropdown-item" href="../continental.php">International</a>
+                <div class="sub-menu-box continetal-bx">
+                  <div class="row sub-menu-row">
+                    <div class="col-3">
+                      <?php if (!empty($europe)) { ?>
+                        <h6>Europe</h6>
+                      <?php } ?>
+                      <ul class="cm-ul">
+                        <?php
+                        foreach ($europe as $row) {
+                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
+                        }
+                        ?>
+                      </ul>
+                    </div>
+                    <div class="col-3">
+                      <?php if (!empty($asia)) { ?>
+                        <h6>Asia</h6>
+                      <?php } ?>
+                      <ul class="cm-ul">
+                        <?php
+                        foreach ($asia as $row) {
+                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
+                        }
+                        ?>
+                      </ul>
+                    </div>
+                    <div class="col-3">
+                      <?php if (!empty($east)) { ?>
+                        <h6>East</h6>
+                      <?php } ?>
+                      <ul class="cm-ul">
+                        <?php
+                        foreach ($east as $row) {
+                          $uae = $row['country'];
+                          if ($row['country'] == 'United Arab Emirates') {
+                            $uae = 'UAE';
+                          }
+                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $uae . '</li></a>';
+                        }
+                        ?>
+                      </ul>
+                      <?php if (!empty($pacific)) { ?>
+                        <h6>Pacific</h6>
+                      <?php } ?>
+                      <ul class="cm-ul">
+                        <?php
+                        foreach ($pacific as $row) {
+                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
+                        }
+                        ?>
+                      </ul>
+                    </div>
+                    <div class="col-3">
+                      <?php if (!empty($africa)) { ?>
+                        <h6>Africa</h6>
+                      <?php } ?>
+                      <ul class="cm-ul">
+                        <?php
+                        foreach ($africa as $row) {
+                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
+                        }
+                        ?>
+                      </ul>
+                      <?php if (!empty($america)) { ?>
+                        <h6>America</h6>
+                      <?php } ?>
+                      <ul class="cm-ul">
+                        <?php
+                        foreach ($america as $row) {
+                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
+                        }
+                        ?>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="cbox2"><a class="dropdown-item" href="../india.php">Domestic</a>
+                <div class="sub-menu-box india-bx">
+                  <div class="row sub-menu-row">
+                    <div class="col-12">
+                      <ul class="cm-ul">
+                        <?php
+                        foreach ($india as $row) {
+                          echo '<a href="../package.php?state=' . $row['state'] . '"><li class="cm-li">' . $row['state'] . '</li></a>';
+                        }
+                        ?>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -355,7 +654,8 @@ if (!$package) {
 
             <div class="row top-1">
               <div class="col-4">
-                <img class="icons-img" alt="Duration" title="Duration" src="../asset/icons/time.png" height="50px" width="50px">
+                <img class="icons-img" alt="Duration" title="Duration" src="../asset/icons/time.png" height="50px"
+                  width="50px">
               </div>
               <div class="col-8 in-tit">
                 <p class="para">Duration</p>
@@ -367,7 +667,7 @@ if (!$package) {
 
             <?php if ($package['visa'] === 1) { ?>
               <div class="row top-1">
-                <div class="col-4"> 
+                <div class="col-4">
                   <img class="icons-img" alt="Visa" title="Visa" src="../asset/icons/visa.png" height="50px" width="50px">
                 </div>
                 <div class="col-8 in-tit">
@@ -382,7 +682,8 @@ if (!$package) {
             <?php if ($package['passport'] === 1) { ?>
               <div class="row top-1">
                 <div class="col-4">
-                  <img class="icons-img" alt="Passport" title="Passport" src="../asset/icons/pass.png" height="50px" width="50px">
+                  <img class="icons-img" alt="Passport" title="Passport" src="../asset/icons/pass.png" height="50px"
+                    width="50px">
                 </div>
                 <div class="col-8 in-tit">
                   <p class="para">Passport</p>
@@ -396,7 +697,8 @@ if (!$package) {
             <?php if ($package['ticket'] === 1) { ?>
               <div class="row top-1">
                 <div class="col-4">
-                  <img class="icons-img" alt="Ticket" title="Ticket" src="../asset/icons/ticket.png" height="50px" width="50px">
+                  <img class="icons-img" alt="Ticket" title="Ticket" src="../asset/icons/ticket.png" height="50px"
+                    width="50px">
                 </div>
                 <div class="col-8 in-tit">
                   <p class="para">Ticket</p>
@@ -410,7 +712,8 @@ if (!$package) {
             <?php if ($package['transport'] === 1) { ?>
               <div class="row top-1">
                 <div class="col-4">
-                  <img class="icons-img" alt="Transport" title="Transport" src="../asset/icons/trans.png" height="50px" width="50px">
+                  <img class="icons-img" alt="Transport" title="Transport" src="../asset/icons/trans.png" height="50px"
+                    width="50px">
                 </div>
                 <div class="col-8 in-tit">
                   <p class="para">Transport</p>
@@ -424,7 +727,8 @@ if (!$package) {
             <?php if ($package['hotel'] === 1) { ?>
               <div class="row top-1">
                 <div class="col-4">
-                  <img class="icons-img" alt="Hotel" title="Hotel" src="../asset/icons/hotel.png" height="50px" width="50px">
+                  <img class="icons-img" alt="Hotel" title="Hotel" src="../asset/icons/hotel.png" height="50px"
+                    width="50px">
                 </div>
                 <div class="col-8 in-tit">
                   <p class="para">Hotel</p>
@@ -610,8 +914,9 @@ if (!$package) {
                 <div class="add-box">
                   <p class="mini-heading">Address</p>
                   <address>
-                   Second Floor, 
-                    Nagammai Building,<br/> Dr Nanjappa Road, Near Park Gate Roundana, Park Gate, Ram Nagar, Coimbatore, Tamil Nadu 641018
+                    Second Floor,
+                    Nagammai Building,<br /> Dr Nanjappa Road, Near Park Gate Roundana, Park Gate, Ram Nagar,
+                    Coimbatore, Tamil Nadu 641018
                   </address>
                   <div class="social-icons">
                     <a href="https://www.instagram.com/aspireholidays.in/"><span
@@ -698,7 +1003,7 @@ if (!$package) {
     <div class="infy-box">
       <a href="#">
         <p>Developed & Maitained By</p>
-        <img src="https://infygain.com/images/logo-alt.svg" alt="Infygain Logo" title="Infygain Logo"/>
+        <img src="https://infygain.com/images/logo-alt.svg" alt="Infygain Logo" title="Infygain Logo" />
       </a>
     </div>
   </div>
@@ -758,6 +1063,31 @@ if (!$package) {
       },
       utilsScript:
         "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const cbox1 = document.querySelector('.cbox1');
+      const cbox2 = document.querySelector('.cbox2');
+      const continetalBx = document.querySelector('.continetal-bx');
+      const indiaBx = document.querySelector('.india-bx');
+
+      cbox1.addEventListener('mouseenter', function () {
+        continetalBx.style.opacity = '1';
+      });
+
+      cbox1.addEventListener('mouseleave', function () {
+        continetalBx.style.opacity = '0';
+      });
+
+      cbox2.addEventListener('mouseenter', function () {
+        indiaBx.style.opacity = '1';
+      });
+
+      cbox2.addEventListener('mouseleave', function () {
+        indiaBx.style.opacity = '0';
+      });
     });
   </script>
 
