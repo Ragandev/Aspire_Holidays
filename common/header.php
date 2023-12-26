@@ -52,10 +52,31 @@
 <meta name="twitter:image" content="https://aspireholidays.in/asset/images/others/logo.svg" />
 <!-- Code for twitter card ends-->
 
-  <!-- Google search results scripts  -->
-<!--HTML TAG-->
-<meta name="google-site-verification" content="ub_ZBL3e5cugs-F54YwAvByPa4P_rPB6JOwu8SlngXA" />
-<!--HTML TAG END-->
+  <!--Google site verification -->
+  <meta name="google-site-verification" content="ub_ZBL3e5cugs-F54YwAvByPa4P_rPB6JOwu8SlngXA" />
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WQEJCJR0VX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WQEJCJR0VX');
+</script>
+  
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PHTG8MG6');</script>
+<!-- End Google Tag Manager -->
+
+ <!-- Google Tag Manager (noscript) -->
+ <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHTG8MG6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
   <!-- BreadcrumbList schema  -->
   <script type="application/ld+json">
