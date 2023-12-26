@@ -47,7 +47,8 @@ $data = $package->fetchAll(PDO::FETCH_ASSOC);
 <?php 
  include("common/header.php");
  ?>
- 
+   <meta name="robots" content="index,follow">
+
  <!--Main blog section page-->
 <section class="blog-sec">
     <div class="blog-sec-inn container">

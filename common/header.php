@@ -27,6 +27,13 @@
   <link rel="stylesheet" href="css/service.css" />
   <link rel="stylesheet" href="css/package-details.css">
 
+  <!--Canonical tag-->
+  <link rel="canonical" href="https://aspireholidays.in/">
+  <meta name="robots" content="index,follow">
+    <!--End Canonical tag-->
+    <!-- google optimizer -->
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-NWGHP4M"></script>
+    <!-- end google optimizer -->
   <!-- Search Engine -->
 <meta name="description" content="Best Travel Agent in Coimbatore where you can find domestic & international package. Plan your trip as you wish. A single window to your travel needs.">
 <meta name="image" content="https://aspireholidays.in/asset/images/others/logo.svg">

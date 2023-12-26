@@ -4,6 +4,8 @@ include('common/header.php');
 ?>
 
 <!-- Styles  -->
+<meta name="robots" content="index,follow">
+
 <style>
     .banner-cont {
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);

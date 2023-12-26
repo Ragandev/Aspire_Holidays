@@ -11,6 +11,7 @@
          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     <?php endif ?>
+    <meta name="robots" content="index,follow">
 
 <!DOCTYPE html>
 <html lang="en">

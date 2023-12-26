@@ -18,6 +18,8 @@ if (!$blog) {
 }
 
 ?>
+  <meta name="robots" content="index,follow">
+
 <html lang="en">
 
 <head>

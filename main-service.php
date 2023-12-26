@@ -1,6 +1,8 @@
 <?php 
  include("common/header.php");
  ?>
+   <meta name="robots" content="index,follow">
+
   <!-- Banner Section  -->
   <section class="cont-bannerr">
     <div class="banner-box">

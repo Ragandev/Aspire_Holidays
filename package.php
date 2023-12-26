@@ -196,6 +196,7 @@ $totalCount = $stmtCount->fetchColumn();
 <?php
 include("common/header.php");
 ?>
+  <meta name="robots" content="index,follow">
 
 <style>
   .filter-con {
