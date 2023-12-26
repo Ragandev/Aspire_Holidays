@@ -26,6 +26,8 @@
     
     
 </style>
+<meta name="robots" content="index,follow">
+
   <!-- Section 11 -->
   <section class="footer-bg"></section>
   <section class="footer-sec">

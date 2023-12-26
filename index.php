@@ -26,6 +26,8 @@
     color: #fff !important;
   }
 </style>
+<meta name="robots" content="index,follow">
+
 <?php
 require('config.php');
 $trendsql = "SELECT * FROM package WHERE subid=4 AND status=1 ORDER BY priority DESC";

@@ -24,6 +24,7 @@ if (!$package) {
   exit();
 }
 ?>
+  <meta name="robots" content="index,follow">
 
 <html lang="en">
 

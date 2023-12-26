@@ -11,6 +11,7 @@ $cStmt = $pdo->prepare($countrySql);
 $cStmt->execute();
 $country = $cStmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+  <meta name="robots" content="index,follow">
 
 <!-- Styles  -->
 <style>

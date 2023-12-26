@@ -1,6 +1,7 @@
 <?php 
  include("common/header.php");
 ?>
+  <meta name="robots" content="index,follow">
 
 <style>
     .cont-btn{

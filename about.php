@@ -12,6 +12,7 @@ require('config.php');
     $stmt->execute();
     $blogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
  ?>
+  <meta name="robots" content="index,follow">
 
   <!-- Banner Section  -->
   <section class="cont-banner">
