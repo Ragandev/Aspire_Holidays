@@ -105,7 +105,7 @@
       }
     }
 
-    .count {
+    /* .count {
       animation: counter 5s linear forwards;
       counter-reset: num var(--num);
       font: 800 40px system-ui;
@@ -124,7 +124,7 @@
       to {
         --num: 1000;
       }
-    }
+    } */
 
     .sm {
       height: 30px;
