@@ -2,1141 +2,645 @@
 require('config.php');
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
-$packageID = $_GET['id'];
-
-// Retrieve the package based on the ID
-$packagesql = "SELECT * FROM package WHERE id = :id";
-$stmt = $pdo->prepare($packagesql);
-$stmt->bindParam(':id', $packageID, PDO::PARAM_INT);
-$stmt->execute();
-$package = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// Retrieve the package based on the ID
-$dayssql = "SELECT * FROM days WHERE pkgid = :id";
-$stmt1 = $pdo->prepare($dayssql);
-$stmt1->bindParam(':id', $packageID, PDO::PARAM_INT);
-$stmt1->execute();
-$days = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
-if (!$package) {
-  // Handle package not found
-  echo "Package not found.";
-  exit();
+function generateSlug($text)
+{
+    $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $text)));
+    return $slug;
 }
+
+// Pagination Route
+$perPage = 10;
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$offset = ($page - 1) * $perPage;
+
+//Category Data
+$catsql = "SELECT * FROM category";
+$stmt1 = $pdo->prepare($catsql);
+$stmt1->execute();
+$catdata = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+
+//Sub Data
+$subsql = "SELECT * FROM sub";
+$stmt2 = $pdo->prepare($subsql);
+$stmt2->execute();
+$subdata = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+
+// Fetch packages
+$packagesql = "SELECT * FROM package WHERE 1=1 AND status=1";
+
+// From home page
+if (isset($_GET['world']) && $_GET['world'] !== "") {
+    $world = $_GET['world'];
+    $packagesql .= " AND country = :world";
+}
+
+if (isset($_GET['namee']) && $_GET['namee'] !== "") {
+    $namee = '%' . $_GET['namee'] . '%';
+    $packagesql .= " AND name LIKE :namee";
+}
+
+if (isset($_GET['days']) && $_GET['days'] !== "") {
+    $days = $_GET['days'];
+    $packagesql .= " AND tdays <= :days";
+}
+
+if (isset($_GET['country']) && $_GET['country'] !== "") {
+    $country = $_GET['country'];
+    $packagesql .= " AND country = :country";
+}
+
+if (isset($_GET['state']) && $_GET['state'] !== "") {
+    $state = $_GET['state'];
+    $packagesql .= " AND state = :state";
+}
+
+if (isset($_GET['cat']) && $_GET['cat'] !== "") {
+    $category = $_GET['cat'];
+    $packagesql .= " AND categoryid = :category";
+}
+
+if (isset($_GET['sub']) && $_GET['sub'] !== "") {
+    $subcategory = $_GET['sub'];
+    $packagesql .= " AND subid = :subcategory";
+}
+
+if (isset($_GET['amount']) && $_GET['amount'] !== "0") {
+    $amount = $_GET['amount'];
+    $packagesql .= " AND amount <= :amount";
+}
+
+if (isset($_GET['duration']) && $_GET['duration'] !== "0") {
+    $tdays = $_GET['duration'];
+    $packagesql .= " AND tdays <= :duration";
+}
+
+if (isset($_GET['search']) && $_GET['search'] !== "") {
+    $search = '%' . $_GET['search'] . '%';
+    $packagesql .= " AND name LIKE :search";
+}
+
+$packagesql .= " ORDER BY id LIMIT :offset, :perPage";
+
+$stmt = $pdo->prepare($packagesql);
+
+if (isset($country)) {
+    $stmt->bindParam(':country', $country, PDO::PARAM_STR);
+}
+if (isset($state)) {
+    $stmt->bindParam(':state', $state, PDO::PARAM_STR);
+}
+if (isset($category)) {
+    $stmt->bindParam(':category', $category, PDO::PARAM_STR);
+}
+if (isset($subcategory)) {
+    $stmt->bindParam(':subcategory', $subcategory, PDO::PARAM_STR);
+}
+if (isset($amount)) {
+    $stmt->bindParam(':amount', $amount, PDO::PARAM_STR);
+}
+if (isset($tdays)) {
+    $stmt->bindParam(':duration', $tdays, PDO::PARAM_STR);
+}
+if (isset($search)) {
+    $stmt->bindParam(':search', $search, PDO::PARAM_STR);
+}
+
+// Home Render 
+if (isset($world)) {
+    $stmt->bindParam(':world', $world, PDO::PARAM_STR);
+}
+
+if (isset($namee)) {
+    $stmt->bindParam(':namee', $namee, PDO::PARAM_STR);
+}
+
+if (isset($days)) {
+    $stmt->bindParam(':days', $days, PDO::PARAM_STR);
+}
+
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+$stmt->bindParam(':perPage', $perPage, PDO::PARAM_INT);
+
+$stmt->execute();
+$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$dataCount = count($data);
+for ($i = 0; $i < $dataCount - 1; $i++) {
+    $randIndex = mt_rand($i, $dataCount - 1);
+    if ($i !== $randIndex) {
+        // Swap elements at $i and $randIndex
+        $temp = $data[$i];
+        $data[$i] = $data[$randIndex];
+        $data[$randIndex] = $temp;
+    }
+}
+
+// Filters 
+$countSql = "SELECT COUNT(*) FROM package WHERE 1=1 AND status=1";
+$conditions = array();
+$params = array();
+
+if (isset($_GET['world']) && $_GET['world'] !== "") {
+    $conditions[] = "country = :world";
+    $params[':world'] = $_GET['world'];
+}
+
+if (isset($_GET['namee']) && $_GET['namee'] !== "") {
+    $conditions[] = "name LIKE :namee";
+    $params[':namee'] = '%' . $_GET['namee'] . '%';
+}
+
+if (isset($_GET['days']) && $_GET['days'] !== "") {
+    $conditions[] = "tdays <= :days";
+    $params[':days'] = $_GET['days'];
+}
+
+if (isset($_GET['country']) && $_GET['country'] !== "") {
+    $conditions[] = "country = :country";
+    $params[':country'] = $_GET['country'];
+}
+
+if (isset($_GET['cat']) && $_GET['cat'] !== "") {
+    $conditions[] = "categoryid = :category";
+    $params[':category'] = $_GET['cat'];
+}
+
+if (isset($_GET['sub']) && $_GET['sub'] !== "") {
+    $conditions[] = "subid = :subcategory";
+    $params[':subcategory'] = $_GET['sub'];
+}
+
+if (isset($_GET['amount']) && $_GET['amount'] !== "0") {
+    $conditions[] = "amount <= :amount";
+    $params[':amount'] = $_GET['amount'];
+}
+
+if (isset($_GET['duration']) && $_GET['duration'] !== "0") {
+    $conditions[] = "tdays <= :duration";
+    $params[':duration'] = $_GET['duration'];
+}
+
+// Combine conditions if available
+if (!empty($conditions)) {
+    $countSql .= " AND " . implode(" AND ", $conditions);
+}
+
+$stmtCount = $pdo->prepare($countSql);
+
+$stmtCount->execute($params);
+
+$totalCount = $stmtCount->fetchColumn();
+
 ?>
 
 <?php
-require('config.php');
-
-// <!-- Get Packages  -->
-$eastSql = "SELECT DISTINCT country FROM `package` WHERE country IN('Turkey',
-'Israel',
-'jordan',
-'Oman',
-'Egypt',
-'Qatar',
-'Saudi',
-'United Arab Emirates'
-)";
-$eastStmt = $pdo->prepare($eastSql);
-$eastStmt->execute();
-$east = $eastStmt->fetchAll(PDO::FETCH_ASSOC);
-
-$africaSql = "SELECT DISTINCT country FROM `package` WHERE country IN(
-  'Kenya',
-  'Morocco',
-  'Mauritius',
-  'Seyschells', 
-  'zimbave',
-  'Madagascar',
-  'Tanzania',
-  'Southafrica'
-  )";
-$africaStmt = $pdo->prepare($africaSql);
-$africaStmt->execute();
-$africa = $africaStmt->fetchAll(PDO::FETCH_ASSOC);
-
-$americaSql = "SELECT DISTINCT country FROM `package` WHERE country IN(
-    'alaska',
-    'Canada',
-    'USA',
-    'Southamerica'
-    )";
-$americaStmt = $pdo->prepare($americaSql);
-$americaStmt->execute();
-$america = $americaStmt->fetchAll(PDO::FETCH_ASSOC);
-
-$asiaSql = "SELECT DISTINCT country FROM `package` WHERE country IN('Thailand', 'malaysia','Singapore','Malaysia',
-    'Singapore',
-    'Bali',
-    'Philipines',
-    'China',
-    'Hongkong',
-    'Indonesia',
-    'Japan',
-    'Taiwan',
-    'kazakhasthan',
-    'southkorea',
-    'uzbekisthan',
-    'vietnam',
-    'combodia',
-    'vietnam',
-    'combodia',
-    'srilanka',
-    'azerbijian',
-    'Maldives',
-    'Mynmar',
-    'bhutan',
-    'nepal',
-    'Georgia',
-    'Armenia',
-    'Mongolia')";
-$asiaStmt = $pdo->prepare($asiaSql);
-$asiaStmt->execute();
-$asia = $asiaStmt->fetchAll(PDO::FETCH_ASSOC);
-
-$europeSql = "SELECT DISTINCT country FROM `package` WHERE country IN(
-      'Austria',
-      'Belgium',
-      'Bulgaria',
-      'Crotia',
-      'Czech',
-      'Denmark',
-      'Finland',
-      'France',
-      'Germany',
-      'Greece',
-      'Geenland',
-      'Hungary',
-      'Iceland',
-      'Ireland',
-      'Italy',
-      'Netherland',
-      'Norway',
-      'Portugal',
-      'Romania',
-      'Sweden',
-      'UK',
-      'Spain',
-      'Switzerland'
-      
-      )";
-$europeStmt = $pdo->prepare($europeSql);
-$europeStmt->execute();
-$europe = $europeStmt->fetchAll(PDO::FETCH_ASSOC);
-
-$pacificSql = "SELECT DISTINCT country FROM `package` WHERE country IN('Australia',
-'Newzealand',
-'Fiji'
-)";
-$pacificStmt = $pdo->prepare($pacificSql);
-$pacificStmt->execute();
-$pacific = $pacificStmt->fetchAll(PDO::FETCH_ASSOC);
-
-$indiaSql = "SELECT DISTINCT state FROM `package` WHERE state IN(
-  'Tamil Nadu',
-  'Chhattishgarh',
-  'Maharashtra',
-  'Andra Pradesh',
-  'Arunachal Pradesh',
-  'Assam',
-  'Bihar',
-  'Delhi',
-  'Goa',
-  'Gujarat',
-  'Haryana',
-  'Himachal Pradesh',
-  'Jammu & Kashmir',
-  'Jharkhand',
-  'Karnataka',
-  'Kerala',
-  'Madhya Pradesh',
-  'Maharashtra',
-  'Manipur',
-  'Meghalaya',
-  'Mizoram',
-  'Nagaland',
-  'Orissa',
-  'Pondichery',
-  'Punjab',
-  'Rajasthan',
-  'Sikkim',
-  'Uttar Pradesh',
-  'Tripura',
-  'Uttarakhand',
-  'West Bengal')";
-$indiaStmt = $pdo->prepare($indiaSql);
-$indiaStmt->execute();
-$india = $indiaStmt->fetchAll(PDO::FETCH_ASSOC);
+include("common/header.php");
 ?>
+<meta name="robots" content="index,follow">
 
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
-  <meta name="robots" content="index,follow">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="../css/owl.carousel.min.css" />
-  <link rel="stylesheet" href="../css/common.css" />
-  <link rel="stylesheet" href="../css/menu.css" />
-  <link rel="stylesheet" href="../css/slider.css" />
-  <link rel="stylesheet" href="../css/section3.css" />
-  <link rel="stylesheet" href="../css/section4.css" />
-  <link rel="stylesheet" href="../css/section6.css" />
-  <link rel="stylesheet" href="../css/section7.css" />
-  <link rel="stylesheet" href="../css/section9.css" />
-  <link rel="stylesheet" href="../css/section10.css" />
-  <link rel="stylesheet" href="../css/section11.css" />
-  <link rel="stylesheet" href="../css/about.css" />
-  <link rel="stylesheet" href="../css/service.css">
-  <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="stylesheet" href="../css/package.css" />
-  <link rel="stylesheet" href="../css/package-details.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-  <style>
-    /* Country Flag Position */
-    .iti--allow-dropdown .iti__flag-container,
-    .iti--separate-dial-code .iti__flag-container {
-      margin-top: 38px !important;
-    }
-
-    .social1 {
-      margin-right: 20px;
-      display: flex;
-      gap: 5px
-    }
-
-    .social1 div {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      margin-bottom: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: azure;
-      font-size: 15px;
-    }
-
-    .social1 div:hover i {
-      animation-name: social;
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
-    }
-
-    @keyframes social {
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    .s-media1 {
-      background-image: var(--blueG);
-    }
-
-    .s-media2 {
-      background-image: var(--instaG);
-    }
-
-    .s-media3 {
-      background-image: var(--youG);
-    }
-
-    .s-media4 {
-      background-image: var(--whatG);
+<style>
+    .filter-con {
+        position: sticky !important;
+        top: 0px !important;
+        height: fit-content;
     }
 
     .icons-img:hover {
-      animation: flip 1s;
+        animation: flip 1s;
     }
 
-    .cont-btn {
-      width: 60%;
-      margin: 0 auto;
+    .amt-box {
+        position: relative;
     }
 
-    .iti {
-      position: relative;
-      display: inline !important;
-      margin-left: 10% !important;
+    #amount-val {
+        position: absolute;
+        bottom: 60px;
+        color: #fff;
+        background-color: #000;
+        padding: 5px;
+        font-size: 14px;
+        display: none;
     }
 
-    .iti input,
-    .iti input[type=text],
-    .iti input[type=tel] {
-      z-index: 0;
-      margin-top: 0 !important;
-      margin-bottom: 18px !important;
-      padding-right: 36px;
-      margin-right: 0;
-      margin-left: 10% !important;
-    }
-
-    .form-box {
-      background-image: url("asset/images/others/enquiry-bg.webp");
+    .show-amt {
+        display: block !important;
     }
 
     .in-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .in-icon span {
-      font-size: 25px;
-      color: #fff;
+        font-size: 25px;
+        color: #fff;
     }
 
     .in-inner {
-      gap: 5px;
+        gap: 5px;
     }
 
-    .highlights div {
-      gap: 20px;
+    .search-input {
+        border: 1px solid grey !important;
     }
 
-    .highlights img {
-      filter: hue-rotate(-149deg);
+    /* visa page  */
+
+    .visabx {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    .visabx:hover{
+        scale:0.9;
+        transition: 1s;
     }
 
-    .in-title {
-      font-weight: bold;
+    .visa-con-bx {
+        /* background-color: var(--main); */
+        border-bottom: 5px solid var(--main);
+        padding: 10px;
     }
 
-    input {
-      height: 20px !important;
+    .visa-con-bx h5 {
+        color: var(--main);
+        text-align: center;
     }
 
-    select {
-      height: 30px;
-      padding: 0;
+    .visa-item-box {
+        border-radius: 10px;
     }
+</style>
 
-    .accordion-button:not(.collapsed) {
-      color: var(--main) !important;
-      background-color: #fff !important;
-    }
-
-    .pd-main-sec {
-      background-image: url(../asset/images/bg/world1.webp);
-      background-size: cover;
-      background-repeat: no-repeat !important;
-    }
-
-    .pd-head-cont>div {
-      /*    width:200px;*/
-      margin-bottom: 20px;
-    }
-
-    .ico-in {
-      justify-content: center;
-    }
-
-    @media (width <=1400px) {
-      .pd-head-cont {
-        flex-wrap: wrap;
-        justify-content: start;
-        align-items: start;
-      }
-    }
-
-    @media (width <=992px) {
-      .pd-head-cont {
-        flex-wrap: nowrap;
-      }
-
-      .in-tit {
-        display: none;
-      }
-
-      .navbar-collapse {
-        z-index: 10;
-        background: rgb(255, 255, 255);
-      }
-    }
-
-    @media (width <=767px) {
-      .pd-head-cont {
-        flex-wrap: wrap;
-        justify-content: start !important;
-      }
-
-    }
-
-    .accordion-item h5 {
-      font-size: 18px;
-      line-height: 30px;
-    }
-
-    .sm {
-      height: 30px;
-      width: 30px;
-      padding: 0px 1px;
-    }
-
-    .footer-sec a:hover {
-      color: var(--main) !important;
-    }
-
-    .topbar {
-      position: fixed;
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      background-color: var(--main);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      right: 10px;
-      bottom: 10px;
-      z-index: 20;
-    }
-
-    .topbar a {
-      color: #fff;
-    }
-
-    .topbar a:hover {
-      color: #fff !important;
-    }
-  </style>
-
-  <style>
-    /* Submenu Style  */
-    .sub-menu-box {
-      position: absolute;
-      top: 0;
-      left: 160px;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      opacity: 0;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .sub-menu-box ul {
-      padding-left: 20px;
-    }
-
-    .sub-menu-box ul li {
-      margin-bottom: 5px;
-    }
-
-    .sub-menu-box .col-3 {
-      width: fit-content;
-    }
-
-    .sub-menu-box .row {
-      width: fit-content;
-    }
-
-    .sub-menu-row {
-      flex-wrap: nowrap;
-    }
-
-    .continetal-bx,
-    .india-bx {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .cbox1:hover .continetal-bx,
-    .cbox2:hover .india-bx {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .india-bx .col-12 {
-      width: fit-content;
-      white-space: nowrap;
-    }
-
-    .cm-ul a {
-      color: black;
-      font-weight: 400;
-    }
-
-    .cm-ul a:hover {
-      color: #f0870d !important;
-      font-weight: 400;
-    }
-  </style>
-
-</head>
-
-<!--  section 1-->
-<section class="main-menu" id="top">
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="../asset/images/others/logo.webp" alt="aspire_logo" srcset="" title="aspire_logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul class="navbar-nav mx-auto my-2 my-lg-0 navbar-nav-scroll nav-scr">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../about.php">About</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle packmenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Packages
-            </a>
-            <ul class="dropdown-menu flymenu">
-              <li class="cbox1"><a class="dropdown-item" href="../continental.php">International&nbsp;&nbsp;<i class="fa-solid fa-caret-right fa-sm"></i></a>
-                <div class="sub-menu-box continetal-bx">
-                  <div class="row sub-menu-row">
-                    <div class="col-3">
-                      <?php if (!empty($europe)) { ?>
-                        <h6>Europe</h6>
-                      <?php } ?>
-                      <ul class="cm-ul">
-                        <?php
-                        foreach ($europe as $row) {
-                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
-                        }
-                        ?>
-                      </ul>
-                    </div>
-                    <div class="col-3">
-                      <?php if (!empty($asia)) { ?>
-                        <h6>Asia</h6>
-                      <?php } ?>
-                      <ul class="cm-ul">
-                        <?php
-                        foreach ($asia as $row) {
-                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
-                        }
-                        ?>
-                      </ul>
-                    </div>
-                    <div class="col-3">
-                      <?php if (!empty($east)) { ?>
-                        <h6>East</h6>
-                      <?php } ?>
-                      <ul class="cm-ul">
-                        <?php
-                        foreach ($east as $row) {
-                          $uae = $row['country'];
-                          if ($row['country'] == 'United Arab Emirates') {
-                            $uae = 'UAE';
-                          }
-                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $uae . '</li></a>';
-                        }
-                        ?>
-                      </ul>
-                      <?php if (!empty($pacific)) { ?>
-                        <h6>Pacific</h6>
-                      <?php } ?>
-                      <ul class="cm-ul">
-                        <?php
-                        foreach ($pacific as $row) {
-                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
-                        }
-                        ?>
-                      </ul>
-                    </div>
-                    <div class="col-3">
-                      <?php if (!empty($africa)) { ?>
-                        <h6>Africa</h6>
-                      <?php } ?>
-                      <ul class="cm-ul">
-                        <?php
-                        foreach ($africa as $row) {
-                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
-                        }
-                        ?>
-                      </ul>
-                      <?php if (!empty($america)) { ?>
-                        <h6>America</h6>
-                      <?php } ?>
-                      <ul class="cm-ul">
-                        <?php
-                        foreach ($america as $row) {
-                          echo '<a href="../package.php?country=' . $row['country'] . '"><li class="cm-li">' . $row['country'] . '</li></a>';
-                        }
-                        ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="cbox2"><a class="dropdown-item" href="../india.php">Domestic&nbsp;&nbsp;<i class="fa-solid fa-caret-right fa-sm"></i></a>
-                <div class="sub-menu-box india-bx">
-                  <div class="row sub-menu-row">
-                    <div class="col-12">
-                      <ul class="cm-ul">
-                        <?php
-                        foreach ($india as $row) {
-                          echo '<a href="../package.php?state=' . $row['state'] . '"><li class="cm-li">' . $row['state'] . '</li></a>';
-                        }
-                        ?>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="../blog.php" class="nav-link">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a href="../service.php" class="nav-link">Services</a>
-          </li>
-          <li class="nav-item">
-            <a href="../contact.php" class="nav-link">Contact</a>
-          </li>
-
-        </ul>
-        <!--<div>-->
-        <!--<a href="https://www.instagram.com/aspireholidays.in/"><img class="sm" src="../asset/images/others/Instagram.png"></a>-->
-        <!--     <a href="https://www.linkedin.com/in/aspire-holidays-52b626144/?originalSubdomain=in"><img class="sm" src="../asset/images/others/Linkdin.png"></a>-->
-        <!--     <a href="https://wa.me/+919362266666"><img class="sm" src="../asset/images/others/Whatsapp.png"></a>-->
-        <!--     <a href="https://twitter.com/aspireholidays"><img class="sm" src="../asset/images/others/Twitter.png"></a>-->
-        <!--     <a href="https://www.youtube.com/@AspireHolidays"><img class="sm" src="../asset/images/others/Youtube.png"></a>-->
-        <!--     </div>-->
-        <!--<div class="social1">-->
-        <!--       <a class="sm1" href="https://facebook.com/aspireholidays"><div class="s-media1"><i class="fa-brands fa-facebook-f"></i></div></a>-->
-        <!--       <a class="sm1" href="https://www.instagram.com/aspireholidays.in/"><div class="s-media2"><i class="fa-brands fa-instagram"></i></div></a>-->
-        <!--       <a class="sm1" href="https://www.youtube.com/@AspireHolidays"><div class="s-media3"><i class="fa-brands fa-youtube"></i></div></a>-->
-        <!--       <a class=" sm1" href="https://wa.me/+919362266666"><div class="s-media4"><i class="fa-brands fa-whatsapp"></i></div></a>-->
-        <!--   </div>-->
-      </div>
+<!-- Banner Section  -->
+<section class="cont-banner">
+    <div class="banner-box">
+        <h2 class="main-heading">VISA</h2>
+        <p class="mini-heading">Explore Now</p>
     </div>
-  </nav>
 </section>
-<!--  section 1 end -->
+<!-- Banner Section End  -->
 
-<body>
-
-  <!-- Package Detail Banner  -->
-  <div class="pd-banner-sec">
-    <div class="owl-carousel pd-banner owl-theme">
-      <div class="item">
-        <img src="../uploads/<?php echo $package['img1'] ?>" alt="Package" title="Package" class="img-fluid" />
-      </div>
-      <div class="item">
-        <img src="../uploads/<?php echo $package['img2'] ?>" alt="Package" title="Package" class="img-fluid" />
-      </div>
-      <div class="item">
-        <img src="../uploads/<?php echo $package['img3'] ?>" alt="Package" title="Package" class="img-fluid" />
-      </div>
-    </div>
-    <div class="pd-header container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="pd-title-box">
-            <h2 class="sub-heading">
-              <?php echo $package['name']; ?>
-            </h2>
-            <p class="para">
-              <span class="fa fa-location-dot"></span> &nbsp;
-              <?php echo $package['country']; ?>
-            </p>
-          </div>
-        </div>
-        <div class="col-md-9 ico-in">
-          <div class="pd-head-cont">
-
-            <div class="row top-1">
-              <div class="col-4">
-                <img class="icons-img" alt="Duration" title="Duration" src="../asset/icons/time.png" height="50px"
-                  width="50px">
-              </div>
-              <div class="col-8 in-tit">
-                <p class="para">Duration</p>
-                <p class="in-title">
-                  <?php echo $package['tdays']; ?> Days
-                </p>
-              </div>
-            </div>
-
-            <?php if ($package['visa'] === 1) { ?>
-              <div class="row top-1">
-                <div class="col-4">
-                  <img class="icons-img" alt="Visa" title="Visa" src="../asset/icons/visa.png" height="50px" width="50px">
-                </div>
-                <div class="col-8 in-tit">
-                  <p class="para">Visa</p>
-                  <p class="in-title">
-                    <?php echo $package['visa_title']; ?>
-                  </p>
-                </div>
-              </div>
-            <?php } ?>
-
-            <?php if ($package['passport'] === 1) { ?>
-              <div class="row top-1">
-                <div class="col-4">
-                  <img class="icons-img" alt="Passport" title="Passport" src="../asset/icons/pass.png" height="50px"
-                    width="50px">
-                </div>
-                <div class="col-8 in-tit">
-                  <p class="para">Passport</p>
-                  <p class="in-title">
-                    <?php echo $package['passport_title']; ?>
-                  </p>
-                </div>
-              </div>
-            <?php } ?>
-
-            <?php if ($package['ticket'] === 1) { ?>
-              <div class="row top-1">
-                <div class="col-4">
-                  <img class="icons-img" alt="Ticket" title="Ticket" src="../asset/icons/ticket.png" height="50px"
-                    width="50px">
-                </div>
-                <div class="col-8 in-tit">
-                  <p class="para">Ticket</p>
-                  <p class="in-title">
-                    <?php echo $package['ticket_title']; ?>
-                  </p>
-                </div>
-              </div>
-            <?php } ?>
-
-            <?php if ($package['transport'] === 1) { ?>
-              <div class="row top-1">
-                <div class="col-4">
-                  <img class="icons-img" alt="Transport" title="Transport" src="../asset/icons/trans.png" height="50px"
-                    width="50px">
-                </div>
-                <div class="col-8 in-tit">
-                  <p class="para">Transport</p>
-                  <p class="in-title">
-                    <?php echo $package['transport_title']; ?>
-                  </p>
-                </div>
-              </div>
-            <?php } ?>
-
-            <?php if ($package['hotel'] === 1) { ?>
-              <div class="row top-1">
-                <div class="col-4">
-                  <img class="icons-img" alt="Hotel" title="Hotel" src="../asset/icons/hotel.png" height="50px"
-                    width="50px">
-                </div>
-                <div class="col-8 in-tit">
-                  <p class="para">Hotel</p>
-                  <p class="in-title">
-                    <?php echo $package['hotel_title']; ?>
-                  </p>
-                </div>
-              </div>
-            <?php } ?>
-
-          </div>
-        </div>
-      </div>
-      <br>
-      <h5 class="text-center"><b>
-          <?php echo $package['quote'] ?>
-        </b></h5>
-    </div>
-  </div>
-  <!-- Package Detail Banner End -->
-
-  <?php if (!empty($_GET['succ'])): ?>
-
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <strong>
-        <?php echo $_GET['succ'] ?>
-      </strong>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-  <?php endif ?>
-  <?php if (!empty($_GET['err'])): ?>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>
-        <?php echo $_GET['err'] ?>
-      </strong>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-  <?php endif ?>
-
-  <!-- Package Detail Section  -->
-  <div class="pd-main-sec position-relative mt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="detail-box">
-
-            <div class="highlights">
-              <div class="d-flex align-items-center">
-                <img src="../asset/icons/high.gif" alt="Highlights" title="Highlights" height="50px">
-                <h5><b>Highlights</b></h5>
-              </div><br>
-              <p>
-                <?php echo $package['highlights']; ?>
-              </p>
-            </div>
-            <p class="para">
-              <?php echo $package['content']; ?>
-            </p>
-            <hr />
-            <h2 class="mini-heading">Itinerary</h2><br>
-            <p class="para">
-              Aspire Holidays Team specializes in creating exceptional itineraries and organizing tours for the ultimate
-              travel experience. With this plan, you will be sure to make the most of your time here and create lasting
-              memories.
-            </p><br>
-
-            <div class="accordion" id="accordionExample">
-              <?php foreach ($days as $d) { ?>
-                <!--Days Render -->
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#<?php echo 'id' . $d['id']; ?>" aria-expanded="true" aria-controls="collapseOne">
-                      <h5>
-                        <?php echo $d['name']; ?> :
-                        <?php echo $d['title']; ?>
-                      </h5><br>
-                    </button>
-                  </h2>
-                  <div id="id<?php echo $d['id']; ?>" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <p>
-                        <?php echo $d['content']; ?>
-                      </p><br>
+<!-- package Section  -->
+<section class="package-sec">
+    <div class="container-xxl">
+        <div class="row pack-row">
+            <div class="filter-con col-md-3 d-none d-md-block">
+                <div class="filter-box">
+                    <p class="mini-heading">Search :</p>
+                    <form method="get" action="">
+                        <input class="form-control search-input" name="search" placeholder="Type Here"
+                            onchange="this.form.submit()" value="<?php if (isset($_GET['search'])) {
+                                echo $_GET['search'];
+                            } ?>">
+                    </form>
+                    <br>
+                    <div class="filter-1">
+                        <p class="mini-heading">Destination :</p>
+                        <form method="get" action="">
+                            <select name="country" id="" onchange="this.form.submit()">
+                                <option value="">All Destination</option>
+                                <?php
+                                $selectedCountry = $_GET['country'];
+                                $countries = [
+                                    'Thailand',
+                                    'Malaysia',
+                                    'Singapore',
+                                    'Malaysia',
+                                    'Singapore',
+                                    'Bali',
+                                    'Philippines',
+                                    'China',
+                                    'Hong Kong',
+                                    'Japan',
+                                    'Taiwan',
+                                    'Kazakhstan',
+                                    'South Korea',
+                                    'Uzbekistan',
+                                    'Vietnam',
+                                    'Cambodia',
+                                    'Vietnam',
+                                    'Cambodia',
+                                    'Sri Lanka',
+                                    'Azerbaijan',
+                                    'Maldives',
+                                    'Myanmar',
+                                    'Bhutan',
+                                    'Nepal',
+                                    'Georgia',
+                                    'Armenia',
+                                    'Mongolia',
+                                    'Australia',
+                                    'New Zealand',
+                                    'Fiji',
+                                    'Turkey',
+                                    'Israel',
+                                    'Jordan',
+                                    'Oman',
+                                    'Egypt',
+                                    'Qatar',
+                                    'Saudi',
+                                    'Indonesia',
+                                    'United Arab Emirates',
+                                    'Kenya',
+                                    'Morocco',
+                                    'Mauritius',
+                                    'Seychelles',
+                                    'Zimbabwe',
+                                    'Madagascar',
+                                    'Tanzania',
+                                    'South Africa',
+                                    'Alaska',
+                                    'Canada',
+                                    'USA',
+                                    'South America',
+                                    'Austria',
+                                    'Belgium',
+                                    'Bulgaria',
+                                    'Croatia',
+                                    'Czech',
+                                    'Denmark',
+                                    'Finland',
+                                    'France',
+                                    'Germany',
+                                    'Greece',
+                                    'Greenland',
+                                    'Hungary',
+                                    'Iceland',
+                                    'Ireland',
+                                    'Italy',
+                                    'Netherlands',
+                                    'Norway',
+                                    'Portugal',
+                                    'Romania',
+                                    'Sweden',
+                                    'UK',
+                                    'Spain',
+                                    'Switzerland'
+                                ];
+                                foreach ($countries as $country) {
+                                    $selected = ($selectedCountry === $country) ? 'selected' : '';
+                                    echo '<option ' . $selected . ' value="' . $country . '">' . $country . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </form>
                     </div>
-                  </div>
+
+                    <div class="filter-3">
+                        <p class="mini-heading">Category :</p>
+                        <div class="row">
+                            <form method="get" action="">
+                                <select name="cat" id="" onchange="this.form.submit()">
+                                    <option value="">All Category</option>
+                                    <?php foreach ($catdata as $category) { ?>
+                                        <option <?php if ($_GET['cat'] == $category['id']) {
+                                            echo "selected";
+                                        } ?>
+                       value="<?php echo $category['id'] ?>">
+                                            <?php echo $category['name'] ?>
+                                        </option>
+                                    <?php } ?>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="filter-3">
+                        <p class="mini-heading">Sub Category :</p>
+                        <div class="row">
+                            <form method="get" action="">
+                                <select name="sub" id="" onchange="this.form.submit()">
+                                    <option value="">All Sub Category</option>
+                                    <?php foreach ($subdata as $sub) { ?>
+                                        <option <?php if ($_GET['sub'] == $sub['id']) {
+                                            echo "selected";
+                                        } ?> value="<?php echo $sub['id'] ?>">
+                                            <?php echo $sub['name'] ?>
+                                        </option>
+                                    <?php } ?>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="filter-5">
+                        <p class="mini-heading">Durations :</p>
+                        <div class="row">
+                            <form method="get" action="">
+                                <select name="duration" id="" onchange="this.form.submit()">
+                                    <option value="">All Durations</option>
+                                    <option value="5">Upto 5 days</option>
+                                    <option value="10">Upto 10 days</option>
+                                    <option value="15">Upto 15 days</option>
+                                    <option value="20">Upto 20 days</option>
+                                    <option value="25">Upto 25 days</option>
+                                    <option value="30">Upto 30 days</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="filter-4">
+                        <p class="mini-heading">Max Price :</p>
+                        <form method="get" action="">
+
+                            <div class="amt-box">
+                                <span id="amount-val"></span>
+                                <input type="range" name="amount" id="amount" min="0" max="100000"
+                                    data-bs-toggle="popover" title="Slider Value" data-bs-placement="top" steps="1" <?php
+                                    if (isset($_GET['amount'])) {
+                                        echo 'value="' . $_GET["amount"] . '"';
+                                    } else {
+                                        echo 'value="0"';
+                                    }
+                                    ?> onchange="this.form.submit()" />
+                                <p id="amountDisplay">Price:
+                                    <?php
+                                    if (isset($_GET['amount']) && $_GET['amount'] != 0) {
+                                        echo $_GET["amount"];
+                                    } else {
+                                        echo 'Any Price';
+                                    }
+                                    ?>
+                                </p>
+                            </div>
+
+                        </form>
+                    </div>
+
                 </div>
-              <?php } ?>
             </div>
-
-          </div>
-          <br>
-          <p class="para">
-            From start to finish, we Aspire Holidays, have been your travel partner, and we'll continue to be there till
-            the last step. Until we meet again!
-          </p>
-          <hr />
-        </div>
-        <div class="col-lg-4 price-col">
-          <div class="price-box position-sticky">
-            <!--<div class="price-head">-->
-            <!--  <div class="txt">-->
-            <!--    <p class="para">Price</p>-->
-            <!--  <p class="mini-heading">From</p>-->
-            <!--  </div>-->
-            <!--  <div class="price">-->
-            <!--    <p class="sub-heading">₹ <?php echo $package['amount']; ?></p>-->
-            <!--  </div>-->
-            <!--</div>-->
-            <!--<hr>-->
-            <div class="form-box">
-              <p class="mini-heading text-center">Explore the World with Us</p>
-              <form action="../enq_mail.php" method="post" id="myform">
-                <input name="name" type="text" placeholder="Type your Name" required>
-                <input name="ph" type="tel" id="phone" placeholder="Phone" required>
-                <input name="email" type="email" placeholder="Insert your Email" required>
-                <input name="dest" type="text" placeholder="Your Destination" required>
-                <input name="bp" type="text" placeholder="Type your Boarding point">
-                <input name="sd" placeholder="Date Start" class="textbox-n" type="text" onfocus="(this.type='date')"
-                  id="date" />
-                <input name="ed" placeholder="Date End" class="textbox-n" type="text" onfocus="(this.type='date')"
-                  id="date" />
-                <input name="no-ad" type="number" placeholder="Adult">
-                <input name="no-ch" type="number" placeholder="Child">
-                <input name="no-sc" type="number" placeholder="Senior">
-                <select name="occ">
-                  <option value="Choose Occasion">Choose Occasion</option>
-                  <option value="Corporate">Corporate</option>
-                  <option value="Family">Family</option>
-                  <option value="College">College</option>
-                  <option value="Honeymoon">Honeymoon</option>
-                  <option value="Adventure">Adventure</option>
-                </select>
-                <select name="hot">
-                  <option value="Choose Hotel Type">Choose Hotel Type</option>
-                  <option value="5 Star">5 Star</option>
-                  <option value="4 Star">4 Star</option>
-                  <option value="3 Star">3 Star</option>
-                  <option value="2 Star">2 Star</option>
-                  <option value="1 Star">1 Star</option>
-                </select>
-                <select name="tra">
-                  <option value="Choose Travel Mode">Choose Travel Mode</option>
-                  <option value="Train">Train</option>
-                  <option value="Flight">Flight</option>
-                  <option value="Bus">Bus</option>
-                  <option value="Cab">Cab</option>
-                </select>
-
-                <textarea name="message" rows="3" placeholder="Your Message"></textarea>
-                <div class="d-grid gap-2">
-                  <button class="btns cont-btn">Send</button>
-                  <br>
-
-                </div>
-              </form>
+            <div class="col-md-9">
+                <?php
+                if (count($data) > 0) {
+                    foreach ($data as $p) {
+                        $packageSlug = generateSlug($p['name']);
+                        $packageUrl = "package-details.php/$packageSlug";
+                        ?>
+                        <div class="visa-box mb-4">
+                            <div class="visa-item-box">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="visabx">
+                                            <div class="visa-item-img">
+                                                <a class='text-dark' href="#">
+                                                    <img class="img-fluid" src="asset/images/country/africa.webp" alt="package"
+                                                        title="package" srcset="" />
+                                                </a>
+                                            </div>
+                                            <div class="visa-con-bx">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5>
+                                                            Country Name
+                                                        </h5>
+                                                        <p class="text-center"><strong><span>₹&nbsp;&nbsp;<span>50,000</strong>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                    <div class="visabx">
+                                            <div class="visa-item-img">
+                                                <a class='text-dark' href="#">
+                                                    <img class="img-fluid" src="asset/images/country/africa.webp" alt="package"
+                                                        title="package" srcset="" />
+                                                </a>
+                                            </div>
+                                            <div class="visa-con-bx">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5>
+                                                            Country Name
+                                                        </h5>
+                                                        <p class="text-center"><strong><span>₹&nbsp;&nbsp;<span>50,000</strong>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                    <div class="visabx">
+                                            <div class="visa-item-img">
+                                                <a class='text-dark' href="#">
+                                                    <img class="img-fluid" src="asset/images/country/africa.webp" alt="package"
+                                                        title="package" srcset="" />
+                                                </a>
+                                            </div>
+                                            <div class="visa-con-bx">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5>
+                                                            Country Name
+                                                        </h5>
+                                                        <p class="text-center"><strong><span>₹&nbsp;&nbsp;<span>50,000</strong>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                } else {
+                    echo '<h3 class="text-center text-warning">No packages found</h3>';
+                } ?>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  </div>
-  <!-- Package Detail Section End  -->
+</section>
+<div class="pagesBox"></div>
+<!-- package Section End -->
 
-  <!-- Section 11 -->
-  <section class="footer-bg"></section>
-  <section class="footer-sec">
-    <div class="footer-sec-inn container">
-      <div class="row first-row">
-        <div class="col-md-12 col-lg-6 mb-5">
-          <div class="txt-box" data-aos="fade-right" data-aos-duration="1000">
-            <p class="main-heading">
-              Travel beyond your imagination, with our Travel Agency!
-            </p>
-          </div>
-        </div>
-        <div class="col-md-12 col-lg-6">
-          <div class="footer-box">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="add-box">
-                  <p class="mini-heading">Address</p>
-                  <address>
-                    Second Floor,
-                    Nagammai Building,<br /> Dr Nanjappa Road, Near Park Gate Roundana, Park Gate, Ram Nagar,
-                    Coimbatore, Tamil Nadu 641018
-                  </address>
-                  <div class="social-icons">
-                    <a href="https://www.instagram.com/aspireholidays.in/"><span
-                        class="fa-brands fa-xl fa-instagram"></span></a>
-                    <!--<a href="#"><span class="fa-brands fa-xl fa-facebook"></span></a>-->
-                    <a href="https://www.linkedin.com/in/aspire-holidays-52b626144/?originalSubdomain=in"><span
-                        class="fa-brands fa-xl fa-linkedin"></span></a>
-                    <a href="https://www.youtube.com/@AspireHolidays"><span
-                        class="fa-brands fa-xl fa-youtube"></span></a>
-                    <a href="https://twitter.com/aspireholidays"><span class="fa-brands fa-xl fa-twitter"></span></a>
-                    <a href="https://wa.me/+919362266666"><span class="fa-brands fa-xl fa-whatsapp"></span></a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="contact-box">
-                  <p class="mini-heading">Contact</p>
-                  <a href="" class="btns">info@aspireholidays.in</a>
-                  <div class="phone-box">
-                    <a href="tel:9362266666" class="mini-heading">+91 9362266666</a><br>
-                    <a href="tel:9514433334" class="mini-heading">+91 9514433334</a>
-                  </div>
-                  <br> <br>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row second-row">
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="ql-list">
-            <p class="mini-heading">Quick Links</p>
-            <li><a href="../about.php">About</a></li>
-            <li><a href="../contact.php">Contact</a></li>
-            <li><a href="../service.php">Services</a></li>
-            <li><a href="../package.php">Packages</a></li>
-            <li><a href="../contact.php">Enquire</a></li>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="p-list">
-            <p class="mini-heading">Package Category</p>
-            <li><a href="../package.php?cat=1">International</a></li>
-            <li><a href="../package.php?cat=2">Domestic</a></li>
-            <li><a href="../package.php?sub=1">Educational</a></li>
-            <li><a href="../package.php?sub=2">Honeymoon</a></li>
-            <li><a href="../package.php?sub=3">Cruises</a></li>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="pp-list">
-            <p class="mini-heading">Popular Packages</p>
-            <li><a href="../package.php?country=Japan">Japan</a></li>
-            <li><a href="../package.php?country=Indonesia">Bali</a></li>
-            <li><a href="#">Munnar</a></li>
-            <li><a href="#">Thailand</a></li>
-            <li><a href="#">America</a></li>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="pp-list">
-            <p class="mini-heading">Our Services</p>
-            <li><a href="../main-service.php">Ticketing</a></li>
-            <li><a href="../main-service.php">Passport</a></li>
-            <li><a href="../main-service.php">VISA</a></li>
-            <li><a href="../main-service.php">Travel Insurance</a></li>
-            <li><a href="../main-service.php">Currency Exchange</a></li>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Section 11 End -->
 
-  <!--Gotop button-->
-  <div class="topbar">
-    <a href="#top"><i class="fa-solid fa-circle-arrow-up"></i></a>
-  </div>
-  <!--End-->
 
-  <!-- infy Section  -->
-  <div class="infy-sec">
-    <div class="infy-box">
-      <a href="#">
-        <p>Developed & Maitained By</p>
-        <img src="https://infygain.com/images/logo-alt.svg" alt="Infygain Logo" title="Infygain Logo" />
-      </a>
-    </div>
-  </div>
-  <!-- Infy Section End  -->
+<script>
+    // Pagination Script 
+    let package = <?php echo $totalCount ?>;
+    let pages = Math.ceil(package / 10);
+    let currentPage = <?php echo $page; ?>;
 
-  <!-- jQuery cdn  -->
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
-    integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <!-- JS  -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
-    integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="../js/owl.carousel.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true,
-      easing: 'ease'
-    });
-  </script>
+    let pagesBox = document.querySelector('.pagesBox');
 
-  <script>
-    $(".pd-banner").owlCarousel({
-      loop: true,
-      autoplay: true,
-      margin: 20,
-      nav: false,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        600: {
-          items: 3,
-        },
-        1200: {
-          items: 2,
-        },
-        1300: {
-          items: 3,
+    function createPaginationButton(text, pageNumber) {
+        const button = document.createElement('button');
+        button.textContent = text;
+        button.classList.remove('btns');
+        button.classList.add('btns-navy');
+
+        if (pageNumber === currentPage) {
+            button.classList.remove('btns-navy');
+            button.classList.add('btns');
         }
-      },
+
+        const link = document.createElement('a');
+        link.classList.add('pagination');
+
+
+        link.addEventListener('click', () => {
+            const queryParams = new URLSearchParams(window.location.search);
+            queryParams.set('page', pageNumber);
+            window.location.href = `${window.location.pathname}?${queryParams.toString()}`;
+        });
+
+        link.appendChild(button);
+        return link;
+    }
+
+    let startPage = currentPage - 1;
+    let endPage = currentPage + 1;
+
+    if (startPage < 1) {
+        startPage = 1;
+        endPage = Math.min(startPage + 1, pages);
+    }
+
+    if (endPage > pages) {
+        endPage = pages;
+        startPage = Math.max(endPage - 1, 1);
+    }
+
+    if (currentPage != 1) {
+        pagesBox.appendChild(createPaginationButton('<<', 1));
+    }
+
+    // Previous Button
+    if (currentPage > 1) {
+        pagesBox.appendChild(createPaginationButton('<', currentPage - 1));
+    }
+
+    // Page Buttons
+    pagesBox.appendChild(createPaginationButton(currentPage, currentPage));
+
+
+    // Next Button
+    if (currentPage < pages) {
+        pagesBox.appendChild(createPaginationButton('>', currentPage + 1));
+    }
+
+    if (currentPage != pages) {
+        pagesBox.appendChild(createPaginationButton('>>', pages));
+    }
+
+    // Price Range Input 
+    const rangeInput = document.getElementById('amount');
+    const currentValueDisplay = document.getElementById('amount-val');
+
+    rangeInput.addEventListener('input', function () {
+        currentValueDisplay.classList.add('show-amt');
+        const currentValue = rangeInput.value;
+        currentValueDisplay.textContent = `${currentValue}`;
     });
-  </script>
+</script>
 
-  <script>
-    const phoneInputField = document.querySelector("#phone");
-    const phoneInput = window.intlTelInput(phoneInputField, {
-      initialCountry: "auto",
-      geoIpLookup: callback => {
-        fetch("https://ipapi.co/json")
-          .then(res => res.json())
-          .then(data => callback(data.country_code))
-          .catch(() => callback("us"));
-      },
-      utilsScript:
-        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const cbox1 = document.querySelector('.cbox1');
-      const cbox2 = document.querySelector('.cbox2');
-      const continetalBx = document.querySelector('.continetal-bx');
-      const indiaBx = document.querySelector('.india-bx');
-
-      cbox1.addEventListener('mouseenter', function () {
-        continetalBx.style.opacity = '1';
-      });
-
-      cbox1.addEventListener('mouseleave', function () {
-        continetalBx.style.opacity = '0';
-      });
-
-      cbox2.addEventListener('mouseenter', function () {
-        indiaBx.style.opacity = '1';
-      });
-
-      cbox2.addEventListener('mouseleave', function () {
-        indiaBx.style.opacity = '0';
-      });
-    });
-  </script>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const cbox1 = document.querySelector('.cbox1');
-      const cbox2 = document.querySelector('.cbox2');
-      const continetalBx = document.querySelector('.continetal-bx');
-      const indiaBx = document.querySelector('.india-bx');
-
-      cbox1.addEventListener('mouseenter', function () {
-        continetalBx.style.opacity = '1';
-      });
-
-      cbox1.addEventListener('mouseleave', function () {
-        continetalBx.style.opacity = '0';
-      });
-
-      cbox2.addEventListener('mouseenter', function () {
-        indiaBx.style.opacity = '1';
-      });
-
-      cbox2.addEventListener('mouseleave', function () {
-        indiaBx.style.opacity = '0';
-      });
-    });
-  </script>
-  
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-     var flymenu = document.querySelector(".flymenu");
-     var packmenu = document.querySelector(".packmenu");
-     
-     packmenu.addEventListener('mouseenter', ()=>{
-         flymenu.classList.add('show');
-     })
-     
-     flymenu.addEventListener('mouseenter', ()=>{
-         flymenu.classList.add('show');
-     })
-     flymenu.addEventListener('mouseleave', ()=>{
-         flymenu.classList.remove('show');
-     })
-     packmenu.addEventListener('mouseleave', ()=>{
-         flymenu.classList.remove('show');
-     })
-  });
-  </script>
-
-</body>
-
-</html>
+<?php
+include("common/footer.php");
+?>

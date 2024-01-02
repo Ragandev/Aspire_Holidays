@@ -176,7 +176,7 @@ include("common/header.php");
         </div>
 
         <div class="col-md-12 col-lg-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
-          <a class="dropdown-item" href="package.php?sub=3">
+          <a class="dropdown-item" href="visa.php">
             <div class="box-inn">
               <div class="row  tour tour-box-5">
                 <div class="col-3 icon-box">
