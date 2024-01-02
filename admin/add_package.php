@@ -60,7 +60,7 @@
                         <option value="0">Select Category</option>
                         <?php
                             foreach ($data as $row) {
-                                echo '<option value="'.$row['id'].'">'.$row['name'].'</option>';
+                                echo '<option value="'.$row['country'].'">'.$row['name'].'</option>';
                             }
                          ?>
                     </select>
