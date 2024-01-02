@@ -147,22 +147,22 @@ include("common/header.php");
 
       <div class="row main-tour-box">
 
-        <div class="col-md-12 col-lg-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
-          <a class="dropdown-item" href="package.php?sub=2">
-            <div class="box-inn">
-              <div class="row tour tour-box-3">
-                <div class="col-3 icon-box">
-                  <img src="asset/gif/education-min.webp" alt="Educational" title="Educational">
-                </div>
-                <div class="col-9 txt-box sub-heading">
-                  Educational
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
+        <!--<div class="col-md-12 col-lg-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">-->
+        <!--  <a class="dropdown-item" href="package.php?sub=2">-->
+        <!--    <div class="box-inn">-->
+        <!--      <div class="row tour tour-box-3">-->
+        <!--        <div class="col-3 icon-box">-->
+        <!--          <img src="asset/gif/education-min.webp" alt="Educational" title="Educational">-->
+        <!--        </div>-->
+        <!--        <div class="col-9 txt-box sub-heading">-->
+        <!--          Educational-->
+        <!--        </div>-->
+        <!--      </div>-->
+        <!--    </div>-->
+        <!--  </a>-->
+        <!--</div>-->
 
-        <div class="col-md-12 col-lg-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+        <div class="col-md-12 col-lg-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
           <a class="dropdown-item" href="package.php?sub=2">
             <div class="box-inn">
               <div class="row  tour tour-box-4">
@@ -175,14 +175,14 @@ include("common/header.php");
           </a>
         </div>
 
-        <div class="col-md-12 col-lg-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
+        <div class="col-md-12 col-lg-6" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
           <a class="dropdown-item" href="package.php?sub=3">
             <div class="box-inn">
               <div class="row  tour tour-box-5">
                 <div class="col-3 icon-box">
-                  <img src="asset/gif/cruises-min.webp" alt="Cruises" title="Cruises">
+                  <img src="asset/gif/cruises-min.webp" alt="Visa" title="Visa Services">
                 </div>
-                <div class="col-9 txt-box sub-heading">Cruises</div>
+                <div class="col-9 txt-box sub-heading">Visa</div>
               </div>
             </div>
           </a>

@@ -12,7 +12,7 @@
         justify-content:center;
         align-items:center;
         right:10px;
-        bottom:10px;
+        bottom:50px;
     }
     .topbar a{
         color:#fff;
@@ -130,9 +130,9 @@
   <!-- infy Section  -->
   <div class="infy-sec">
     <div class="infy-box">
-      <a href="https://infygain.com/">
+      <a href="https://infygain.com/" target="_blank">
         <p>Developed & Maitained By</p>
-        <img src="https://infygain.com/images/logo-alt.svg" alt="Infygain Logo" title="Infygain Logo" />
+        <img src="https://infygain.com/images/others/logo-alt.svg" target="_blank" alt="Infygain Logo" title="Infygain Logo" />
       </a>
     </div>
   </div>
