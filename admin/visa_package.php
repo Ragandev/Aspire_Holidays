@@ -2,15 +2,14 @@
 require('../config.php');
 include('common/header.php');
 
-$pkgsql = "SELECT id, categoryid, name, amount, country, status FROM package ORDER BY id DESC";
-$stmt = $pdo->query($pkgsql);
+$visapaksql = "SELECT id, name, fees, type, country FROM visa_package ORDER BY id";
+$stmt = $pdo->query($visapaksql);
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <div class="container">
     <div class="btn-box">
-        <a href='cat.php'><button class="btn btn-success">Category</button></a>&nbsp;&nbsp;
-        <a href='add_package.php'><button class="btn btn-primary">Create Package</button></a>&nbsp;
+        <a href='add_visa_package.php'><button class="btn btn-primary">Create Visa Packages</button></a>
     </div>
 
     <?php if (!empty($_GET['succ'])): ?>
@@ -32,49 +31,41 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php endif ?>
 
     <div class="table-responsive">
-        <table class="table table-striped" id="myTable">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Category</th>
                     <th>Name</th>
-                    <th>Amount</th>
                     <th>Country</th>
-                    <th>Status</th>
-                    <th>Edit</th>
+                    <th>Type</th>
+                    <th>Fees</th>
+                    <th>EDIT</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($data as $row) { ?>
                     <?php
-                    $catsql = "SELECT name FROM category WHERE id='" . $row['categoryid'] . "'";
-                    $stmt = $pdo->query($catsql);
-                    $catData = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $visasql = "SELECT country FROM visa WHERE id =" . $row['country'];
+                    $stmt_visa = $pdo->query($visasql);
+                    $data_visa = $stmt_visa->fetch(PDO::FETCH_ASSOC);
                     ?>
                     <tr>
                         <td>
                             <?php echo $row['id']; ?>
                         </td>
                         <td>
-                            <?php echo $catData['name'] ?>
-                        </td>
-                        <td>
                             <?php echo $row['name']; ?>
                         </td>
                         <td>
-                            <?php echo $row['amount']; ?>
+                            <?php echo $data_visa['country']; ?>
                         </td>
                         <td>
-                            <?php echo $row['country']; ?>
+                            <?php echo $row['type']; ?>
                         </td>
                         <td>
-                            <?php if ($row['status'] === 1) {
-                                echo 'Active';
-                            } else {
-                                echo 'Inactive';
-                            } ?>
+                            <?php echo $row['fees']; ?>
                         </td>
-                        <td><a href="edit_package.php?id=<?php echo $row['id']; ?>">Edit</a></td>
+                        <td><a href="visa_edit_package.php?id=<?php echo $row['id']; ?>">Edit</a></td>
                     </tr>
                 <?php } ?>
             </tbody>
