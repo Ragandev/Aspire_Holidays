@@ -26,7 +26,7 @@ $stmt2->execute();
 $subdata = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 // Fetch packages
-$packagesql = "SELECT * FROM package WHERE 1=1 AND status=1";
+$packagesql = "SELECT * FROM visa WHERE status=1";
 
 // From home page
 if (isset($_GET['world']) && $_GET['world'] !== "") {
@@ -298,7 +298,7 @@ include("common/header.php");
                     </form>
                     <br>
                     <div class="filter-1">
-                        <p class="mini-heading">Destination :</p>
+                        <p class="mini-heading">Country :</p>
                         <form method="get" action="">
                             <select name="country" id="" onchange="this.form.submit()">
                                 <option value="">All Destination</option>
@@ -306,8 +306,6 @@ include("common/header.php");
                                 $selectedCountry = $_GET['country'];
                                 $countries = [
                                     'Thailand',
-                                    'Malaysia',
-                                    'Singapore',
                                     'Malaysia',
                                     'Singapore',
                                     'Bali',
@@ -319,8 +317,6 @@ include("common/header.php");
                                     'Kazakhstan',
                                     'South Korea',
                                     'Uzbekistan',
-                                    'Vietnam',
-                                    'Cambodia',
                                     'Vietnam',
                                     'Cambodia',
                                     'Sri Lanka',
@@ -395,79 +391,11 @@ include("common/header.php");
                             <form method="get" action="">
                                 <select name="cat" id="" onchange="this.form.submit()">
                                     <option value="">All Category</option>
-                                    <?php foreach ($catdata as $category) { ?>
-                                        <option <?php if ($_GET['cat'] == $category['id']) {
-                                            echo "selected";
-                                        } ?>
-                       value="<?php echo $category['id'] ?>">
-                                            <?php echo $category['name'] ?>
-                                        </option>
-                                    <?php } ?>
+                                    <option value="arrival">On Arrival</option>
+                                    <option value="e-visa">E-Visa</option>
                                 </select>
                             </form>
                         </div>
-                    </div>
-                    <div class="filter-3">
-                        <p class="mini-heading">Sub Category :</p>
-                        <div class="row">
-                            <form method="get" action="">
-                                <select name="sub" id="" onchange="this.form.submit()">
-                                    <option value="">All Sub Category</option>
-                                    <?php foreach ($subdata as $sub) { ?>
-                                        <option <?php if ($_GET['sub'] == $sub['id']) {
-                                            echo "selected";
-                                        } ?> value="<?php echo $sub['id'] ?>">
-                                            <?php echo $sub['name'] ?>
-                                        </option>
-                                    <?php } ?>
-                                </select>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="filter-5">
-                        <p class="mini-heading">Durations :</p>
-                        <div class="row">
-                            <form method="get" action="">
-                                <select name="duration" id="" onchange="this.form.submit()">
-                                    <option value="">All Durations</option>
-                                    <option value="5">Upto 5 days</option>
-                                    <option value="10">Upto 10 days</option>
-                                    <option value="15">Upto 15 days</option>
-                                    <option value="20">Upto 20 days</option>
-                                    <option value="25">Upto 25 days</option>
-                                    <option value="30">Upto 30 days</option>
-                                </select>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="filter-4">
-                        <p class="mini-heading">Max Price :</p>
-                        <form method="get" action="">
-
-                            <div class="amt-box">
-                                <span id="amount-val"></span>
-                                <input type="range" name="amount" id="amount" min="0" max="100000"
-                                    data-bs-toggle="popover" title="Slider Value" data-bs-placement="top" steps="1" <?php
-                                    if (isset($_GET['amount'])) {
-                                        echo 'value="' . $_GET["amount"] . '"';
-                                    } else {
-                                        echo 'value="0"';
-                                    }
-                                    ?> onchange="this.form.submit()" />
-                                <p id="amountDisplay">Price:
-                                    <?php
-                                    if (isset($_GET['amount']) && $_GET['amount'] != 0) {
-                                        echo $_GET["amount"];
-                                    } else {
-                                        echo 'Any Price';
-                                    }
-                                    ?>
-                                </p>
-                            </div>
-
-                        </form>
                     </div>
 
                 </div>
@@ -477,7 +405,7 @@ include("common/header.php");
                 if (count($data) > 0) {
                     foreach ($data as $p) {
                         $packageSlug = generateSlug($p['name']);
-                        $packageUrl = "package-details.php/$packageSlug";
+                        $packageUrl = "visa-detail.php/$packageSlug";
                         ?>
                         <div class="visa-box mb-4">
                             <div class="visa-item-box">
@@ -485,7 +413,7 @@ include("common/header.php");
                                     <div class="col-lg-4">
                                         <div class="visabx">
                                             <div class="visa-item-img">
-                                                <a class='text-dark' href="#">
+                                                <a class='text-dark' href="visa_detail.php">
                                                     <img class="img-fluid" src="asset/images/country/africa.webp" alt="package"
                                                         title="package" srcset="" />
                                                 </a>
@@ -506,7 +434,7 @@ include("common/header.php");
                                     <div class="col-lg-4">
                                     <div class="visabx">
                                             <div class="visa-item-img">
-                                                <a class='text-dark' href="#">
+                                                <a class='text-dark' href="visa_detail.php">
                                                     <img class="img-fluid" src="asset/images/country/africa.webp" alt="package"
                                                         title="package" srcset="" />
                                                 </a>
@@ -527,7 +455,7 @@ include("common/header.php");
                                     <div class="col-lg-4">
                                     <div class="visabx">
                                             <div class="visa-item-img">
-                                                <a class='text-dark' href="#">
+                                                <a class='text-dark' href="visa_detail.php">
                                                     <img class="img-fluid" src="asset/images/country/africa.webp" alt="package"
                                                         title="package" srcset="" />
                                                 </a>
