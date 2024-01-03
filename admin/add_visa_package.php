@@ -6,9 +6,6 @@ include('common/header.php');
     $stmt = $pdo->query($csql);
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // var_dump($data);
-    // exit();
-
 ?>
 
 <style>
@@ -114,7 +111,6 @@ include('common/header.php');
                     <label for="">Fees <span class='text-danger'>*</span></label>
                     <input type="text" name="fees" class="form-control" placeholder="Validity" required>
                 </div>
-                
             </div>
             
 
