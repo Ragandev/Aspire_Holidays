@@ -65,7 +65,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td>
                             <?php echo $row['fees']; ?>
                         </td>
-                        <td><a href="visa_edit_package.php?id=<?php echo $row['id']; ?>">Edit</a></td>
+                        <td><a href="edit_visa_package.php?id=<?php echo $row['id']; ?>">Edit</a></td>
                     </tr>
                 <?php } ?>
             </tbody>
