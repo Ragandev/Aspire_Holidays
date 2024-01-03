@@ -1,6 +1,27 @@
 <?php
 require('../config.php');
 include('common/header.php');
+
+$visaDetails = array(
+    'country' => '',
+    'type' => 'arrival',
+    'startingPrice' => '',
+    'document' => '',
+    'embassy' => ''
+);
+
+// Check if ID is present in the URL
+if (isset($_GET['id'])) {
+    $visaId = $_GET['id'];
+
+    // Fetch visa details based on ID
+    $selectQuery = "SELECT * FROM visa WHERE id = :id";
+    $stmt = $pdo->prepare($selectQuery);
+    $stmt->bindParam(':id', $visaId);
+    $stmt->execute();
+    $visaDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 ?>
 <style>
     .blod-add {
@@ -32,17 +53,17 @@ include('common/header.php');
             </div>
         <?php endif ?>
 
-        <form action="add_visa_post.php" method="post">
+        <form action="edit_visa_post.php" method="post">
+            <?php if (isset($_GET['id'])): ?>
+                <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+            <?php endif; ?>
 
             <div class="row mb-4">
                 <div class="col">
                     <label for="">Country <span class='text-danger'>*</span></label>
                     <select required name="country" id="country" class="form-control">
-                        <option value="" selected>Country</option>
+                        <option value="" selected disabled>Select Country</option>
                         <?php
-                        // $selectedCountry = $_GET['country']; // Get the selected country from the URL
-                        
-                        // Define an array of countries
                         $countries = array(
                             'Thailand',
                             'Malaysia',
@@ -118,8 +139,8 @@ include('common/header.php');
                         sort($countries);
 
                         foreach ($countries as $country) {
-                            // $selected = ($selectedCountry === $country) ? 'selected' : ''; // Check if this is the selected country
-                            echo '<option value="' . $country . '">' . $country . '</option>';
+                            $selected = ($visaDetails['country'] === $country) ? 'selected' : '';
+                            echo '<option value="' . $country . '" ' . $selected . '>' . $country . '</option>';
                         }
                         ?>
                     </select>
@@ -127,31 +148,38 @@ include('common/header.php');
                 <div class="col">
                     <label for="">Type <span class='text-danger'>*</span></label>
                     <select required name="type" id="type" class="form-control">
-                        <option value="arrival">On Arrival</option>
-                        <option value="e-visa">E-Visa</option>
+                        <option value="arrival" <?php echo ($visaDetails['visa_type'] === 'arrival') ? 'selected' : ''; ?>>On
+                            Arrival</option>
+                        <option value="e-visa" <?php echo ($visaDetails['visa_type'] === 'e-visa') ? 'selected' : ''; ?>>
+                            E-Visa
+                        </option>
                     </select>
                 </div>
                 <div class="col">
                     <label for="">Starting Price <span class='text-danger'>*</span></label>
-                    <input type="text" name="startingPrice" class="form-control" placeholder="Starting Price" required>
+                    <input type="text" name="startingPrice" class="form-control" placeholder="Starting Price" required
+                        value="<?php echo $visaDetails['starting_price']; ?>">
                 </div>
             </div>
 
             <div class="row mb-4">
                 <div class="col">
                     <label for="">Documents <span class='text-danger'>*</span></label>
-                    <textarea required class="form-control" name="document" id="" rows="10"></textarea>
+                    <textarea required class="form-control" name="document" id="document"
+                        rows="10"><?php echo $visaDetails['documents']; ?></textarea>
                 </div>
             </div>
 
             <div class="row mb-4">
                 <div class="col">
                     <label for="">Embassy <span class='text-danger'>*</span></label>
-                    <textarea required class="form-control" name="embassy" id="" rows="10"></textarea>
+                    <textarea required class="form-control" name="embassy" id="embassy"
+                        rows="10"><?php echo $visaDetails['embassy']; ?></textarea>
                 </div>
             </div>
 
-            <input type='submit' value='Create' class="btn btn-primary">
+            <input type='submit' value='<?php echo isset($_GET['id']) ? 'Update' : 'Create'; ?>'
+                class="btn btn-primary">
         </form>
     </div>
 </div>

@@ -73,15 +73,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $lid = $pdo->lastInsertId();
-        
-        function updatePackageData($pdo, $column, $columnTitle, $postData, $lid) {
+
+        function updatePackageData($pdo, $column, $columnTitle, $postData, $lid)
+        {
             if (isset($postData)) {
                 $sql = "UPDATE package SET $column = :data, $columnTitle = :title WHERE id = :id";
                 $stmt = $pdo->prepare($sql);
                 $stmt->bindParam(':data', $postData);
                 $stmt->bindParam(':title', $_POST[$columnTitle]);
                 $stmt->bindParam(':id', $lid);
-                
+
                 // Execute the statement and handle potential errors
                 if (!$stmt->execute()) {
                     $errorInfo = $stmt->errorInfo();
@@ -91,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             }
         }
-        
+
         try {
             updatePackageData($pdo, 'visa', 'visa_title', $_POST['visa'], $lid);
             updatePackageData($pdo, 'passport', 'passport_title', $_POST['passport'], $lid);
@@ -111,9 +112,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmts->bindParam(':name', $dayval);
             $stmts->bindParam(':pkgid', $lid);
             $stmts->bindParam(':cont', $data);
-            
+
             $stmts->bindParam(':title', $day_title[$index]);
-            
+
             if (!$stmts->execute()) {
                 throw new Exception("Day insertion failed");
             }
