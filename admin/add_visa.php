@@ -131,9 +131,19 @@ include('common/header.php');
                         <option value="e-visa">E-Visa</option>
                     </select>
                 </div>
+            </div>
+
+            <div class="row mb-4">
                 <div class="col">
                     <label for="">Starting Price <span class='text-danger'>*</span></label>
                     <input type="text" name="startingPrice" class="form-control" placeholder="Starting Price" required>
+                </div>
+                <div class="col">
+                    <label for="">Status <span class='text-danger'>*</span></label>
+                    <select required name="status" id="status" class="form-control">
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
                 </div>
             </div>
 

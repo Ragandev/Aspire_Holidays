@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $starting_price = $_POST['startingPrice'];
     $document = $_POST['document'];
     $embassy = $_POST['embassy'];
+    $status = $_POST['status'];
 
     try {
         $pdo->beginTransaction(); // Start a transaction
@@ -22,7 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             starting_price = :starting_price, 
                             documents = :documents, 
                             visa_type = :visa_type, 
-                            embassy = :embassy 
+                            embassy = :embassy,
+                            status = :status
                         WHERE id = :id";
 
         $stmt = $pdo->prepare($updateQuery);
@@ -31,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':documents', $document);
         $stmt->bindParam(':visa_type', $type);
         $stmt->bindParam(':embassy', $embassy);
+        $stmt->bindParam(':status', $status);
         $stmt->bindParam(':id', $id);
 
         if (!$stmt->execute()) {

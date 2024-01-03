@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $validity = $_POST['validity'];
     $entry = $_POST['entry'];
     $fees = $_POST['fees'];
+    $status = $_POST['status'];
 
     try {
         $pdo->beginTransaction(); // Start a transaction
@@ -26,7 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         validity = :validity, 
                         entry = :entry, 
                         fees = :fees, 
-                        type = :type
+                        type = :type,
+                        status = :status
                         WHERE id = :id";
 
         $stmt = $pdo->prepare($updateQuery);
@@ -39,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':entry', $entry);
         $stmt->bindParam(':fees', $fees);
         $stmt->bindParam(':type', $type);
+        $stmt->bindParam(':status', $status);
 
         if (!$stmt->execute()) {
             throw new Exception("Visa package update failed");

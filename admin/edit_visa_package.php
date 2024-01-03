@@ -113,6 +113,18 @@ include('common/header.php');
                     <label for="">Fees <span class='text-danger'>*</span></label>
                     <input type="text" value="<?php echo $olddata['fees'] ?>" name="fees" class="form-control" placeholder="Validity" required>
                 </div>
+                <div class="col">
+                        <label for="">Status <span class='text-danger'>*</span></label>
+                        <select required name="status" id="status" class="form-control">
+                            <option <?php if ($olddata['status'] == "1") {
+                                echo "selected";
+                            } ?> value="1">Active</option>
+                            <option <?php if ($olddata['status'] == "0") {
+                                echo "selected";
+                            } ?> value="0">Inactive
+                            </option>
+                        </select>
+                    </div>
             </div>
             
 

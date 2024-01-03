@@ -2,14 +2,6 @@
 require('../config.php');
 include('common/header.php');
 
-$visaDetails = array(
-    'country' => '',
-    'type' => 'arrival',
-    'startingPrice' => '',
-    'document' => '',
-    'embassy' => ''
-);
-
 // Check if ID is present in the URL
 if (isset($_GET['id'])) {
     $visaId = $_GET['id'];
@@ -155,10 +147,26 @@ if (isset($_GET['id'])) {
                         </option>
                     </select>
                 </div>
+            </div>
+
+
+            <div class="row mb-4">
                 <div class="col">
                     <label for="">Starting Price <span class='text-danger'>*</span></label>
                     <input type="text" name="startingPrice" class="form-control" placeholder="Starting Price" required
                         value="<?php echo $visaDetails['starting_price']; ?>">
+                </div>
+                <div class="col">
+                    <label for="">Status <span class='text-danger'>*</span></label>
+                    <select required name="status" id="status" class="form-control">
+                        <option <?php if ($visaDetails['status'] == "1") {
+                            echo "selected";
+                        } ?> value="1">Active</option>
+                        <option <?php if ($visaDetails['status'] == "0") {
+                            echo "selected";
+                        } ?> value="0">Inactive
+                        </option>
+                    </select>
                 </div>
             </div>
 

@@ -2,7 +2,7 @@
 require('../config.php');
 include('common/header.php');
 
-$visapaksql = "SELECT id, name, fees, type, country FROM visa_package ORDER BY id";
+$visapaksql = "SELECT id, name, fees, type, country, status FROM visa_package ORDER BY id";
 $stmt = $pdo->query($visapaksql);
 $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -39,6 +39,7 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>Country</th>
                     <th>Type</th>
                     <th>Fees</th>
+                    <th>Status</th>
                     <th>EDIT</th>
                 </tr>
             </thead>
@@ -64,6 +65,9 @@ $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </td>
                         <td>
                             <?php echo $row['fees']; ?>
+                        </td>
+                        <td>
+                            <?php  if($row['status'] == 0){echo "Inactive";}else{echo "Active";}; ?>
                         </td>
                         <td><a href="edit_visa_package.php?id=<?php echo $row['id']; ?>">Edit</a></td>
                     </tr>

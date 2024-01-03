@@ -11,12 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $starting_price = $_POST['startingPrice'];
     $document = $_POST['document'];
     $embassy = $_POST['embassy'];
+    $status = $_POST['status'];
 
     try {
         $pdo->beginTransaction(); // Start a transaction
 
-        $insertQuery = "INSERT INTO visa (country, starting_price, documents, visa_type, embassy)
-                        VALUES (:country, :starting_price, :documents, :visa_type, :embassy)";
+        $insertQuery = "INSERT INTO visa (country, starting_price, documents, visa_type, embassy, status)
+                        VALUES (:country, :starting_price, :documents, :visa_type, :embassy, :status)";
 
         $stmt = $pdo->prepare($insertQuery);
         $stmt->bindParam(':country', $country);
@@ -24,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':documents', $document);
         $stmt->bindParam(':visa_type', $type);
         $stmt->bindParam(':embassy', $embassy);
+        $stmt->bindParam(':status', $status);
 
         if (!$stmt->execute()) {
             throw new Exception("Visa insertion failed");

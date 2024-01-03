@@ -13,13 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $validity = $_POST['validity'];
     $entry = $_POST['entry'];
     $fees = $_POST['fees'];
+    $status = $_POST['status'];
 
 
     try {
         $pdo->beginTransaction(); // Start a transaction
 
-        $insertQuery = "INSERT INTO visa_package (name, country, process_time, stay_period, validity, entry, fees, type)
-                        VALUES (:name, :country, :process_time, :stay_period, :validity, :entry, :fees, :type)";
+        $insertQuery = "INSERT INTO visa_package (name, country, process_time, stay_period, validity, entry, fees, type, status)
+                        VALUES (:name, :country, :process_time, :stay_period, :validity, :entry, :fees, :type, :status)";
 
         $stmt = $pdo->prepare($insertQuery);
         $stmt->bindParam(':name', $name);
@@ -30,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(':entry', $entry);
         $stmt->bindParam(':fees', $fees);
         $stmt->bindParam(':type', $type);
+        $stmt->bindParam(':status', $status);
 
         
 
