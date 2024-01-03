@@ -1,6 +1,6 @@
 <?php
 require('config.php');
-error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+ini_set('display_errors', 0);
 
 function generateSlug($text)
 {
@@ -13,70 +13,22 @@ $perPage = 10;
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $offset = ($page - 1) * $perPage;
 
-//Category Data
-$catsql = "SELECT * FROM category";
-$stmt1 = $pdo->prepare($catsql);
-$stmt1->execute();
-$catdata = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-
-//Sub Data
-$subsql = "SELECT * FROM sub";
-$stmt2 = $pdo->prepare($subsql);
-$stmt2->execute();
-$subdata = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-
 // Fetch packages
 $packagesql = "SELECT * FROM visa WHERE status=1";
-
-// From home page
-if (isset($_GET['world']) && $_GET['world'] !== "") {
-    $world = $_GET['world'];
-    $packagesql .= " AND country = :world";
-}
-
-if (isset($_GET['namee']) && $_GET['namee'] !== "") {
-    $namee = '%' . $_GET['namee'] . '%';
-    $packagesql .= " AND name LIKE :namee";
-}
-
-if (isset($_GET['days']) && $_GET['days'] !== "") {
-    $days = $_GET['days'];
-    $packagesql .= " AND tdays <= :days";
-}
 
 if (isset($_GET['country']) && $_GET['country'] !== "") {
     $country = $_GET['country'];
     $packagesql .= " AND country = :country";
 }
 
-if (isset($_GET['state']) && $_GET['state'] !== "") {
-    $state = $_GET['state'];
-    $packagesql .= " AND state = :state";
-}
-
 if (isset($_GET['cat']) && $_GET['cat'] !== "") {
     $category = $_GET['cat'];
-    $packagesql .= " AND categoryid = :category";
-}
-
-if (isset($_GET['sub']) && $_GET['sub'] !== "") {
-    $subcategory = $_GET['sub'];
-    $packagesql .= " AND subid = :subcategory";
-}
-
-if (isset($_GET['amount']) && $_GET['amount'] !== "0") {
-    $amount = $_GET['amount'];
-    $packagesql .= " AND amount <= :amount";
-}
-
-if (isset($_GET['duration']) && $_GET['duration'] !== "0") {
-    $tdays = $_GET['duration'];
-    $packagesql .= " AND tdays <= :duration";
+    $packagesql .= " AND visa_type = :visa_type";
 }
 
 if (isset($_GET['search']) && $_GET['search'] !== "") {
     $search = '%' . $_GET['search'] . '%';
-    $packagesql .= " AND name LIKE :search";
+    $packagesql .= " AND country LIKE :search";
 }
 
 $packagesql .= " ORDER BY id LIMIT :offset, :perPage";
@@ -86,36 +38,8 @@ $stmt = $pdo->prepare($packagesql);
 if (isset($country)) {
     $stmt->bindParam(':country', $country, PDO::PARAM_STR);
 }
-if (isset($state)) {
-    $stmt->bindParam(':state', $state, PDO::PARAM_STR);
-}
-if (isset($category)) {
-    $stmt->bindParam(':category', $category, PDO::PARAM_STR);
-}
-if (isset($subcategory)) {
-    $stmt->bindParam(':subcategory', $subcategory, PDO::PARAM_STR);
-}
-if (isset($amount)) {
-    $stmt->bindParam(':amount', $amount, PDO::PARAM_STR);
-}
-if (isset($tdays)) {
-    $stmt->bindParam(':duration', $tdays, PDO::PARAM_STR);
-}
 if (isset($search)) {
     $stmt->bindParam(':search', $search, PDO::PARAM_STR);
-}
-
-// Home Render 
-if (isset($world)) {
-    $stmt->bindParam(':world', $world, PDO::PARAM_STR);
-}
-
-if (isset($namee)) {
-    $stmt->bindParam(':namee', $namee, PDO::PARAM_STR);
-}
-
-if (isset($days)) {
-    $stmt->bindParam(':days', $days, PDO::PARAM_STR);
 }
 
 $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
@@ -140,45 +64,20 @@ $countSql = "SELECT COUNT(*) FROM package WHERE 1=1 AND status=1";
 $conditions = array();
 $params = array();
 
-if (isset($_GET['world']) && $_GET['world'] !== "") {
-    $conditions[] = "country = :world";
-    $params[':world'] = $_GET['world'];
-}
 
 if (isset($_GET['namee']) && $_GET['namee'] !== "") {
-    $conditions[] = "name LIKE :namee";
+    $conditions[] = "country LIKE :namee";
     $params[':namee'] = '%' . $_GET['namee'] . '%';
 }
 
-if (isset($_GET['days']) && $_GET['days'] !== "") {
-    $conditions[] = "tdays <= :days";
-    $params[':days'] = $_GET['days'];
-}
 
 if (isset($_GET['country']) && $_GET['country'] !== "") {
     $conditions[] = "country = :country";
     $params[':country'] = $_GET['country'];
 }
 
-if (isset($_GET['cat']) && $_GET['cat'] !== "") {
-    $conditions[] = "categoryid = :category";
-    $params[':category'] = $_GET['cat'];
-}
 
-if (isset($_GET['sub']) && $_GET['sub'] !== "") {
-    $conditions[] = "subid = :subcategory";
-    $params[':subcategory'] = $_GET['sub'];
-}
 
-if (isset($_GET['amount']) && $_GET['amount'] !== "0") {
-    $conditions[] = "amount <= :amount";
-    $params[':amount'] = $_GET['amount'];
-}
-
-if (isset($_GET['duration']) && $_GET['duration'] !== "0") {
-    $conditions[] = "tdays <= :duration";
-    $params[':duration'] = $_GET['duration'];
-}
 
 // Combine conditions if available
 if (!empty($conditions)) {
@@ -253,8 +152,9 @@ include("common/header.php");
         overflow: hidden;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     }
-    .visabx:hover{
-        scale:0.9;
+
+    .visabx:hover {
+        scale: 0.9;
         transition: 1s;
     }
 
@@ -272,6 +172,13 @@ include("common/header.php");
     .visa-item-box {
         border-radius: 10px;
     }
+    .visa-item-img{
+        height: 180px;
+        overflow: hidden;
+    }
+    .visa-item-img img{
+        width: 100%;
+    }
 </style>
 
 <!-- Banner Section  -->
@@ -287,134 +194,23 @@ include("common/header.php");
 <section class="package-sec">
     <div class="container-xxl">
         <div class="row pack-row">
-            <div class="filter-con col-md-3 d-none d-md-block">
-                <div class="filter-box">
-                    <p class="mini-heading">Search :</p>
-                    <form method="get" action="">
-                        <input class="form-control search-input" name="search" placeholder="Type Here"
-                            onchange="this.form.submit()" value="<?php if (isset($_GET['search'])) {
-                                echo $_GET['search'];
-                            } ?>">
-                    </form>
-                    <br>
-                    <div class="filter-1">
-                        <p class="mini-heading">Country :</p>
-                        <form method="get" action="">
-                            <select name="country" id="" onchange="this.form.submit()">
-                                <option value="">All Destination</option>
-                                <?php
-                                $selectedCountry = $_GET['country'];
-                                $countries = [
-                                    'Thailand',
-                                    'Malaysia',
-                                    'Singapore',
-                                    'Bali',
-                                    'Philippines',
-                                    'China',
-                                    'Hong Kong',
-                                    'Japan',
-                                    'Taiwan',
-                                    'Kazakhstan',
-                                    'South Korea',
-                                    'Uzbekistan',
-                                    'Vietnam',
-                                    'Cambodia',
-                                    'Sri Lanka',
-                                    'Azerbaijan',
-                                    'Maldives',
-                                    'Myanmar',
-                                    'Bhutan',
-                                    'Nepal',
-                                    'Georgia',
-                                    'Armenia',
-                                    'Mongolia',
-                                    'Australia',
-                                    'New Zealand',
-                                    'Fiji',
-                                    'Turkey',
-                                    'Israel',
-                                    'Jordan',
-                                    'Oman',
-                                    'Egypt',
-                                    'Qatar',
-                                    'Saudi',
-                                    'Indonesia',
-                                    'United Arab Emirates',
-                                    'Kenya',
-                                    'Morocco',
-                                    'Mauritius',
-                                    'Seychelles',
-                                    'Zimbabwe',
-                                    'Madagascar',
-                                    'Tanzania',
-                                    'South Africa',
-                                    'Alaska',
-                                    'Canada',
-                                    'USA',
-                                    'South America',
-                                    'Austria',
-                                    'Belgium',
-                                    'Bulgaria',
-                                    'Croatia',
-                                    'Czech',
-                                    'Denmark',
-                                    'Finland',
-                                    'France',
-                                    'Germany',
-                                    'Greece',
-                                    'Greenland',
-                                    'Hungary',
-                                    'Iceland',
-                                    'Ireland',
-                                    'Italy',
-                                    'Netherlands',
-                                    'Norway',
-                                    'Portugal',
-                                    'Romania',
-                                    'Sweden',
-                                    'UK',
-                                    'Spain',
-                                    'Switzerland'
-                                ];
-                                foreach ($countries as $country) {
-                                    $selected = ($selectedCountry === $country) ? 'selected' : '';
-                                    echo '<option ' . $selected . ' value="' . $country . '">' . $country . '</option>';
-                                }
-                                ?>
-                            </select>
-                        </form>
-                    </div>
-
-                    <div class="filter-3">
-                        <p class="mini-heading">Category :</p>
+            
+            <div class="col-md-12">
+                <div class="visa-box mb-4">
+                    <div class="visa-item-box">
                         <div class="row">
-                            <form method="get" action="">
-                                <select name="cat" id="" onchange="this.form.submit()">
-                                    <option value="">All Category</option>
-                                    <option value="arrival">On Arrival</option>
-                                    <option value="e-visa">E-Visa</option>
-                                </select>
-                            </form>
-                        </div>
-                    </div>
+                            <?php
+                            if (count($data) > 0) {
+                                foreach ($data as $p) {
+                                    $packageSlug = generateSlug($p['country']);
+                                    $packageUrl = "visa-detail.php/$packageSlug";
+                                    ?>
 
-                </div>
-            </div>
-            <div class="col-md-9">
-                <?php
-                if (count($data) > 0) {
-                    foreach ($data as $p) {
-                        $packageSlug = generateSlug($p['name']);
-                        $packageUrl = "visa-detail.php/$packageSlug";
-                        ?>
-                        <div class="visa-box mb-4">
-                            <div class="visa-item-box">
-                                <div class="row">
                                     <div class="col-lg-4">
                                         <div class="visabx">
                                             <div class="visa-item-img">
-                                                <a class='text-dark' href="visa_detail.php">
-                                                    <img class="img-fluid" src="asset/images/country/africa.webp" alt="package"
+                                                <a class='text-dark' href="visa_package.php?id=<?php echo $p['id']?>">
+                                                    <img class="img-fluid" src="asset/images/country/<?php echo $p['country']?>.webp" alt="package"
                                                         title="package" srcset="" />
                                                 </a>
                                             </div>
@@ -422,65 +218,24 @@ include("common/header.php");
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <h5>
-                                                            Country Name
+                                                           <?php echo $p['country'] ?>
                                                         </h5>
-                                                        <p class="text-center"><strong><span>₹&nbsp;&nbsp;<span>50,000</strong>
+                                                        <p class="text-center">Starting From <strong><span>₹&nbsp;&nbsp;<span><?php echo $p['starting_price']?></strong>
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4">
-                                    <div class="visabx">
-                                            <div class="visa-item-img">
-                                                <a class='text-dark' href="visa_detail.php">
-                                                    <img class="img-fluid" src="asset/images/country/africa.webp" alt="package"
-                                                        title="package" srcset="" />
-                                                </a>
-                                            </div>
-                                            <div class="visa-con-bx">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <h5>
-                                                            Country Name
-                                                        </h5>
-                                                        <p class="text-center"><strong><span>₹&nbsp;&nbsp;<span>50,000</strong>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                    <div class="visabx">
-                                            <div class="visa-item-img">
-                                                <a class='text-dark' href="visa_detail.php">
-                                                    <img class="img-fluid" src="asset/images/country/africa.webp" alt="package"
-                                                        title="package" srcset="" />
-                                                </a>
-                                            </div>
-                                            <div class="visa-con-bx">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <h5>
-                                                            Country Name
-                                                        </h5>
-                                                        <p class="text-center"><strong><span>₹&nbsp;&nbsp;<span>50,000</strong>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                                    <?php
+                                }
+                            } else {
+                                echo '<h3 class="text-center text-warning">No VISA found</h3>';
+                            } ?>
                         </div>
-                        <?php
-                    }
-                } else {
-                    echo '<h3 class="text-center text-warning">No packages found</h3>';
-                } ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
